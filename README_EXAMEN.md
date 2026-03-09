@@ -29,7 +29,8 @@ streamlit run app_examen.py
 
 2. En la pantalla de configuración:
    - Selecciona el número de preguntas que deseas (de 1 hasta 699 preguntas disponibles)
-   - Define el tiempo por pregunta en segundos
+   - El tiempo total se calculará automáticamente según la fórmula: (preguntas / 65) × 90 minutos
+   - Por ejemplo: 65 preguntas = 90 minutos (~1min 23seg por pregunta)
    - Haz clic en "Comenzar Examen"
 
 3. Durante el examen:
@@ -67,23 +68,29 @@ streamlit run app_examen.py
 ## 🎯 Consejos para el examen
 
 1. **Lee cuidadosamente**: Cada pregunta debe leerse completamente antes de responder
-2. **Gestiona tu tiempo**: Usa el temporizador para mantener un ritmo adecuado
+2. **Gestiona tu tiempo**: 
+   - El tiempo se calcula automáticamente (~1min 23seg por pregunta)
+   - Para 65 preguntas: 90 minutos totales
+   - Para 90 preguntas: ~125 minutos totales
 3. **Revisa antes de finalizar**: Usa el mapa de preguntas para revisar las que dejaste sin responder
 4. **Aprende de los errores**: Después del examen, revisa detenidamente las respuestas incorrectas
 
 ## 🔧 Personalización
 
 Puedes modificar la aplicación editando `app_examen.py`:
-- Cambiar el umbral de aprobación (actualmente 70%)
+- Cambiar el umbral de aprobación (actualmente >70%)
 - Modificar los colores y estilos
-- Ajustar los rangos de tiempo disponibles
+- Ajustar la fórmula de cálculo de tiempo (actualmente: preguntas/65 × 90 minutos)
 - Personalizar los mensajes de retroalimentación
 
 ## 📝 Notas
 
 - Las preguntas se seleccionan aleatoriamente de la base de datos cada vez que inicias un nuevo examen
-- El temporizador por pregunta es individual y se reinicia al navegar entre preguntas
+- El tiempo total se calcula según: **(preguntas / 65) × 90 minutos**
+- El temporizador por pregunta se calcula dividiendo el tiempo total entre el número de preguntas
+- El temporizador se reinicia al navegar entre preguntas
 - Tus respuestas se guardan automáticamente al hacer clic en una opción
+- **Número de preguntas por defecto**: 65 preguntas = 90 minutos de examen
 
 ## 🆘 Soporte
 

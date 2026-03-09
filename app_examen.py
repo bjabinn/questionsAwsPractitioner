@@ -32,18 +32,24 @@ st.markdown("""
     
     /* Botones con mejor contraste */
     .stButton button {
-        background-color: #0066CC;
-        color: white !important;
+        background-color: #F0F7FF;
+        color: #000000 !important;
+        border: 2px solid #3399FF;
     }
     
     .stButton button[kind="primary"] {
-        background-color: #FF9900;
+        background-color: #0095ff;
         color: white !important;
     }
     
     /* Métricas */
+    [data-testid="stMetricLabel"] {
+        display: none !important;
+    }
+    
     [data-testid="stMetricValue"] {
-        color: #000000 !important;
+        color: #808080 !important;
+        margin-top: -19px !important;
     }
     
     /* Input fields */
@@ -56,6 +62,23 @@ st.markdown("""
     .streamlit-expanderHeader {
         background-color: #F0F0F0;
         color: #000000 !important;
+    }
+    
+    [data-testid="stExpanderDetails"] {
+        background-color: #FFFFFF !important;
+    }
+    
+    [data-testid="stExpanderDetails"] p,
+    [data-testid="stExpanderDetails"] div,
+    [data-testid="stExpanderDetails"] span,
+    [data-testid="stExpanderDetails"] strong,
+    [data-testid="stExpanderDetails"] [data-testid="stMarkdownContainer"] {
+        background-color: transparent !important;
+        color: #000000 !important;
+    }
+    
+    [data-testid="stExpander"] {
+        background-color: #FFFFFF !important;
     }
     
     /* Markdown */
@@ -81,14 +104,14 @@ def inicializar_sesion():
         st.session_state.pregunta_actual = 0
     if 'respuestas_usuario' not in st.session_state:
         st.session_state.respuestas_usuario = {}
-    if 'tiempo_inicio_pregunta' not in st.session_state:
-        st.session_state.tiempo_inicio_pregunta = None
+    if 'tiempo_inicio_examen' not in st.session_state:
+        st.session_state.tiempo_inicio_examen = None
     if 'finalizado' not in st.session_state:
         st.session_state.finalizado = False
     if 'num_preguntas' not in st.session_state:
         st.session_state.num_preguntas = 10
-    if 'tiempo_por_pregunta' not in st.session_state:
-        st.session_state.tiempo_por_pregunta = 83  # 1 minuto 23 segundos
+    if 'tiempo_total_minutos' not in st.session_state:
+        st.session_state.tiempo_total_minutos = 90  # Tiempo total en minutos
     if 'preguntas_examen' not in st.session_state:
         st.session_state.preguntas_examen = []
 
@@ -97,7 +120,6 @@ def navegar_pregunta(direccion):
     nueva_posicion = st.session_state.pregunta_actual + direccion
     if 0 <= nueva_posicion < len(st.session_state.preguntas_examen):
         st.session_state.pregunta_actual = nueva_posicion
-        st.session_state.tiempo_inicio_pregunta = time.time()
 
 def seleccionar_respuesta(indice_pregunta, respuesta):
     """Guardar la respuesta del usuario"""
@@ -117,7 +139,7 @@ def calcular_resultado():
 
 def mostrar_configuracion():
     """Mostrar pantalla de configuración del examen"""
-    st.title("⚙️ Configuración del Examen AWS")
+    st.title("⚙️ Configura tu Examen AWS")
     st.markdown("---")
     
     todas_preguntas = cargar_preguntas()
@@ -125,24 +147,37 @@ def mostrar_configuracion():
     col1, col2 = st.columns(2)
     
     with col1:
-        st.session_state.num_preguntas = st.number_input(
+        num_preguntas_seleccionadas = st.number_input(
             "Número de preguntas",
             min_value=1,
             max_value=len(todas_preguntas),
-            value=10,
+            value=65,
             step=1,
             help=f"Hay {len(todas_preguntas)} preguntas disponibles"
         )
+        st.session_state.num_preguntas = num_preguntas_seleccionadas
     
     with col2:
-        st.session_state.tiempo_por_pregunta = st.number_input(
-            "Tiempo por pregunta (segundos)",
-            min_value=10,
-            max_value=300,
-            value=83,  # 1 minuto 23 segundos por defecto
-            step=1,
-            help="Tiempo límite para responder cada pregunta (por defecto: 1min 23seg)"
-        )
+        # Calcular tiempo total basado en la fórmula: (num_preguntas / 65) * 90 minutos
+        tiempo_total_minutos = (num_preguntas_seleccionadas / 65) * 90
+        st.session_state.tiempo_total_minutos = tiempo_total_minutos
+        
+        # Calcular tiempo por pregunta en segundos (para uso interno)
+        st.session_state.tiempo_por_pregunta = int((tiempo_total_minutos * 60) / num_preguntas_seleccionadas)
+        
+        # Mostrar tiempo total como métrica informativa (sin botones + y -)
+        st.markdown("<div style='text-align: right;'><strong>Duración máxima del examen</strong></div>", unsafe_allow_html=True)
+        
+        # Formatear tiempo en minutos y segundos
+        minutos_enteros = int(tiempo_total_minutos)
+        segundos = int((tiempo_total_minutos - minutos_enteros) * 60)
+        
+        if segundos > 0:
+            tiempo_formateado = f"{minutos_enteros}Min {segundos}segundos"
+        else:
+            tiempo_formateado = f"{minutos_enteros}Min"
+        
+        st.markdown(f"<div style='text-align: right; color: #808080; font-size: 2.5rem; margin-top: -19px;'>{tiempo_formateado}</div>", unsafe_allow_html=True)
     
     st.markdown("---")
     
@@ -154,7 +189,7 @@ def mostrar_configuracion():
             st.session_state.num_preguntas
         )
         st.session_state.iniciado = True
-        st.session_state.tiempo_inicio_pregunta = time.time()
+        st.session_state.tiempo_inicio_examen = time.time()
         st.rerun()
 
 def mostrar_examen():
@@ -173,14 +208,24 @@ def mostrar_examen():
         st.metric("Respondidas", f"{contestadas}/{len(st.session_state.preguntas_examen)}")
     
     with col3:
-        # Temporizador
-        tiempo_transcurrido = int(time.time() - st.session_state.tiempo_inicio_pregunta)
-        tiempo_restante = max(0, st.session_state.tiempo_por_pregunta - tiempo_transcurrido)
+        # Temporizador global del examen
+        tiempo_total_segundos = int(st.session_state.tiempo_total_minutos * 60)
+        tiempo_transcurrido = int(time.time() - st.session_state.tiempo_inicio_examen)
+        tiempo_restante = max(0, tiempo_total_segundos - tiempo_transcurrido)
         
-        if tiempo_restante > 10:
-            st.metric("⏱️ Tiempo", f"{tiempo_restante}s")
+        # Mostrar en minutos y segundos
+        if tiempo_restante >= 60:
+            mins = tiempo_restante // 60
+            segs = tiempo_restante % 60
+            tiempo_display = f"{mins}:{segs:02d}"
         else:
-            st.metric("⏱️ Tiempo", f"{tiempo_restante}s", delta="¡Apúrate!")
+            tiempo_display = f"{tiempo_restante}s"
+        
+        # Cambiar color cuando queden menos de 5 minutos
+        if tiempo_restante > 300:  # Más de 5 minutos
+            st.metric("⏱️ Tiempo Restante", tiempo_display)
+        else:
+            st.metric("⏱️ Tiempo Restante", tiempo_display, delta="¡Apúrate!")
     
     st.markdown("---")
     
@@ -206,7 +251,7 @@ def mostrar_examen():
     st.markdown("---")
     
     # Navegación
-    col1, col2, col3, col4 = st.columns([1, 1, 1, 1])
+    col1, col2, col3 = st.columns([1, 1, 2])
     
     with col1:
         if pregunta_idx > 0:
@@ -219,11 +264,6 @@ def mostrar_examen():
             if st.button("➡️ Siguiente", use_container_width=True):
                 navegar_pregunta(1)
                 st.rerun()
-    
-    with col4:
-        if st.button("✅ Finalizar Examen", use_container_width=True, type="primary"):
-            st.session_state.finalizado = True
-            st.rerun()
     
     # Mapa de preguntas
     st.markdown("---")
@@ -247,8 +287,15 @@ def mostrar_examen():
                 type=tipo if es_actual else "secondary"
             ):
                 st.session_state.pregunta_actual = idx
-                st.session_state.tiempo_inicio_pregunta = time.time()
                 st.rerun()
+    
+    # Botón Finalizar Examen centrado
+    st.markdown("---")
+    col1, col2, col3 = st.columns([1, 2, 1])
+    with col2:
+        if st.button("✅ Finalizar Examen", use_container_width=True, type="primary"):
+            st.session_state.finalizado = True
+            st.rerun()
 
 def mostrar_resultados():
     """Mostrar resultados del examen"""
@@ -292,7 +339,7 @@ def mostrar_resultados():
         with st.expander(
             f"Pregunta {idx + 1} - {'✅ Correcta' if es_correcta else '❌ Incorrecta' if respuesta_usuario != 'Sin responder' else '⚠️ Sin responder'}"
         ):
-            st.markdown(f"**{pregunta['pregunta']}**")
+            st.markdown(f"<div style='background-color: white; color: black; padding: 10px;'><strong>{pregunta['pregunta']}</strong></div>", unsafe_allow_html=True)
             st.markdown("")
             
             # Las opciones vienen como diccionario {'A': '...', 'B': '...', etc}
