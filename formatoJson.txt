@@ -1,0 +1,13 @@
+{
+  "id": N,
+  "pregunta": "...",
+  "opciones": {
+    "A": "...",
+    "B": "...",
+    "C": "...",
+    "D": "..."
+  },
+  "respuesta_correcta": "B",
+  "explicacion": null,
+  "referencia": null
+}
