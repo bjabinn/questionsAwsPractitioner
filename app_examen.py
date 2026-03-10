@@ -125,6 +125,24 @@ def seleccionar_respuesta(indice_pregunta, respuesta):
     """Guardar la respuesta del usuario"""
     st.session_state.respuestas_usuario[indice_pregunta] = respuesta
 
+def seleccionar_respuesta_multiple(indice_pregunta, letra, estado):
+    """Guardar respuestas múltiples del usuario"""
+    if indice_pregunta not in st.session_state.respuestas_usuario:
+        st.session_state.respuestas_usuario[indice_pregunta] = []
+    
+    respuestas = st.session_state.respuestas_usuario[indice_pregunta]
+    
+    if estado and letra not in respuestas:
+        respuestas.append(letra)
+    elif not estado and letra in respuestas:
+        respuestas.remove(letra)
+    
+    st.session_state.respuestas_usuario[indice_pregunta] = respuestas
+
+def es_pregunta_multiple(pregunta):
+    """Verificar si una pregunta tiene múltiples respuestas correctas"""
+    return ',' in pregunta['respuesta_correcta']
+
 def calcular_resultado():
     """Calcular el resultado del examen"""
     correctas = 0
@@ -132,8 +150,20 @@ def calcular_resultado():
     
     for idx, pregunta in enumerate(st.session_state.preguntas_examen):
         respuesta_usuario = st.session_state.respuestas_usuario.get(idx)
-        if respuesta_usuario == pregunta['respuesta_correcta']:
-            correctas += 1
+        respuesta_correcta = pregunta['respuesta_correcta']
+        
+        # Verificar si es pregunta múltiple
+        if es_pregunta_multiple(pregunta):
+            # Comparar sets de respuestas
+            respuestas_correctas_set = set(respuesta_correcta.split(','))
+            respuestas_usuario_set = set(respuesta_usuario) if respuesta_usuario else set()
+            
+            if respuestas_correctas_set == respuestas_usuario_set:
+                correctas += 1
+        else:
+            # Pregunta de una sola respuesta
+            if respuesta_usuario == respuesta_correcta:
+                correctas += 1
     
     return correctas, total
 
@@ -233,20 +263,42 @@ def mostrar_examen():
     st.markdown(f"### {pregunta['pregunta']}")
     st.markdown("")
     
+    # Verificar si es pregunta múltiple
+    es_multiple = es_pregunta_multiple(pregunta)
+    
     # Mostrar opciones
     respuesta_actual = st.session_state.respuestas_usuario.get(pregunta_idx)
     
     # Las opciones vienen como diccionario {'A': '...', 'B': '...', etc}
     opciones = pregunta['opciones']
-    for letra in sorted(opciones.keys()):
-        if st.button(
-            f"**{letra})** {opciones[letra]}",
-            key=f"opcion_{pregunta_idx}_{letra}",
-            use_container_width=True,
-            type="primary" if respuesta_actual == letra else "secondary"
-        ):
-            seleccionar_respuesta(pregunta_idx, letra)
-            st.rerun()
+    
+    if es_multiple:
+        # Usar checkboxes para preguntas múltiples
+        respuestas_seleccionadas = respuesta_actual if isinstance(respuesta_actual, list) else []
+        
+        for letra in sorted(opciones.keys()):
+            checked = letra in respuestas_seleccionadas
+            nuevo_estado = st.checkbox(
+                f"**{letra})** {opciones[letra]}",
+                value=checked,
+                key=f"opcion_{pregunta_idx}_{letra}"
+            )
+            
+            # Si el estado cambió, actualizar
+            if nuevo_estado != checked:
+                seleccionar_respuesta_multiple(pregunta_idx, letra, nuevo_estado)
+                st.rerun()
+    else:
+        # Usar botones para preguntas de una sola respuesta
+        for letra in sorted(opciones.keys()):
+            if st.button(
+                f"**{letra})** {opciones[letra]}",
+                key=f"opcion_{pregunta_idx}_{letra}",
+                use_container_width=True,
+                type="primary" if respuesta_actual == letra else "secondary"
+            ):
+                seleccionar_respuesta(pregunta_idx, letra)
+                st.rerun()
     
     st.markdown("---")
     
@@ -334,7 +386,17 @@ def mostrar_resultados():
     for idx, pregunta in enumerate(st.session_state.preguntas_examen):
         respuesta_usuario = st.session_state.respuestas_usuario.get(idx, "Sin responder")
         respuesta_correcta = pregunta['respuesta_correcta']
-        es_correcta = respuesta_usuario == respuesta_correcta
+        
+        # Verificar si es pregunta múltiple
+        es_multiple = es_pregunta_multiple(pregunta)
+        
+        # Determinar si la respuesta es correcta
+        if es_multiple:
+            respuestas_correctas_set = set(respuesta_correcta.split(','))
+            respuestas_usuario_set = set(respuesta_usuario) if isinstance(respuesta_usuario, list) else set()
+            es_correcta = respuestas_correctas_set == respuestas_usuario_set
+        else:
+            es_correcta = respuesta_usuario == respuesta_correcta
         
         with st.expander(
             f"Pregunta {idx + 1} - {'✅ Correcta' if es_correcta else '❌ Incorrecta' if respuesta_usuario != 'Sin responder' else '⚠️ Sin responder'}"
@@ -344,13 +406,37 @@ def mostrar_resultados():
             
             # Las opciones vienen como diccionario {'A': '...', 'B': '...', etc}
             opciones = pregunta['opciones']
-            for letra in sorted(opciones.keys()):
-                if letra == respuesta_correcta:
-                    st.success(f"✅ **{letra})** {opciones[letra]} (Correcta)")
-                elif letra == respuesta_usuario and respuesta_usuario != respuesta_correcta:
-                    st.error(f"❌ **{letra})** {opciones[letra]} (Tu respuesta)")
-                else:
-                    st.markdown(f"**{letra})** {opciones[letra]}")
+            
+            if es_multiple:
+                # Para preguntas múltiples
+                respuestas_correctas_list = respuesta_correcta.split(',')
+                respuestas_usuario_list = respuesta_usuario if isinstance(respuesta_usuario, list) else []
+                
+                for letra in sorted(opciones.keys()):
+                    es_correcta_opcion = letra in respuestas_correctas_list
+                    usuario_marco = letra in respuestas_usuario_list
+                    
+                    if es_correcta_opcion and usuario_marco:
+                        # Usuario marcó correctamente
+                        st.success(f"✅ **{letra})** {opciones[letra]} (Correcta - Marcada)")
+                    elif es_correcta_opcion and not usuario_marco:
+                        # Usuario no marcó una correcta
+                        st.warning(f"⚠️ **{letra})** {opciones[letra]} (Correcta - No marcada)")
+                    elif not es_correcta_opcion and usuario_marco:
+                        # Usuario marcó una incorrecta
+                        st.error(f"❌ **{letra})** {opciones[letra]} (Incorrecta - Marcada)")
+                    else:
+                        # No es correcta y usuario no la marcó
+                        st.markdown(f"**{letra})** {opciones[letra]}")
+            else:
+                # Para preguntas de una sola respuesta
+                for letra in sorted(opciones.keys()):
+                    if letra == respuesta_correcta:
+                        st.success(f"✅ **{letra})** {opciones[letra]} (Correcta)")
+                    elif letra == respuesta_usuario and respuesta_usuario != respuesta_correcta:
+                        st.error(f"❌ **{letra})** {opciones[letra]} (Tu respuesta)")
+                    else:
+                        st.markdown(f"**{letra})** {opciones[letra]}")
     
     st.markdown("---")
     
