@@ -1,12 +1,13 @@
 import streamlit as st
 import json
+import glob
 import time
 from datetime import datetime, timedelta
 
 # Configuración de la página
 st.set_page_config(
-    page_title="Examen AWS Cloud Practitioner",
-    page_icon="☁️",
+    page_title="Examen de Certificaciones",
+    page_icon="📝",
     layout="wide",
     initial_sidebar_state="collapsed"
 )
@@ -52,12 +53,90 @@ st.markdown("""
         margin-top: -19px !important;
     }
     
-    /* Input fields */
-    .stNumberInput input {
-        background-color: #F5F5F5;
+    /* Etiquetas de los widgets: distintivo visual para accesibilidad */
+    [data-testid="stWidgetLabel"] {
+        border-left: 3px solid #0095FF;
+        padding-left: 8px;
+        margin-bottom: 4px;
+    }
+
+    [data-testid="stWidgetLabel"] p {
+        font-weight: 600 !important;
         color: #000000 !important;
     }
-    
+
+    /* Selectbox (combo de certificación) */
+    [data-testid="stSelectbox"] [role="group"] {
+        background-color: #FFFFFF !important;
+        border: 1px solid #999999 !important;
+        border-radius: 4px !important;
+    }
+
+    [data-testid="stSelectbox"]:focus-within [role="group"] {
+        border-color: #0095FF !important;
+        box-shadow: 0 0 0 1px #0095FF !important;
+    }
+
+    [data-testid="stSelectbox"] input {
+        color: #000000 !important;
+    }
+
+    [data-testid="stSelectbox"] svg {
+        fill: #000000 !important;
+    }
+
+    /* Menú desplegable del selectbox (se renderiza en un portal aparte) */
+    [role="listbox"] {
+        background-color: #FFFFFF !important;
+        border: 1px solid #CCCCCC !important;
+    }
+
+    [role="option"] {
+        background-color: #FFFFFF !important;
+        color: #000000 !important;
+    }
+
+    [role="option"]:hover,
+    [role="option"][aria-selected="true"] {
+        background-color: #F0F7FF !important;
+    }
+
+    /* Number input (número de preguntas) */
+    [data-testid="stNumberInputContainer"] {
+        background-color: #F5F5F5 !important;
+        border: 1px solid #999999 !important;
+        border-radius: 4px !important;
+    }
+
+    [data-testid="stNumberInputContainer"]:focus-within {
+        border-color: #0095FF !important;
+        box-shadow: 0 0 0 1px #0095FF !important;
+    }
+
+    [data-testid="stNumberInputField"] {
+        background-color: transparent !important;
+        color: #000000 !important;
+    }
+
+    /* Botones +/- del number input */
+    [data-testid="stNumberInputStepDown"],
+    [data-testid="stNumberInputStepUp"] {
+        background-color: #F0F7FF !important;
+        border: 1px solid #3399FF !important;
+        border-radius: 4px !important;
+        color: #000000 !important;
+    }
+
+    [data-testid="stNumberInputStepDown"]:hover,
+    [data-testid="stNumberInputStepUp"]:hover {
+        background-color: #0095FF !important;
+    }
+
+    [data-testid="stNumberInputStepDown"]:hover svg,
+    [data-testid="stNumberInputStepUp"]:hover svg {
+        fill: #FFFFFF !important;
+    }
+
     /* Expanders */
     .streamlit-expanderHeader {
         background-color: #F0F0F0;
@@ -85,16 +164,52 @@ st.markdown("""
     .element-container {
         color: #000000 !important;
     }
+
+    /* Opciones de respuesta: alinear texto a la izquierda */
+    .st-key-opciones_respuesta .stButton button,
+    .st-key-opciones_respuesta .stButton button > div,
+    .st-key-opciones_respuesta .stButton button > div > span {
+        justify-content: flex-start !important;
+        text-align: left !important;
+    }
+
+    .st-key-opciones_respuesta .stButton button p {
+        text-align: left !important;
+    }
+
+    .st-key-opciones_respuesta [data-testid="stCheckbox"] label {
+        justify-content: flex-start !important;
+        text-align: left !important;
+    }
     </style>
 """, unsafe_allow_html=True)
 
-# Cargar preguntas desde JSON
+# Cargar una certificación (metadata + preguntas) desde su fichero JSON
 @st.cache_data
-def cargar_preguntas():
-    with open('preguntas_aws.json', 'r', encoding='utf-8') as f:
-        data = json.load(f)
-    # El archivo JSON contiene directamente una lista de preguntas
-    return data
+def cargar_certificacion(ruta_fichero):
+    with open(ruta_fichero, 'r', encoding='utf-8') as f:
+        return json.load(f)
+
+# Descubrir certificaciones disponibles escaneando la carpeta preguntas/
+# TTL corto para que una certificación añadida en caliente aparezca sin reiniciar el servidor
+@st.cache_data(ttl=30)
+def descubrir_certificaciones():
+    certificaciones = []
+    for ruta in sorted(glob.glob('preguntas/*.json')):
+        data = cargar_certificacion(ruta)
+        meta = data['certificacion']
+        certificaciones.append({
+            'id': meta['id'],
+            'nombre': meta['nombre'],
+            'codigo': meta.get('codigo', ''),
+            'nota_corte': meta.get('nota_corte', 70),
+            'duracion_minutos': meta.get('duracion_minutos', 90),
+            'num_preguntas_examen': meta.get('num_preguntas_examen', 65),
+            'ruta': ruta,
+            'num_preguntas': len(data['preguntas']),
+        })
+    certificaciones.sort(key=lambda c: c['nombre'])
+    return certificaciones
 
 # Inicializar estado de la sesión
 def inicializar_sesion():
@@ -114,6 +229,12 @@ def inicializar_sesion():
         st.session_state.tiempo_total_minutos = 90  # Tiempo total en minutos
     if 'preguntas_examen' not in st.session_state:
         st.session_state.preguntas_examen = []
+    if 'cert_seleccionada_id' not in st.session_state:
+        st.session_state.cert_seleccionada_id = None
+    if 'cert_activa' not in st.session_state:
+        st.session_state.cert_activa = None
+    if 'nota_corte' not in st.session_state:
+        st.session_state.nota_corte = 70
 
 def navegar_pregunta(direccion):
     """Navegar entre preguntas"""
@@ -169,27 +290,51 @@ def calcular_resultado():
 
 def mostrar_configuracion():
     """Mostrar pantalla de configuración del examen"""
-    st.title("⚙️ Configura tu Examen AWS")
+    st.title("⚙️ Configura tu Examen")
     st.markdown("---")
-    
-    todas_preguntas = cargar_preguntas()
-    
+
+    certificaciones = descubrir_certificaciones()
+
+    if not certificaciones:
+        st.error(
+            "No se encontró ninguna certificación en la carpeta 'preguntas/'. "
+            "Añade al menos un fichero JSON con el esquema esperado."
+        )
+        return
+
+    nombres = [c['nombre'] for c in certificaciones]
+    indice_por_defecto = 0
+    if st.session_state.cert_seleccionada_id:
+        for i, c in enumerate(certificaciones):
+            if c['id'] == st.session_state.cert_seleccionada_id:
+                indice_por_defecto = i
+                break
+
+    nombre_elegido = st.selectbox(
+        "Certificación",
+        nombres,
+        index=indice_por_defecto
+    )
+    cert = next(c for c in certificaciones if c['nombre'] == nombre_elegido)
+    st.session_state.cert_seleccionada_id = cert['id']
+
     col1, col2 = st.columns(2)
-    
+
     with col1:
         num_preguntas_seleccionadas = st.number_input(
             "Número de preguntas",
             min_value=1,
-            max_value=len(todas_preguntas),
-            value=65,
+            max_value=cert['num_preguntas'],
+            value=min(65, cert['num_preguntas']),
             step=1,
-            help=f"Hay {len(todas_preguntas)} preguntas disponibles"
+            help=f"Hay {cert['num_preguntas']} preguntas disponibles"
         )
         st.session_state.num_preguntas = num_preguntas_seleccionadas
     
     with col2:
-        # Calcular tiempo total basado en la fórmula: (num_preguntas / 65) * 90 minutos
-        tiempo_total_minutos = (num_preguntas_seleccionadas / 65) * 90
+        # Calcular tiempo total proporcional al formato oficial de la certificación
+        # (p.ej. AWS CLF-C02: 65 preguntas / 90 min; Claude CAF: 60 preguntas / 120 min)
+        tiempo_total_minutos = (num_preguntas_seleccionadas / cert['num_preguntas_examen']) * cert['duracion_minutos']
         st.session_state.tiempo_total_minutos = tiempo_total_minutos
         
         # Calcular tiempo por pregunta en segundos (para uso interno)
@@ -212,12 +357,15 @@ def mostrar_configuracion():
     st.markdown("---")
     
     if st.button("🚀 Comenzar Examen", use_container_width=True, type="primary"):
-        # Seleccionar preguntas aleatorias
+        # Seleccionar preguntas aleatorias de la certificación elegida
         import random
+        todas_preguntas = cargar_certificacion(cert['ruta'])['preguntas']
         st.session_state.preguntas_examen = random.sample(
-            todas_preguntas, 
+            todas_preguntas,
             st.session_state.num_preguntas
         )
+        st.session_state.cert_activa = cert
+        st.session_state.nota_corte = cert['nota_corte']
         st.session_state.iniciado = True
         st.session_state.tiempo_inicio_examen = time.time()
         st.rerun()
@@ -231,7 +379,8 @@ def mostrar_examen():
     col1, col2, col3 = st.columns([2, 1, 1])
     
     with col1:
-        st.title(f"☁️ Examen AWS - Pregunta {pregunta_idx + 1} de {len(st.session_state.preguntas_examen)}")
+        nombre_cert = st.session_state.cert_activa['nombre']
+        st.title(f"📝 Examen {nombre_cert} - Pregunta {pregunta_idx + 1} de {len(st.session_state.preguntas_examen)}")
     
     with col2:
         contestadas = len(st.session_state.respuestas_usuario)
@@ -272,33 +421,34 @@ def mostrar_examen():
     # Las opciones vienen como diccionario {'A': '...', 'B': '...', etc}
     opciones = pregunta['opciones']
     
-    if es_multiple:
-        # Usar checkboxes para preguntas múltiples
-        respuestas_seleccionadas = respuesta_actual if isinstance(respuesta_actual, list) else []
-        
-        for letra in sorted(opciones.keys()):
-            checked = letra in respuestas_seleccionadas
-            nuevo_estado = st.checkbox(
-                f"**{letra})** {opciones[letra]}",
-                value=checked,
-                key=f"opcion_{pregunta_idx}_{letra}"
-            )
-            
-            # Si el estado cambió, actualizar
-            if nuevo_estado != checked:
-                seleccionar_respuesta_multiple(pregunta_idx, letra, nuevo_estado)
-                st.rerun()
-    else:
-        # Usar botones para preguntas de una sola respuesta
-        for letra in sorted(opciones.keys()):
-            if st.button(
-                f"**{letra})** {opciones[letra]}",
-                key=f"opcion_{pregunta_idx}_{letra}",
-                use_container_width=True,
-                type="primary" if respuesta_actual == letra else "secondary"
-            ):
-                seleccionar_respuesta(pregunta_idx, letra)
-                st.rerun()
+    with st.container(key="opciones_respuesta"):
+        if es_multiple:
+            # Usar checkboxes para preguntas múltiples
+            respuestas_seleccionadas = respuesta_actual if isinstance(respuesta_actual, list) else []
+
+            for letra in sorted(opciones.keys()):
+                checked = letra in respuestas_seleccionadas
+                nuevo_estado = st.checkbox(
+                    f"**{letra})** {opciones[letra]}",
+                    value=checked,
+                    key=f"opcion_{pregunta_idx}_{letra}"
+                )
+
+                # Si el estado cambió, actualizar
+                if nuevo_estado != checked:
+                    seleccionar_respuesta_multiple(pregunta_idx, letra, nuevo_estado)
+                    st.rerun()
+        else:
+            # Usar botones para preguntas de una sola respuesta
+            for letra in sorted(opciones.keys()):
+                if st.button(
+                    f"**{letra})** {opciones[letra]}",
+                    key=f"opcion_{pregunta_idx}_{letra}",
+                    use_container_width=True,
+                    type="primary" if respuesta_actual == letra else "secondary"
+                ):
+                    seleccionar_respuesta(pregunta_idx, letra)
+                    st.rerun()
     
     st.markdown("---")
     
@@ -351,9 +501,11 @@ def mostrar_examen():
 
 def mostrar_resultados():
     """Mostrar resultados del examen"""
-    st.title("📊 Resultados del Examen")
+    nombre_cert = st.session_state.cert_activa['nombre']
+    nota_corte = st.session_state.nota_corte
+    st.title(f"📊 Resultados del Examen - {nombre_cert}")
     st.markdown("---")
-    
+
     correctas, total = calcular_resultado()
     porcentaje = (correctas / total) * 100
     
@@ -371,12 +523,12 @@ def mostrar_resultados():
     
     # Calificación
     st.markdown("---")
-    if porcentaje > 70:  # Solo aprueba si SUPERA el 70%
+    if porcentaje > nota_corte:  # Solo aprueba si SUPERA la nota de corte de la certificación
         st.success(f"### 🎉 ¡APROBADO! - {porcentaje:.1f}%")
         st.balloons()
     else:
         st.error(f"### 😔 No Aprobado - {porcentaje:.1f}%")
-        st.info("ℹ️ Necesitas superar el 70% para aprobar")
+        st.info(f"ℹ️ Necesitas superar el {nota_corte}% para aprobar")
     
     st.markdown("---")
     

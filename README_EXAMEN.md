@@ -1,9 +1,11 @@
-# 📚 Aplicación de Examen AWS Cloud Practitioner
+# 📚 Aplicación de Examen de Certificaciones
 
-Aplicación interactiva de Streamlit para realizar exámenes de preparación para la certificación AWS Cloud Practitioner.
+Aplicación interactiva de Streamlit para realizar exámenes de preparación para certificaciones
+técnicas (AWS y otras que se vayan añadiendo).
 
 ## ✨ Características
 
+- **Múltiples certificaciones**: elige de un desplegable qué certificación quieres practicar
 - **Personalización del examen**: Elige el número de preguntas y el tiempo por pregunta
 - **Navegación intuitiva**: Botones para avanzar y retroceder entre preguntas
 - **Mapa de preguntas**: Visualiza qué preguntas has respondido y navega directamente a cualquier pregunta
@@ -28,7 +30,8 @@ streamlit run app_examen.py
 ```
 
 2. En la pantalla de configuración:
-   - Selecciona el número de preguntas que deseas (de 1 hasta 699 preguntas disponibles)
+   - Elige la certificación en el desplegable
+   - Selecciona el número de preguntas que deseas (según las disponibles para esa certificación)
    - El tiempo total se calculará automáticamente según la fórmula: (preguntas / 65) × 90 minutos
    - Por ejemplo: 65 preguntas = 90 minutos (~1min 23seg por pregunta)
    - Haz clic en "Comenzar Examen"
@@ -53,7 +56,8 @@ streamlit run app_examen.py
 
 ## 📊 Evaluación
 
-- Necesitas un 70% o más para aprobar
+- La nota de corte para aprobar depende de la certificación (definida en su fichero JSON, por
+  defecto 70%)
 - Verás un desglose completo de:
   - Respuestas correctas vs incorrectas
   - Porcentaje de aciertos
@@ -62,8 +66,46 @@ streamlit run app_examen.py
 ## 📁 Archivos del proyecto
 
 - `app_examen.py`: Aplicación principal de Streamlit
-- `preguntas_aws.json`: Base de datos con 699 preguntas de AWS Cloud Practitioner
+- `preguntas/`: Carpeta con un fichero JSON por certificación (ver "Añadir una certificación nueva")
+- `convertir_a_json.py` / `limpiar_examen_aws.py`: Utilidades para generar un fichero de
+  `preguntas/` a partir de un dump de texto
 - `README_EXAMEN.md`: Este archivo de documentación
+
+## ➕ Añadir una certificación nueva
+
+No hace falta tocar el código de la app. Solo hay que crear un fichero JSON dentro de `preguntas/`
+con este esquema:
+
+```json
+{
+  "certificacion": {
+    "id": "mi-cert",
+    "nombre": "Nombre de la certificación",
+    "codigo": "COD-01",
+    "nota_corte": 70
+  },
+  "preguntas": [
+    {
+      "id": 1,
+      "pregunta": "Texto de la pregunta",
+      "opciones": {"A": "...", "B": "...", "C": "...", "D": "..."},
+      "respuesta_correcta": "B",
+      "explicacion": null,
+      "referencia": null
+    }
+  ]
+}
+```
+
+Para preguntas de respuesta múltiple, `respuesta_correcta` va con las letras separadas por coma
+(ej. `"B,D"`).
+
+Al reiniciar la app (o refrescar si el fichero se añadió con la app ya abierta), la nueva
+certificación aparece automáticamente en el desplegable.
+
+Si el origen de las preguntas es un dump de texto similar al de AWS, puedes reutilizar el pipeline:
+1. `python limpiar_examen_aws.py` (ajustando el nombre de fichero de entrada dentro del script)
+2. `python convertir_a_json.py entrada_limpio.txt preguntas/mi_cert.json --id mi-cert --nombre "Mi Certificación" --codigo COD-01 --nota-corte 70`
 
 ## 🎯 Consejos para el examen
 
@@ -77,15 +119,14 @@ streamlit run app_examen.py
 
 ## 🔧 Personalización
 
-Puedes modificar la aplicación editando `app_examen.py`:
-- Cambiar el umbral de aprobación (actualmente >70%)
-- Modificar los colores y estilos
-- Ajustar la fórmula de cálculo de tiempo (actualmente: preguntas/65 × 90 minutos)
-- Personalizar los mensajes de retroalimentación
+- Cambiar el umbral de aprobación de una certificación: edita `nota_corte` en su fichero JSON
+  dentro de `preguntas/` (no requiere tocar código)
+- Modificar los colores y estilos, la fórmula de cálculo de tiempo (actualmente: preguntas/65 × 90
+  minutos) o los mensajes de retroalimentación: edita `app_examen.py`
 
 ## 📝 Notas
 
-- Las preguntas se seleccionan aleatoriamente de la base de datos cada vez que inicias un nuevo examen
+- Las preguntas se seleccionan aleatoriamente de la certificación elegida cada vez que inicias un nuevo examen
 - El tiempo total se calcula según: **(preguntas / 65) × 90 minutos**
 - El temporizador por pregunta se calcula dividiendo el tiempo total entre el número de preguntas
 - El temporizador se reinicia al navegar entre preguntas
