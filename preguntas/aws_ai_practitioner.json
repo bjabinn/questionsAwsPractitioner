@@ -1,0 +1,2914 @@
+{
+  "certificacion": {
+    "id": "aws-aif-c01",
+    "nombre": "AWS Certified AI Practitioner",
+    "codigo": "AIF-C01",
+    "nota_corte": 70,
+    "duracion_minutos": 90,
+    "num_preguntas_examen": 65
+  },
+  "preguntas": [
+    {
+      "id": 1,
+      "pregunta": "Una fintech quiere acelerar el despliegue de un modelo de detección de fraude sin disponer de un dataset propio para entrenar desde cero. ¿Cuál es la principal ventaja de usar un modelo preentrenado en este caso?",
+      "opciones": {
+        "A": "Siempre supera a cualquier modelo entrenado específicamente para la tarea",
+        "B": "Garantiza la máxima precisión en todos los escenarios de negocio",
+        "C": "Puede usarse de inmediato para inferencia sin aportar datos de entrenamiento propios",
+        "D": "Elimina por completo la necesidad de ajustar el modelo para casos especializados"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Un modelo preentrenado ya aprendió patrones de un dataset grande, por lo que puede aplicarse de inmediato para generar predicciones sin que el equipo deba recolectar ni entrenar con sus propios datos, ahorrando tiempo y esfuerzo.",
+      "referencia": null
+    },
+    {
+      "id": 2,
+      "pregunta": "Un equipo de data science evalúa un clasificador de correos spam. ¿Qué mide el puntaje F1?",
+      "opciones": {
+        "A": "La velocidad con la que el modelo procesa cada solicitud",
+        "B": "El costo mensual de operar el endpoint de inferencia",
+        "C": "El equilibrio entre precisión y recall del modelo",
+        "D": "La eficiencia energética del entrenamiento en GPU"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "El F1 es la media armónica entre precisión y recall, por lo que resume qué tan bien el modelo acierta en positivos y qué tan completo es al detectarlos; es especialmente útil cuando las clases están desbalanceadas.",
+      "referencia": null
+    },
+    {
+      "id": 3,
+      "pregunta": "Una cadena hotelera necesita publicar las descripciones de sus habitaciones en portugués, inglés y español de forma automática. ¿Qué servicio de AWS cumple este requisito?",
+      "opciones": {
+        "A": "**Amazon Polly**",
+        "B": "Amazon Translate",
+        "C": "**Amazon Comprehend**",
+        "D": "Amazon Transcribe"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "**Amazon Translate** traduce texto entre idiomas con traducción automática neuronal, ideal para convertir descripciones de habitaciones a varios idiomas.",
+      "referencia": null
+    },
+    {
+      "id": 4,
+      "pregunta": "¿Cuál definición describe mejor la IA agéntica (agentic AI)?",
+      "opciones": {
+        "A": "IA que genera imágenes a partir de prompts de texto",
+        "B": "IA que planifica, decide y ejecuta acciones de forma autónoma para alcanzar objetivos",
+        "C": "IA que convierte voz en texto",
+        "D": "IA que agrupa puntos de datos similares en clústeres"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "La IA agéntica puede planificar pasos, tomar decisiones y actuar de manera autónoma para cumplir metas, a menudo usando herramientas, memoria y flujos de varios pasos sin intervención humana constante.",
+      "referencia": null
+    },
+    {
+      "id": 5,
+      "pregunta": "¿Qué afirmación describe mejor la diferencia entre Deep Learning y Machine Learning tradicional?",
+      "opciones": {
+        "A": "Deep Learning exige features diseñadas manualmente, mientras que ML tradicional no",
+        "B": "Deep Learning usa redes neuronales multicapa que aprenden representaciones directamente de datos crudos",
+        "C": "Deep Learning solo puede aplicarse a datos de texto",
+        "D": "Deep Learning siempre requiere menos datos que ML tradicional"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Deep Learning emplea redes con muchas capas que descubren features útiles desde datos crudos, reduciendo la ingeniería manual de variables típica del ML tradicional.",
+      "referencia": null
+    },
+    {
+      "id": 6,
+      "pregunta": "Un analista de RR. HH. sin experiencia en programación quiere predecir la rotación de personal sin escribir código. ¿Qué función de **Amazon SageMaker** satisface este requisito?",
+      "opciones": {
+        "A": "SageMaker Canvas",
+        "B": "SageMaker Clarify",
+        "C": "SageMaker Model Monitor",
+        "D": "SageMaker Data Wrangler"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "**Amazon SageMaker Canvas** ofrece una interfaz visual sin código para construir, entrenar y obtener predicciones, ideal para usuarios de negocio que predicen rotación de personal.",
+      "referencia": null
+    },
+    {
+      "id": 7,
+      "pregunta": "¿Cuál es la diferencia principal entre inferencia por lotes (batch) e inferencia en tiempo real?",
+      "opciones": {
+        "A": "La inferencia por lotes siempre es más precisa",
+        "B": "La inferencia en tiempo real solo funciona con datasets pequeños",
+        "C": "La inferencia por lotes procesa múltiples entradas juntas; la inferencia en tiempo real procesa cada solicitud al llegar",
+        "D": "La inferencia en tiempo real siempre es más rápida que la inferencia por lotes"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Batch inferencing agrupa entradas y las procesa en un job, optimizando throughput cuando no hay urgencia. Real-time inferencing responde solicitud por solicitud al instante, útil para fraude o moderación de contenido.",
+      "referencia": null
+    },
+    {
+      "id": 8,
+      "pregunta": "Una consultora quiere un sistema de IA que investigue tendencias del mercado, redacte un informe ejecutivo y lo envíe por correo a directivos sin intervención humana en cada paso. ¿Qué tipo de aplicación de IA encaja mejor?",
+      "opciones": {
+        "A": "Reconocimiento de voz",
+        "B": "Clasificación de imágenes",
+        "C": "IA agéntica (Agentic AI)",
+        "D": "Análisis de sentimiento"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "La IA agéntica puede orquestar flujos de varios pasos —investigar, compilar y enviar— de forma autónoma, alineándose con el requisito de la consultora.",
+      "referencia": null
+    },
+    {
+      "id": 9,
+      "pregunta": "Un banco entrena un modelo para detectar transacciones fraudulentas, pero las transacciones legítimas superan ampliamente a las fraudulentas. ¿Qué métrica debe usar para evaluar el balance entre detectar fraudes y evitar falsos positivos?",
+      "opciones": {
+        "A": "Accuracy",
+        "B": "Recall",
+        "C": "Precision",
+        "D": "F1 score"
+      },
+      "respuesta_correcta": "D",
+      "explicacion": "El F1 combina precisión y recall en una sola cifra y penaliza modelos que solo optimizan una de las dos, ideal cuando las clases están desbalanceadas como en detección de fraude.",
+      "referencia": null
+    },
+    {
+      "id": 10,
+      "pregunta": "En Machine Learning, ¿a qué se refiere más comúnmente el término bias (sesgo)?",
+      "opciones": {
+        "A": "La velocidad de entrenamiento del modelo",
+        "B": "Un error sistemático que hace que el modelo favorezca ciertos resultados de forma consistente",
+        "C": "La cantidad total de parámetros del modelo",
+        "D": "El proceso de dividir datos en entrenamiento y prueba"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "El sesgo en ML es un error sistemático donde el modelo inclina sus predicciones hacia ciertos resultados, a menudo por datos no representativos o supuestos incorrectos; identificarlo es clave para modelos justos.",
+      "referencia": null
+    },
+    {
+      "id": 11,
+      "pregunta": "Una planta de embotellado usa cámaras para detectar automáticamente botellas con defectos en la línea de producción. ¿Qué tipo de aplicación de IA utiliza?",
+      "opciones": {
+        "A": "Sistema de recomendaciones",
+        "B": "Procesamiento de lenguaje natural (NLP)",
+        "C": "Visión por computadora (Computer Vision)",
+        "D": "Procesamiento de imágenes básico"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Computer Vision permite que las máquinas interpreten imágenes y video, base de sistemas de inspección visual automatizada que detectan defectos en producción.",
+      "referencia": null
+    },
+    {
+      "id": 12,
+      "pregunta": "Un supermercado planea pronosticar la demanda semanal de productos perecederos usando el algoritmo DeepAR de **Amazon SageMaker AI**. ¿Qué tipo de datos necesita?",
+      "opciones": {
+        "A": "Datos de texto",
+        "B": "Datos de series temporales",
+        "C": "Datos de audio",
+        "D": "Datos de imagen"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "DeepAR es un algoritmo de forecasting que aprende de valores históricos registrados en secuencia temporal, como ventas diarias indexadas por fecha.",
+      "referencia": null
+    },
+    {
+      "id": 13,
+      "pregunta": "Una plataforma de streaming de video quiere recomendar contenido a cada usuario según su historial de visualización. ¿Qué servicio de AWS cumple este requisito?",
+      "opciones": {
+        "A": "**Amazon Personalize**",
+        "B": "Amazon Transcribe",
+        "C": "**Amazon Polly**",
+        "D": "**Amazon Comprehend**"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "**Amazon Personalize** es un servicio gestionado de recomendaciones que analiza historial e interacciones para personalizar sugerencias en tiempo real.",
+      "referencia": null
+    },
+    {
+      "id": 14,
+      "pregunta": "En el contexto de IA, ¿qué significa inferencia?",
+      "opciones": {
+        "A": "Recolectar los datos usados para entrenar el sistema",
+        "B": "Diseñar algoritmos de IA completamente nuevos desde cero",
+        "C": "Fusionar varios modelos en uno solo",
+        "D": "Aplicar un modelo ya entrenado a datos nuevos para producir predicciones o decisiones"
+      },
+      "respuesta_correcta": "D",
+      "explicacion": "Inferencia es la fase en la que un modelo entrenado procesa datos no vistos y genera predicciones, distinta del entrenamiento donde el modelo aprende patrones.",
+      "referencia": null
+    },
+    {
+      "id": 15,
+      "pregunta": "Una productora de podcasts quiere generar automáticamente transcripciones escritas del audio de sus episodios. ¿Qué servicio de AWS cumple este requisito?",
+      "opciones": {
+        "A": "Amazon Transcribe",
+        "B": "Amazon Translate",
+        "C": "**Amazon Polly**",
+        "D": "**Amazon Comprehend**"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "**Amazon Transcribe** usa reconocimiento automático de voz para convertir audio hablado en texto con marcas de tiempo, ideal para transcribir episodios de podcast.",
+      "referencia": null
+    },
+    {
+      "id": 16,
+      "pregunta": "Un equipo de desarrollo busca un asistente de IA que responda preguntas sobre su código, explique funciones existentes y ayude a depurar errores directamente en el IDE. ¿Qué servicio de AWS cumple este requisito?",
+      "opciones": {
+        "A": "**Amazon Comprehend**",
+        "B": "**Amazon Q** Developer",
+        "C": "**Amazon Textract**",
+        "D": "Amazon Transcribe"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "**Amazon Q Developer** se integra con IDEs para responder preguntas sobre código, explicar implementaciones y ayudar en troubleshooting, exactamente lo que necesita el equipo.",
+      "referencia": null
+    },
+    {
+      "id": 17,
+      "pregunta": "Una empresa opera decenas de modelos en producción y necesita alertas cuando alguno se desvíe de su comportamiento base. ¿Qué servicio o función de AWS cumple este requisito?",
+      "opciones": {
+        "A": "**Amazon SageMaker** Data Wrangler",
+        "B": "**Amazon SageMaker** Model Monitor",
+        "C": "**Amazon SageMaker** JumpStart",
+        "D": "**Amazon SageMaker** HyperPod"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "**Amazon SageMaker Model Monitor** mide calidad de datos y predicciones en endpoints desplegados y alerta cuando hay desviaciones respecto a la línea base.",
+      "referencia": null
+    },
+    {
+      "id": 18,
+      "pregunta": "Una universidad digital almacena miles de guías, videos y manuales y necesita búsqueda empresarial inteligente sobre ese contenido. ¿Qué servicio de AWS encaja?",
+      "opciones": {
+        "A": "**Amazon Polly**",
+        "B": "Amazon Kendra",
+        "C": "**Amazon Textract**",
+        "D": "**Amazon Comprehend**"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "**Amazon Kendra** es un servicio de búsqueda empresarial inteligente diseñado para indexar y consultar grandes volúmenes de contenido no estructurado como material educativo.",
+      "referencia": null
+    },
+    {
+      "id": 19,
+      "pregunta": "Una empresa de telecomunicaciones monitorea niveles de señal en antenas rurales, registrando lecturas cada minuto en **Amazon RDS** para predecir cortes de servicio. ¿Qué tipo de datos debe recolectar?",
+      "opciones": {
+        "A": "Datos tabulares",
+        "B": "Datos de texto",
+        "C": "Datos de series temporales",
+        "D": "Datos de audio"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Las series temporales registran valores en secuencia cronológica, como lecturas de señal cada minuto, necesarias para analizar fluctuaciones y predecir cortes.",
+      "referencia": null
+    },
+    {
+      "id": 20,
+      "pregunta": "¿Cuál es el propósito del ajuste de hiperparámetros (hyperparameter tuning) en el ciclo de vida de ML?",
+      "opciones": {
+        "A": "Recolectar y limpiar los datos crudos de entrenamiento",
+        "B": "Encontrar la configuración del modelo que produce el mejor rendimiento",
+        "C": "Desplegar el modelo entrenado a un endpoint de producción",
+        "D": "Monitorear drift de datos después del despliegue"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Hyperparameter tuning busca la mejor combinación de configuraciones como learning rate, batch size o número de capas, definidas antes del entrenamiento, para maximizar métricas como accuracy.",
+      "referencia": null
+    },
+    {
+      "id": 21,
+      "pregunta": "En MLOps, ¿a qué se refiere gestionar la deuda técnica (technical debt)?",
+      "opciones": {
+        "A": "Reducir el costo financiero de instancias de cómputo en la nube",
+        "B": "Atender atajos acumulados, dependencias obsoletas y procesos no documentados que dificultan mantener sistemas ML",
+        "C": "Aumentar el número de parámetros del modelo para mejorar precisión",
+        "D": "Eliminar datasets antiguos que ya no se usan"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "La deuda técnica en MLOps es el costo acumulado de pipelines frágiles, documentación pobre y componentes acoplados que vuelven difícil mantener y evolucionar sistemas ML; gestionarla implica refactorizar y estandarizar.",
+      "referencia": null
+    },
+    {
+      "id": 22,
+      "pregunta": "¿Cuál de las siguientes opciones es un ejemplo de aprendizaje no supervisado?",
+      "opciones": {
+        "A": "Predecir el precio de viviendas",
+        "B": "Detección de spam en correos",
+        "C": "Agrupar clientes en segmentos de comportamiento",
+        "D": "Clasificación de imágenes de productos"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Agrupar clientes por similitud es clustering no supervisado: el algoritmo descubre grupos sin etiquetas predefinidas.",
+      "referencia": null
+    },
+    {
+      "id": 23,
+      "pregunta": "Tras entrenar varios modelos, un equipo necesita un repositorio central para almacenarlos, versionarlos y rastrear su estado de despliegue. ¿Qué servicio o función de AWS cumple esto?",
+      "opciones": {
+        "A": "**Amazon SageMaker** Model Monitor",
+        "B": "**Amazon SageMaker** Canvas",
+        "C": "**Amazon SageMaker** Model Registry",
+        "D": "**AWS Audit Manager**"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "**Amazon SageMaker Model Registry** centraliza almacenamiento, versionado y seguimiento del ciclo de vida de modelos ML.",
+      "referencia": null
+    },
+    {
+      "id": 24,
+      "pregunta": "Una app de movilidad urbana procesa miles de solicitudes de rutas diarias. ¿Qué beneficio ofrece AI/ML que un sistema basado solo en reglas no logra fácilmente?",
+      "opciones": {
+        "A": "Salidas determinísticas idénticas para toda entrada",
+        "B": "Capacidad de escalar y adaptarse a patrones cambiantes en los datos",
+        "C": "Corrección garantizada sin validación",
+        "D": "Eliminación total de costos computacionales"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Los sistemas ML aprenden patrones de datos y generalizan ante cambios, escalando a alto volumen sin codificar manualmente cada escenario, ventaja clave sobre reglas estáticas.",
+      "referencia": null
+    },
+    {
+      "id": 25,
+      "pregunta": "Un biólogo marino tiene miles de fotos submarinas y quiere identificar y clasificar automáticamente especies sin revisión manual. ¿Qué estrategia cumple este requisito?",
+      "opciones": {
+        "A": "Reconocimiento de entidades nombradas (NER)",
+        "B": "Inpainting",
+        "C": "Detección de objetos (object detection)",
+        "D": "Detección de anomalías"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Object detection localiza y clasifica objetos dentro de imágenes, ideal para encontrar y categorizar especies marinas en fotos submarinas.",
+      "referencia": null
+    },
+    {
+      "id": 26,
+      "pregunta": "Una empresa de software recibe miles de comentarios libres en encuestas de satisfacción y quiere analizar el sentimiento expresado. ¿Qué solución cumple este requisito?",
+      "opciones": {
+        "A": "Usar un algoritmo de regresión para ordenar comentarios en categorías predefinidas",
+        "B": "Usar un motor de recomendaciones para detectar sentimiento",
+        "C": "Usar un modelo de lenguaje grande (LLM) con NLP para análisis de sentimiento",
+        "D": "Usar un algoritmo de series temporales para predecir sentimiento histórico"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Un LLM con NLP puede interpretar texto no estructurado y determinar si el sentimiento es positivo, negativo o neutral, adecuado para comentarios libres en encuestas.",
+      "referencia": null
+    },
+    {
+      "id": 27,
+      "pregunta": "Una startup quiere usar un foundation model pero no tiene datos ni recursos para preentrenarlo. ¿Qué enfoque le permite obtener uno sin entrenarlo desde cero?",
+      "opciones": {
+        "A": "Usar un modelo preentrenado de código abierto desde un hub de modelos",
+        "B": "Construir un sistema experto basado en reglas",
+        "C": "Recolectar más datos etiquetados y entrenar un árbol de decisión",
+        "D": "Escribir código de inferencia personalizado sin ningún modelo"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Los modelos preentrenados open source en hubs como Hugging Face permiten usar o ajustar foundation models sin el costo de preentrenamiento completo.",
+      "referencia": null
+    },
+    {
+      "id": 28,
+      "pregunta": "Una aseguradora debe ejecutar inferencia sobre años de registros archivados de siniestros, cada lote de varios GB, sin necesidad de resultados inmediatos. ¿Qué opción de inferencia de **Amazon SageMaker AI** encaja mejor?",
+      "opciones": {
+        "A": "Serverless inference",
+        "B": "Batch transform",
+        "C": "Real-time inference",
+        "D": "Asynchronous inference"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "**Batch transform** procesa datasets completos offline sin endpoint persistente, ideal para archivos grandes cuando la urgencia es baja.",
+      "referencia": null
+    },
+    {
+      "id": 29,
+      "pregunta": "Una empresa construye modelos con **Amazon SageMaker** y necesita compartir y gestionar variables (features) entre varios equipos. ¿Qué función de SageMaker cumple esto?",
+      "opciones": {
+        "A": "**Amazon SageMaker** Data Wrangler",
+        "B": "**Amazon SageMaker** Feature Store",
+        "C": "**Amazon SageMaker** Clarify",
+        "D": "**Amazon SageMaker** Model Cards"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "**Amazon SageMaker Feature Store** es un repositorio centralizado para almacenar, compartir y reutilizar features entre equipos y pipelines.",
+      "referencia": null
+    },
+    {
+      "id": 30,
+      "pregunta": "Una cadena de retail quiere construir y desplegar modelos ML en AWS sin escribir código. ¿Qué servicio o función de AWS cumple este requisito?",
+      "opciones": {
+        "A": "**Amazon Rekognition**",
+        "B": "**Amazon Comprehend**",
+        "C": "**Amazon SageMaker** Canvas",
+        "D": "AWS DeepRacer"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "**Amazon SageMaker Canvas** permite construir, entrenar y desplegar modelos personalizados con interfaz visual sin código.",
+      "referencia": null
+    },
+    {
+      "id": 31,
+      "pregunta": "Una minera quiere detectar lecturas anómalas en sensores de maquinaria sin contar con ejemplos etiquetados de fallas. ¿Qué método de ML cumple este requisito?",
+      "opciones": {
+        "A": "Árbol de decisión",
+        "B": "Autoencoders",
+        "C": "Regresión lineal",
+        "D": "Regresión logística"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Los autoencoders aprenden a reconstruir patrones normales; lecturas con alto error de reconstrucción se marcan como anomalías sin necesidad de etiquetas.",
+      "referencia": null
+    },
+    {
+      "id": 32,
+      "pregunta": "¿Cuáles servicios de AWS pueden usarse para análisis de documentos y extracción de información? (Seleccione DOS.)",
+      "opciones": {
+        "A": "**Amazon Textract**",
+        "B": "**Amazon Comprehend**",
+        "C": "**Amazon Polly**",
+        "D": "Amazon Translate",
+        "E": "Amazon Transcribe"
+      },
+      "respuesta_correcta": "A,B",
+      "explicacion": "**Amazon Textract** extrae texto, formularios y tablas de documentos e imágenes con OCR. **Amazon Comprehend** aplica NLP sobre ese texto para identificar entidades, frases clave y sentimiento.",
+      "referencia": null
+    },
+    {
+      "id": 33,
+      "pregunta": "Una plataforma de suscripción entrena un modelo binario para predecir qué usuarios cancelarán su plan. ¿Qué métrica es apropiada para evaluarlo?",
+      "opciones": {
+        "A": "R-cuadrado (R-squared)",
+        "B": "Error cuadrático medio (MSE)",
+        "C": "F1 score",
+        "D": "Tiempo de entrenamiento del modelo"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "El F1 combina precisión y recall, adecuado para clasificación binaria de churn donde importa equilibrar falsos positivos y falsos negativos.",
+      "referencia": null
+    },
+    {
+      "id": 34,
+      "pregunta": "Un equipo de e-commerce construye un modelo que predice retrasos en entregas. ¿Cuál es el orden correcto de las etapas del ciclo de vida de ML?\n\n¿Qué secuencia es correcta?",
+      "opciones": {
+        "A": "1) Recolectar historial de envíos → 2) Ingeniería de features y limpieza → 3) Entrenar el modelo → 4) Desplegar a endpoint → 5) Definir el problema de negocio y métrica de éxito",
+        "B": "1) Desplegar a endpoint → 2) Entrenar el modelo → 3) Ingeniería de features → 4) Recolectar historial → 5) Definir problema de negocio",
+        "C": "1) Recolectar historial → 2) Definir problema de negocio → 3) Ingeniería de features → 4) Entrenar → 5) Desplegar",
+        "D": "1) Definir el problema de negocio y métrica de éxito → 2) Recolectar historial de envíos → 3) Ingeniería de features y limpieza → 4) Entrenar el modelo → 5) Desplegar a endpoint"
+      },
+      "respuesta_correcta": "D",
+      "explicacion": "El ciclo inicia definiendo el problema y la métrica de éxito, luego recolecta datos, prepara features, entrena y finalmente despliega el modelo validado.",
+      "referencia": null
+    },
+    {
+      "id": 35,
+      "pregunta": "Una empresa necesita un servicio altamente escalable de AWS para monitorear el rendimiento de sus sistemas ML en producción. ¿Qué servicio cumple este requisito?",
+      "opciones": {
+        "A": "**AWS CloudTrail**",
+        "B": "**AWS Config**",
+        "C": "**Amazon CloudWatch**",
+        "D": "AWS Trusted Advisor"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "**Amazon CloudWatch** recopila métricas en tiempo real como latencia, errores y uso de recursos, con alarmas y dashboards ideales para observar sistemas ML.",
+      "referencia": null
+    },
+    {
+      "id": 36,
+      "pregunta": "Una empresa quiere modernizar aplicaciones heredadas usando herramientas asistidas por IA para transformar y migrar cargas de trabajo. ¿Qué servicio de AWS cumple este requisito?",
+      "opciones": {
+        "A": "AWS Transform",
+        "B": "**Amazon Textract**",
+        "C": "Amazon Translate",
+        "D": "Amazon Transcribe"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "**AWS Transform** usa IA para ayudar a transformar y modernizar aplicaciones legacy, alineándose con el objetivo de migración asistida.",
+      "referencia": null
+    },
+    {
+      "id": 37,
+      "pregunta": "Una clínica rural quiere desplegar una herramienta de apoyo diagnóstico en tablets con poca memoria y sin conexión a internet. ¿Qué restricción favorece más un modelo ML tradicional sobre un foundation model?",
+      "opciones": {
+        "A": "La necesidad de generar imágenes en tiempo real",
+        "B": "Restricciones operativas de memoria y conectividad",
+        "C": "El requisito de chat multilingüe",
+        "D": "La necesidad de resumir texto de forma abierta"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Los modelos ML tradicionales suelen ser más pequeños y ejecutarse en dispositivos edge sin conexión cloud, ideal para tablets limitadas en clínicas rurales.",
+      "referencia": null
+    },
+    {
+      "id": 38,
+      "pregunta": "Un equipo adopta MLOps para gestionar flujos de ML con mayor confiabilidad. ¿Cuáles dos prácticas debe priorizar? (Seleccione DOS.)",
+      "opciones": {
+        "A": "Versionado de modelos para reproducibilidad",
+        "B": "Pruebas y validación automatizadas de modelos",
+        "C": "Despliegues exclusivamente manuales",
+        "D": "Documentación mínima",
+        "E": "Sin monitoreo en producción"
+      },
+      "respuesta_correcta": "A,B",
+      "explicacion": "El versionado permite reproducir resultados y revertir cambios. Las pruebas automatizadas verifican rendimiento antes del despliegue; ambas son pilares de MLOps confiable.",
+      "referencia": null
+    },
+    {
+      "id": 39,
+      "pregunta": "Un marketplace en línea quiere segmentar compradores según historial de compras y preferencias para personalizar la experiencia. ¿Qué técnica de ML debe usar?",
+      "opciones": {
+        "A": "Clasificación",
+        "B": "Regresión",
+        "C": "Clustering",
+        "D": "Generación de contenido"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Clustering agrupa compradores con comportamiento similar sin etiquetas predefinidas, descubriendo segmentos naturales para personalización.",
+      "referencia": null
+    },
+    {
+      "id": 40,
+      "pregunta": "Un banco debe explicar a reguladores cada factor que influyó en decisiones de crédito. Evalúa un modelo de gradient boosting frente a un LLM. ¿Qué factor favorece más el modelo ML tradicional?",
+      "opciones": {
+        "A": "Requisitos de explicabilidad",
+        "B": "Soporte multilingüe",
+        "C": "Capacidad de generación de contenido",
+        "D": "Necesidad de interfaz conversacional"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Modelos tradicionales como gradient boosting permiten trazar cada predicción a features específicas y sus pesos, cumpliendo exigencias regulatorias de explicabilidad.",
+      "referencia": null
+    },
+    {
+      "id": 41,
+      "pregunta": "Una empresa de paquetería ingiere varios GB de registros de envíos diarios y necesita predicciones de volumen una vez al día sobre el dataset acumulado. ¿Qué tipo de inferencia encaja mejor?",
+      "opciones": {
+        "A": "Inferencia por lotes (batch inference)",
+        "B": "Inferencia asincrónica",
+        "C": "Inferencia en tiempo real",
+        "D": "Inferencia serverless"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Batch inference procesa grandes volúmenes en un job programado, ideal para generar predicciones diarias sobre todo el dataset acumulado sin mantener endpoint persistente.",
+      "referencia": null
+    },
+    {
+      "id": 42,
+      "pregunta": "Un modelo de predicción de abandono de clientes es muy preciso en entrenamiento pero falla con clientes nuevos. ¿Qué cambio resolverá esto?",
+      "opciones": {
+        "A": "Reducir la regularización para permitir patrones más complejos",
+        "B": "Agregar más features al dataset",
+        "C": "Continuar entrenando por más epochs",
+        "D": "Aumentar la regularización para reducir la complejidad del modelo"
+      },
+      "respuesta_correcta": "D",
+      "explicacion": "El modelo está sobreajustando (overfitting): memoriza entrenamiento y no generaliza. Aumentar regularización penaliza pesos grandes y simplifica el modelo para capturar patrones reales.",
+      "referencia": null
+    },
+    {
+      "id": 43,
+      "pregunta": "Una empresa tiene un modelo de clasificación de imágenes y necesita que su app web lo invoque con predicciones en tiempo real, escalando automáticamente. ¿Qué solución cumple esto?",
+      "opciones": {
+        "A": "Usar **Amazon SageMaker** Serverless Inference para desplegar el modelo",
+        "B": "Usar **Amazon CloudFront** para desplegar el modelo",
+        "C": "Usar Amazon API Gateway para alojar el modelo",
+        "D": "Usar AWS Batch para alojar el modelo"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "**Amazon SageMaker Serverless Inference** hospeda modelos y sirve predicciones bajo demanda con escalado automático de cómputo, ideal para apps web con tráfico variable.",
+      "referencia": null
+    },
+    {
+      "id": 44,
+      "pregunta": "En métricas de rendimiento de modelos, ¿qué significa el acrónimo AUC?",
+      "opciones": {
+        "A": "Area Under the Curve (Área bajo la curva)",
+        "B": "Average Usage Cost (Costo promedio de uso)",
+        "C": "Augmented Use Case (Caso de uso aumentado)",
+        "D": "Automated Utility Calculation (Cálculo automatizado de utilidad)"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "AUC significa Area Under the Curve, específicamente bajo la curva ROC. Mide qué tan bien un clasificador separa clases, de 0.5 (azar) a 1.0 (perfecto).",
+      "referencia": null
+    },
+    {
+      "id": 45,
+      "pregunta": "¿Qué técnica de ML usa datos de entrenamiento etiquetados con los valores de salida correctos?",
+      "opciones": {
+        "A": "Aprendizaje supervisado (Supervised learning)",
+        "B": "Aprendizaje no supervisado (Unsupervised learning)",
+        "C": "Aprendizaje por refuerzo (Reinforcement learning)",
+        "D": "Transfer learning"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Supervised learning entrena con pares entrada-etiqueta conocida, aprendiendo la relación entre inputs y targets para predecir en datos nuevos.",
+      "referencia": null
+    },
+    {
+      "id": 46,
+      "pregunta": "Un hospital entrenó un modelo con historial clínico para predecir en tiempo real si un paciente será readmitido en 30 días. ¿Qué tarea representa inferencia del modelo?",
+      "opciones": {
+        "A": "Aplicar el modelo entrenado para predecir readmisión de un paciente nuevo",
+        "B": "Recolectar registros históricos de readmisión",
+        "C": "Medir rendimiento del modelo con métricas de evaluación",
+        "D": "Analizar correlaciones entre variables de pacientes"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Inferencia es aplicar un modelo ya entrenado a datos nuevos para generar predicciones, como estimar readmisión de un paciente al momento del alta.",
+      "referencia": null
+    },
+    {
+      "id": 47,
+      "pregunta": "Una empresa ejecuta un pipeline ML en **Amazon SageMaker AI** con solicitudes de hasta 1 GB que pueden tardar una hora, pero necesita latencia casi en tiempo real. ¿Qué opción de inferencia cumple estos requisitos?",
+      "opciones": {
+        "A": "Real-time inference",
+        "B": "Batch transform",
+        "C": "Serverless inference",
+        "D": "Asynchronous inference"
+      },
+      "respuesta_correcta": "D",
+      "explicacion": "**Asynchronous inference** acepta payloads de hasta 1 GB y procesamiento de hasta una hora, encolando solicitudes y devolviendo resultados cuando están listos sin bloquear al cliente.",
+      "referencia": null
+    },
+    {
+      "id": 48,
+      "pregunta": "¿Qué tipo de machine learning es más apropiado para entrenar un agente que toma decisiones interactuando con su entorno?",
+      "opciones": {
+        "A": "Aprendizaje supervisado",
+        "B": "Aprendizaje no supervisado",
+        "C": "Aprendizaje por refuerzo (Reinforcement learning)",
+        "D": "Transfer learning"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Reinforcement learning entrena un agente que recibe recompensas o penalizaciones por sus acciones en un entorno, aprendiendo una estrategia óptima con el tiempo.",
+      "referencia": null
+    },
+    {
+      "id": 49,
+      "pregunta": "Un centro médico quiere leer expedientes clínicos estructurados, extraer detalles relevantes y generar resúmenes concisos. ¿Qué solución encaja?",
+      "opciones": {
+        "A": "Usar **Amazon Personalize** para modelar engagement y pasar la salida a un modelo general",
+        "B": "Usar **Amazon Comprehend** Medical para extraer entidades clínicas y aplicar lógica basada en reglas para formatear resúmenes",
+        "C": "Usar **Amazon Textract** para digitalizar documentos escaneados y luego extraer palabras clave",
+        "D": "Usar Amazon Kendra para indexar expedientes y aplicar una plantilla"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "**Amazon Comprehend Medical** extrae entidades y relaciones clínicas de texto médico; combinarlo con reglas permite formatear resúmenes concisos.",
+      "referencia": null
+    },
+    {
+      "id": 50,
+      "pregunta": "Un practicante entrenó un modelo de deep learning que clasifica razas de gatos en fotos. ¿Qué métrica ayuda a evaluar su rendimiento?",
+      "opciones": {
+        "A": "Matriz de confusión (Confusion matrix)",
+        "B": "Matriz de correlación",
+        "C": "Puntaje R2",
+        "D": "Error cuadrático medio (MSE)"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "La matriz de confusión desglosa verdaderos/falsos positivos y negativos por clase, mostrando dónde el clasificador acierta o confunde razas.",
+      "referencia": null
+    },
+    {
+      "id": 51,
+      "pregunta": "Un equipo de soporte analiza el tono emocional en tickets de clientes mediante análisis de sentimiento. ¿De qué campo más amplio de IA forma parte?",
+      "opciones": {
+        "A": "Procesamiento de lenguaje natural (NLP)",
+        "B": "Visión por computadora (Computer Vision)",
+        "C": "Pronóstico de series temporales",
+        "D": "Reconocimiento de voz"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "El análisis de sentimiento es una tarea de NLP, el campo de IA enfocado en comprender e interpretar lenguaje humano escrito o hablado.",
+      "referencia": null
+    },
+    {
+      "id": 52,
+      "pregunta": "Un cineasta quiere ampliar su audiencia agregando subtítulos y locuciones en varios idiomas a sus películas. ¿Qué dos pasos juntos cumplen este requisito? (Seleccione DOS.)",
+      "opciones": {
+        "A": "Usar **Amazon Polly** para generar locuciones en varios idiomas",
+        "B": "Usar Amazon Transcribe y Amazon Translate para producir subtítulos en varios idiomas",
+        "C": "Usar Amazon Translate para generar locuciones en varios idiomas",
+        "D": "Usar **Amazon Textract** y Amazon Translate para producir subtítulos en varios idiomas"
+      },
+      "respuesta_correcta": "A,B",
+      "explicacion": "**Amazon Transcribe** convierte diálogo hablado a texto y **Amazon Translate** lo traduce para subtítulos multilingües. **Amazon Polly** convierte texto traducido a audio para locuciones.",
+      "referencia": null
+    },
+    {
+      "id": 53,
+      "pregunta": "Dentro del ciclo de vida de ML, ¿cuál es el objetivo principal de la ingeniería de features?",
+      "opciones": {
+        "A": "Crear nuevas variables de entrada o transformar las existentes para mejorar el rendimiento del modelo",
+        "B": "Recolectar datos crudos adicionales para el proyecto",
+        "C": "Medir qué tan bien rinde el modelo entrenado",
+        "D": "Publicar el modelo en un entorno de producción"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Feature engineering transforma datos crudos en inputs útiles para el modelo, creando o modificando variables que mejoran accuracy y capacidad predictiva.",
+      "referencia": null
+    },
+    {
+      "id": 54,
+      "pregunta": "¿Cuál es un beneficio de usar Infrastructure as Code (IaC) en MLOps?",
+      "opciones": {
+        "A": "IaC elimina la necesidad de hyperparameter tuning",
+        "B": "IaC siempre aprovisiona instancias potentes que entrenan modelos más precisos",
+        "C": "IaC agiliza el despliegue de cargas ML escalables y consistentes en la nube",
+        "D": "IaC minimiza gastos desplegando solo instancias de bajo costo"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "IaC define infraestructura en código versionado, permitiendo aprovisionar entornos ML de forma repetible y consistente entre dev, test y producción.",
+      "referencia": null
+    },
+    {
+      "id": 55,
+      "pregunta": "¿Cuáles de las siguientes son métricas de negocio para evaluar modelos de IA? (Seleccione DOS.)",
+      "opciones": {
+        "A": "Puntaje de precisión (Precision score)",
+        "B": "Puntaje de satisfacción del cliente",
+        "C": "Precisión media (Mean Average Precision)",
+        "D": "Time-to-value (Tiempo hasta generar valor)",
+        "E": "Error cuadrático medio (RMSE)"
+      },
+      "respuesta_correcta": "B,D",
+      "explicacion": "La satisfacción del cliente mide valor entregado al usuario final. Time-to-value mide qué tan rápido la solución de IA produce resultados de negocio medibles.",
+      "referencia": null
+    },
+    {
+      "id": 56,
+      "pregunta": "Una fábrica de textiles entrenó un modelo que clasifica fotos de telas como defectuosas o no. El equipo quiere saber qué proporción de imágenes clasificó correctamente. ¿Qué métrica debe usar?",
+      "opciones": {
+        "A": "Error absoluto medio (MAE)",
+        "B": "Número de epochs de entrenamiento",
+        "C": "Raíz del error cuadrático medio (RMSE)",
+        "D": "Accuracy (Exactitud)"
+      },
+      "respuesta_correcta": "D",
+      "explicacion": "Accuracy mide la proporción de predicciones correctas sobre el total, ideal para saber cuántas fotos de telas se clasificaron bien.",
+      "referencia": null
+    },
+    {
+      "id": 57,
+      "pregunta": "Una tienda en línea quiere agrupar clientes según demografía y comportamiento de compra. ¿Qué algoritmo debe usar?",
+      "opciones": {
+        "A": "Árbol de decisión",
+        "B": "Máquina de vectores de soporte (SVM)",
+        "C": "K-nearest neighbours (k-NN)",
+        "D": "K-means"
+      },
+      "respuesta_correcta": "D",
+      "explicacion": "K-means es un algoritmo de clustering no supervisado que particiona datos en grupos por similitud, ideal para segmentar clientes sin etiquetas.",
+      "referencia": null
+    },
+    {
+      "id": 58,
+      "pregunta": "La calidad de inferencia de un modelo cayó tras cuatro meses en producción. El equipo quiere alertas si vuelve a degradarse. ¿Qué solución encaja?",
+      "opciones": {
+        "A": "Construir un modelo nuevo y monitorear drift con **Amazon SageMaker** Feature Store",
+        "B": "Reentrenar el modelo y monitorear drift con **Amazon SageMaker** Model Monitor",
+        "C": "Reentrenar el modelo y monitorear drift con **Amazon SageMaker** Clarify",
+        "D": "Construir un modelo nuevo y vigilarlo solo con alarmas de **Amazon CloudWatch**"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "**Amazon SageMaker Model Monitor** detecta drift de datos y calidad de predicciones en producción y envía alertas, permitiendo reentrenar antes de más degradación.",
+      "referencia": null
+    },
+    {
+      "id": 59,
+      "pregunta": "¿Cuál de las siguientes es un ejemplo de datos no estructurados?",
+      "opciones": {
+        "A": "Una tabla de base de datos con columnas de fecha, cantidad y precio de pedidos",
+        "B": "Una hoja de cálculo con IDs, nombres y salarios de empleados",
+        "C": "Una colección de correos de soporte redactados libremente por clientes",
+        "D": "Un archivo CSV con lecturas de sensores indexadas por timestamp"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Correos redactados libremente no tienen esquema fijo: varían en longitud, estilo y formato, característica de datos no estructurados.",
+      "referencia": null
+    },
+    {
+      "id": 60,
+      "pregunta": "Una inmobiliaria entrenó un modelo que predice precios de venta y quiere hospedarlo para predicciones sin administrar servidores. ¿Qué solución cumple esto?",
+      "opciones": {
+        "A": "Desplegar el modelo en una instancia **Amazon EC2**",
+        "B": "Desplegar el modelo con **Amazon CloudFront** e integración **Amazon S3**",
+        "C": "Desplegar el modelo en un endpoint de **Amazon SageMaker AI**",
+        "D": "Desplegar el modelo en un clúster de Amazon EKS"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Un endpoint de **Amazon SageMaker AI** es gestionado: AWS administra servidores, escalado y mantenimiento, permitiendo servir predicciones sin gestionar infraestructura.",
+      "referencia": null
+    },
+    {
+      "id": 61,
+      "pregunta": "Una empresa agrícola necesita modelos para varias tareas relacionadas (detección de plagas, estimación de rendimiento, clasificación de suelo). Quiere adaptar modelos preentrenados en lugar de entrenar desde cero. ¿Qué estrategia cumple esto?",
+      "opciones": {
+        "A": "Aumentar el número de epochs",
+        "B": "Usar transfer learning",
+        "C": "Disminuir el número de epochs",
+        "D": "Usar aprendizaje no supervisado"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Transfer learning reutiliza un modelo preentrenado y lo adapta a tareas relacionadas, ahorrando tiempo y datos comparado con entrenar desde cero.",
+      "referencia": null
+    },
+    {
+      "id": 62,
+      "pregunta": "Una constructora quiere estimar el precio de venta de departamentos a partir de metros cuadrados, ubicación y número de habitaciones. ¿Qué algoritmo debe usar?",
+      "opciones": {
+        "A": "K-means",
+        "B": "Regresión logística",
+        "C": "Regresión lineal",
+        "D": "K-nearest neighbours (k-NN)"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Regresión lineal modela la relación entre features y un target numérico continuo, estándar para estimar precios de propiedades.",
+      "referencia": null
+    },
+    {
+      "id": 63,
+      "pregunta": "Un banco necesita flujos donde personal revise predicciones del modelo ML, con umbrales de confianza configurables que determinen cuándo escalar a revisión humana. ¿Qué servicio de AWS cumple esto?",
+      "opciones": {
+        "A": "**Amazon SageMaker** Ground Truth",
+        "B": "**Amazon Inspector**",
+        "C": "Amazon Augmented AI (Amazon A2I)",
+        "D": "**AWS Audit Manager**"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "**Amazon A2I** integra revisión humana en predicciones ML, permitiendo definir umbrales de confianza que envían casos dudosos a revisores humanos.",
+      "referencia": null
+    },
+    {
+      "id": 64,
+      "pregunta": "Una empresa quiere construir un modelo ML para predecir satisfacción del cliente con ajuste de hiperparámetros totalmente automatizado. ¿Qué servicio de AWS cumple esto?",
+      "opciones": {
+        "A": "Amazon Athena",
+        "B": "**Amazon Personalize**",
+        "C": "**Amazon Comprehend**",
+        "D": "**Amazon SageMaker AI**"
+      },
+      "respuesta_correcta": "D",
+      "explicacion": "**Amazon SageMaker AI** incluye Automatic Model Tuning que busca hiperparámetros óptimos automáticamente, ideal para modelos personalizados de satisfacción.",
+      "referencia": null
+    },
+    {
+      "id": 65,
+      "pregunta": "Una cadena de restaurantes quiere analizar el sentimiento en reseñas escritas de clientes. ¿Qué dos servicios de AWS pueden cumplir esto? (Seleccione DOS.)",
+      "opciones": {
+        "A": "**Amazon Comprehend**",
+        "B": "**Amazon Polly**",
+        "C": "**Amazon Bedrock**",
+        "D": "**Amazon Lex**",
+        "E": "**Amazon Rekognition**"
+      },
+      "respuesta_correcta": "A,C",
+      "explicacion": "**Amazon Comprehend** tiene análisis de sentimiento integrado para determinar tono positivo, negativo o neutral en texto. **Amazon Bedrock** accede a foundation models que también pueden clasificar sentimiento mediante prompting.",
+      "referencia": null
+    },
+    {
+      "id": 66,
+      "pregunta": "¿Cuál de las siguientes NO es un tipo de machine learning?",
+      "opciones": {
+        "A": "Aprendizaje supervisado (Supervised learning)",
+        "B": "Aprendizaje no supervisado (Unsupervised learning)",
+        "C": "Aprendizaje por refuerzo (Reinforcement learning)",
+        "D": "Aprendizaje diagnóstico (Diagnostic learning)"
+      },
+      "respuesta_correcta": "D",
+      "explicacion": "Diagnostic learning no es un paradigma reconocido de ML ni aparece en la guía del examen AWS; es la opción que no corresponde.",
+      "referencia": null
+    },
+    {
+      "id": 67,
+      "pregunta": "Un marketplace de bienes raíces debe producir miles de descripciones únicas de propiedades al día, en párrafos con estilo y tono uniformes. ¿Qué tipo de modelo generativo cumple estos requisitos?",
+      "opciones": {
+        "A": "Un modelo de autoencoder variacional (VAE)",
+        "B": "Un modelo de difusión",
+        "C": "Un modelo basado en transformers",
+        "D": "Un modelo de red generativa adversarial (GAN)"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Los modelos basados en transformers, como los large language models, generan párrafos de texto coherentes con estilo y tono consistentes y escalan para producir miles de descripciones únicas, lo cual encaja con el requisito.",
+      "referencia": null
+    },
+    {
+      "id": 68,
+      "pregunta": "Una fintech usa **Amazon Bedrock** para un chatbot de soporte y detecta que los costos suben mes a mes. El equipo descubre que el historial completo de cada conversación se incluye en cada prompt. ¿Qué aspecto del modelo de precios por tokens explica esto?",
+      "opciones": {
+        "A": "El costo se basa en la cantidad de llamadas a la API sin importar el contenido",
+        "B": "El costo aumenta con el total de tokens de entrada y salida procesados por solicitud",
+        "C": "El costo se determina por el tiempo que el modelo tarda en procesar cada solicitud",
+        "D": "El costo depende de la cantidad de usuarios concurrentes"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "El precio por tokens cobra por el total de tokens de entrada y salida procesados en cada solicitud, así que incluir historiales largos aumenta los tokens de entrada en cada llamada y eleva directamente los costos.",
+      "referencia": null
+    },
+    {
+      "id": 69,
+      "pregunta": "Una empresa logística construye un agente de IA que consulta inventario en bodegas, reserva envíos y genera guías de despacho llamando a las APIs de sus proveedores. ¿Qué capacidad de IA agéntica permite al agente interactuar con estos sistemas externos?",
+      "opciones": {
+        "A": "Gestión de memoria",
+        "B": "Uso de herramientas (tool usage)",
+        "C": "Fine-tuning del modelo",
+        "D": "Caché de prompts"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "El uso de herramientas (tool usage) es la capacidad de IA agéntica que permite a un agente invocar APIs, servicios y sistemas externos para obtener información o ejecutar acciones, que es cómo el agente consulta inventario, reserva envíos y genera guías mediante las APIs de los proveedores.",
+      "referencia": null
+    },
+    {
+      "id": 70,
+      "pregunta": "¿Cuál es una ventaja principal de usar los servicios de IA generativa de AWS para construir aplicaciones?",
+      "opciones": {
+        "A": "Siempre son gratuitos",
+        "B": "Garantizan un 100 % de precisión",
+        "C": "Reducen la barrera de entrada",
+        "D": "Eliminan por completo la necesidad de programar"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Los servicios de IA generativa de AWS ofrecen infraestructura administrada, foundation models preentrenados y APIs, lo que reduce la barrera de entrada al eliminar la necesidad de construir y entrenar modelos grandes desde cero.",
+      "referencia": null
+    },
+    {
+      "id": 71,
+      "pregunta": "Una aseguradora recibe un volumen alto de consultas sobre siniestros cada día y planea usar Agents for **Amazon Bedrock** para atenderlas. ¿Cuál es un beneficio clave de usar estos agentes?",
+      "opciones": {
+        "A": "Generar foundation models (FMs) personalizados para predecir necesidades del cliente",
+        "B": "Elegir un foundation model (FM) según criterios y métricas predefinidos",
+        "C": "Automatizar tareas repetitivas y orquestar flujos de trabajo complejos de varios pasos",
+        "D": "Invocar varios foundation models (FMs) a la vez y fusionar sus resultados"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Agents for **Amazon Bedrock** automatizan tareas repetitivas y orquestan flujos de trabajo complejos de varios pasos, lo que permite a la aseguradora gestionar grandes volúmenes de consultas con mayor rapidez y eficiencia.",
+      "referencia": null
+    },
+    {
+      "id": 72,
+      "pregunta": "Una startup edtech desarrolla una app donde los estudiantes escriben una pregunta o toman una foto de un ejercicio, y la app devuelve una respuesta escrita con explicación paso a paso. ¿Qué tipo de modelo debe impulsar la app?",
+      "opciones": {
+        "A": "Modelo de visión por computadora (Computer Vision)",
+        "B": "Modelo de difusión",
+        "C": "Large multimodal language model",
+        "D": "Modelo de texto a voz (text-to-speech)"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Un large multimodal language model puede recibir texto e imágenes como entrada y generar texto como salida, por lo que acepta una pregunta escrita o fotografiada y devuelve una respuesta escrita con explicación.",
+      "referencia": null
+    },
+    {
+      "id": 73,
+      "pregunta": "¿Qué es un token en el contexto de la IA generativa?",
+      "opciones": {
+        "A": "Una función de seguridad",
+        "B": "Un tipo de red neuronal",
+        "C": "Una unidad de texto procesada por el modelo",
+        "D": "Una métrica de evaluación del modelo"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Un token es la unidad básica de texto, como una palabra o subpalabra, que un modelo procesa y genera; ese es el significado del término.",
+      "referencia": null
+    },
+    {
+      "id": 74,
+      "pregunta": "¿Cuál es la diferencia entre modelos de IA discriminativos y generativos?",
+      "opciones": {
+        "A": "Los modelos discriminativos son más rápidos que los generativos",
+        "B": "Los modelos discriminativos son más precisos que los generativos",
+        "C": "Los modelos discriminativos clasifican o predicen, mientras que los generativos crean contenido nuevo",
+        "D": "Los modelos discriminativos necesitan más datos que los generativos"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Los modelos discriminativos aprenden a clasificar entradas o predecir resultados, mientras que los modelos generativos aprenden a crear contenido nuevo similar a sus datos de entrenamiento; esa es la distinción central entre ambos.",
+      "referencia": null
+    },
+    {
+      "id": 75,
+      "pregunta": "Un fabricante de sensores agrícolas IoT quiere que sus dispositivos ejecuten inferencia de modelos de lenguaje localmente, con la latencia más baja posible. ¿Qué solución cumple este requisito?",
+      "opciones": {
+        "A": "Desplegar large language models (LLMs) optimizados en los dispositivos edge",
+        "B": "Desplegar small language models (SLMs) optimizados en los dispositivos edge",
+        "C": "Llamar de forma asíncrona a una API centralizada de small language model (SLM) desde los dispositivos edge",
+        "D": "Llamar de forma asíncrona a una API centralizada de large language model (LLM) desde los dispositivos edge"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Desplegar small language models (SLMs) optimizados en los dispositivos edge mantiene la inferencia local y evita idas y vueltas de red, lo que entrega la latencia más baja posible, y los SLMs son lo suficientemente compactos para ejecutarse en hardware edge con recursos limitados.",
+      "referencia": null
+    },
+    {
+      "id": 76,
+      "pregunta": "En el contexto de la IA generativa, ¿qué es una alucinación (hallucination)?",
+      "opciones": {
+        "A": "Una salida visual producida por el modelo",
+        "B": "Un tipo de arquitectura de modelo",
+        "C": "Una salida incorrecta o fabricada presentada como un hecho",
+        "D": "Un método de entrenamiento de un modelo"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Una alucinación es una salida incorrecta o fabricada que el modelo presenta como si fuera factual.",
+      "referencia": null
+    },
+    {
+      "id": 77,
+      "pregunta": "¿Cuál es el beneficio principal de **Amazon SageMaker** JumpStart?",
+      "opciones": {
+        "A": "Reduce los costos de inferencia",
+        "B": "Proporciona acceso a modelos preentrenados y soluciones",
+        "C": "Ajusta automáticamente los hiperparámetros del modelo",
+        "D": "Administra el etiquetado de datos con una fuerza laboral humana"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "**Amazon SageMaker** JumpStart proporciona acceso a modelos preentrenados, algoritmos integrados y soluciones de extremo a extremo, lo que acelera el inicio de proyectos de machine learning e IA generativa.",
+      "referencia": null
+    },
+    {
+      "id": 78,
+      "pregunta": "Una empresa tiene una aplicación que recopila comentarios de empleados de encuestas internas y los procesa con reglas rígidas codificadas a mano. La empresa quiere escalar esta lógica a nuevas filiales y departamentos. ¿Qué ventaja de los modelos de IA generativa aplica a este escenario?",
+      "opciones": {
+        "A": "Salidas predecibles",
+        "B": "Adaptabilidad",
+        "C": "Menor sensibilidad a cambios en la entrada",
+        "D": "Explicabilidad"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "La adaptabilidad es la ventaja de IA generativa que aplica aquí: los modelos pueden generalizar patrones aprendidos a nuevas filiales y departamentos con poca reconfiguración manual, evitando reescribir reglas rígidas codificadas a mano.",
+      "referencia": null
+    },
+    {
+      "id": 79,
+      "pregunta": "Una revista digital está probando un asistente de redacción con IA generativa. El tráfico del piloto es bajo, el rendimiento no es prioridad y el uso futuro es impredecible; la revista busca el menor costo. ¿Qué solución cumple estos requisitos?",
+      "opciones": {
+        "A": "Usar instancias de **Amazon EC2** con GPU",
+        "B": "Usar **Amazon Bedrock** con precios On-Demand",
+        "C": "Usar **Amazon Bedrock** con Provisioned Throughput",
+        "D": "Usar **Amazon SageMaker** JumpStart"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "**Amazon Bedrock** con precios On-Demand cobra solo por las llamadas de inferencia realizadas, sin compromiso de capacidad, lo que mantiene los costos bajos durante un piloto pequeño y escala elásticamente con demanda impredecible.",
+      "referencia": null
+    },
+    {
+      "id": 80,
+      "pregunta": "¿Qué es un foundation model en IA generativa?",
+      "opciones": {
+        "A": "Un modelo que solo puede generar texto",
+        "B": "Un modelo diseñado específicamente para generación de imágenes",
+        "C": "Un modelo grande preentrenado que puede adaptarse a muchas tareas",
+        "D": "Un modelo que no requiere datos de entrenamiento"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Un foundation model es un modelo grande preentrenado con vastas cantidades de datos que puede adaptarse o afinarse (fine-tuning) para muchas tareas posteriores, como generación de texto, resumen y respuesta a preguntas.",
+      "referencia": null
+    },
+    {
+      "id": 81,
+      "pregunta": "Un equipo jurídico necesita extraer los puntos clave de contratos extensos para que el personal trabaje más rápido. ¿Qué estrategia de IA generativa cumple este requisito?",
+      "opciones": {
+        "A": "Regresión",
+        "B": "Resumen (summarization)",
+        "C": "Clustering",
+        "D": "Clasificación"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "El resumen (summarization) condensa documentos largos en sus ideas clave, de modo que los empleados pueden comprender y actuar rápidamente sobre la información esencial.",
+      "referencia": null
+    },
+    {
+      "id": 82,
+      "pregunta": "Un equipo de call center entrega manualmente recomendaciones de productos según la ubicación del cliente y quiere que los foundation models (FMs) automaticen esta tarea. ¿Qué servicio de AWS cumple esta necesidad?",
+      "opciones": {
+        "A": "**Amazon Macie**",
+        "B": "**Amazon Bedrock**",
+        "C": "**Amazon Textract**",
+        "D": "Amazon Transcribe"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "**Amazon Bedrock** permite a la empresa usar foundation models para generar descripciones de productos y recomendaciones basadas en ubicación sin administrar infraestructura, lo que automatiza la tarea.",
+      "referencia": null
+    },
+    {
+      "id": 83,
+      "pregunta": "¿Cuál de las siguientes NO es una etapa del ciclo de vida de un foundation model (FM)?",
+      "opciones": {
+        "A": "Fine-tuning",
+        "B": "Marketing",
+        "C": "Pre-entrenamiento (pre-training)",
+        "D": "Despliegue (deployment)"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Marketing es una actividad de negocio y no forma parte del ciclo de vida técnico del FM, que cubre etapas como selección de datos, pre-entrenamiento, fine-tuning, evaluación y despliegue.",
+      "referencia": null
+    },
+    {
+      "id": 84,
+      "pregunta": "¿Qué afirmación describe una característica definitoria de los modelos de lenguaje basados en transformers?",
+      "opciones": {
+        "A": "Usan capas convolucionales para aplicar filtros sobre la entrada y capturar patrones locales",
+        "B": "Usan mecanismos de self-attention para capturar relaciones contextuales",
+        "C": "Solo pueden procesar datos de texto",
+        "D": "Procesan una secuencia un elemento a la vez en ciclos repetidos"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Los modelos basados en transformers usan mecanismos de self-attention que ponderan la importancia de cada token respecto a los demás, lo que les permite capturar relaciones contextuales en toda la entrada.",
+      "referencia": null
+    },
+    {
+      "id": 85,
+      "pregunta": "Una empresa de medios compara modelos Amazon Nova en **Amazon Bedrock** y necesita un modelo multimodal que soporte varios idiomas. ¿Qué modelo Nova cumple estos requisitos de forma MÁS rentable?",
+      "opciones": {
+        "A": "Nova Pro",
+        "B": "Nova Lite",
+        "C": "Nova Canvas",
+        "D": "Nova Reel"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Amazon Nova Lite es un modelo multimodal de bajo costo que soporta varios idiomas, por lo que cumple los requisitos multimodales y multilingües como la opción Nova más rentable.",
+      "referencia": null
+    },
+    {
+      "id": 86,
+      "pregunta": "Una agencia creativa pequeña quiere prototipar en **Amazon Bedrock** con presupuesto ajustado y evitar cualquier compromiso a largo plazo. ¿Qué modelo de precios de **Amazon Bedrock** se ajusta?",
+      "opciones": {
+        "A": "Provisioned Throughput",
+        "B": "Model customization",
+        "C": "On-Demand",
+        "D": "Spot Instances"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "El modelo de precios On-Demand cobra solo por lo que se usa, sin compromiso inicial ni a largo plazo, lo que encaja con un presupuesto limitado que necesita flexibilidad.",
+      "referencia": null
+    },
+    {
+      "id": 87,
+      "pregunta": "Una empresa fine-tuneó un large language model (LLM) personalizado en **Amazon Bedrock** y servirá en producción un número estable y predecible de solicitudes por minuto. ¿Qué opción es MÁS rentable?",
+      "opciones": {
+        "A": "Desplegar el modelo en una instancia de **Amazon EC2** optimizada para cómputo",
+        "B": "Comprar Provisioned Throughput para el modelo en **Amazon Bedrock**",
+        "C": "Usar el modelo con throughput On-Demand en **Amazon Bedrock**",
+        "D": "Almacenar el modelo en **Amazon S3** y hospedarlo con **AWS Lambda**"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Para un volumen de solicitudes estable y predecible, Provisioned Throughput en **Amazon Bedrock** ofrece un costo por solicitud más bajo al comprometer un nivel fijo de throughput, lo que lo convierte en la forma más rentable de servir un modelo personalizado.",
+      "referencia": null
+    },
+    {
+      "id": 88,
+      "pregunta": "Una startup sin infraestructura de ML quiere lanzar rápidamente una funcionalidad de IA generativa. ¿Qué ventaja de usar servicios GenAI de AWS como **Amazon Bedrock** es más relevante?",
+      "opciones": {
+        "A": "La startup debe entrenar su propio foundation model desde cero",
+        "B": "Los servicios GenAI de AWS reducen la barrera de entrada al proporcionar acceso administrado a foundation models preentrenados",
+        "C": "Los servicios GenAI de AWS requieren que la startup administre clústeres de GPU",
+        "D": "Los servicios GenAI de AWS solo están disponibles para clientes enterprise"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Los servicios GenAI de AWS como **Amazon Bedrock** proporcionan acceso administrado a foundation models preentrenados mediante APIs, lo que reduce la barrera de entrada al eliminar la necesidad de entrenar modelos, administrar infraestructura o adquirir GPUs, permitiendo a la startup lanzar rápidamente.",
+      "referencia": null
+    },
+    {
+      "id": 89,
+      "pregunta": "Una tienda de moda usa un asistente de IA generativa en **Amazon Bedrock** para recomendar productos y quiere medir su impacto directo en las ventas. ¿Qué métrica cumple este requisito?",
+      "opciones": {
+        "A": "La cantidad de interacciones de clientes con el asistente de IA",
+        "B": "Puntajes de análisis de sentimiento del feedback de clientes tras las interacciones",
+        "C": "La tasa de conversión de clientes que compran después de interactuar con el asistente de IA",
+        "D": "Tasas de precisión de comprensión del lenguaje natural"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "La tasa de conversión, la proporción de clientes que compran después de interactuar con el asistente, vincula la interacción con el asistente directamente con resultados de ventas, por lo que mide el impacto directo en ventas.",
+      "referencia": null
+    },
+    {
+      "id": 90,
+      "pregunta": "Una empresa edtech construye una app de lectura que permite a los niños agregar ilustraciones a sus cuentos. ¿Qué solución cumple este requisito?",
+      "opciones": {
+        "A": "Usar **Amazon Polly** para crear un audiolibro a partir del texto del cuento",
+        "B": "Usar **Amazon Rekognition** para analizar contenido de imágenes y detectar atributos de texto",
+        "C": "Usar **Amazon Bedrock** Stable Diffusion 3.5 Large para generar imágenes a partir de entradas de texto",
+        "D": "Crear una plantilla de prompt estándar y usar **Amazon Q Business** para ilustrar los cuentos"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "**Amazon Bedrock** Stable Diffusion 3.5 Large genera imágenes a partir de prompts de texto, por lo que los niños pueden crear ilustraciones para sus cuentos a partir de descripciones, apoyando la comprensión lectora con elementos visuales.",
+      "referencia": null
+    },
+    {
+      "id": 91,
+      "pregunta": "Un equipo de DevOps quiere que un large language model (LLM) escriba scripts de infraestructura a partir de comentarios en lenguaje natural. ¿De qué capacidad del LLM depende esto?",
+      "opciones": {
+        "A": "Resumen de texto (text summarization)",
+        "B": "Clasificación de texto (text classification)",
+        "C": "Generación de texto (text generation)",
+        "D": "Completado de texto (text completion)"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "La generación de texto (text generation) es la capacidad del LLM que produce texto nuevo, en este caso scripts de código, a partir de una entrada como comentarios en lenguaje natural, que es exactamente lo que el requisito necesita.",
+      "referencia": null
+    },
+    {
+      "id": 92,
+      "pregunta": "Una empresa farmacéutica construye una aplicación que debe generar datos sintéticos basados en sus datos existentes de ensayos clínicos. ¿Qué tipo de modelo puede usar la empresa para cumplir este requisito?",
+      "opciones": {
+        "A": "XGBoost",
+        "B": "WaveNet",
+        "C": "Generative adversarial network (GAN)",
+        "D": "Red neuronal residual (ResNet)"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Una generative adversarial network (GAN) se compone de dos redes neuronales en competencia: un generador que crea muestras sintéticas similares a los datos reales y un discriminador que intenta distinguir lo real de lo generado. Mediante esta competencia aprende a producir datos sintéticos realistas basados en un conjunto de datos existente, que es exactamente lo que la empresa necesita.",
+      "referencia": null
+    },
+    {
+      "id": 93,
+      "pregunta": "Una productora de contenido audiovisual quiere usar IA generativa para crear clips nuevos y reducir tiempos de producción. ¿Qué solución cumple estos requisitos con MAYOR eficiencia operativa?",
+      "opciones": {
+        "A": "Usar el modelo Amazon Titan Image Generator en **Amazon Bedrock** para crear imágenes intermedias y luego armar videos con software de edición",
+        "B": "Usar el modelo Amazon Nova Reel en **Amazon Bedrock** para generar videos",
+        "C": "Usar el modelo Amazon Nova Canvas en **Amazon Bedrock** para crear imágenes intermedias y luego armar videos con software de edición",
+        "D": "Usar el modelo Amazon Nova Pro en **Amazon Bedrock** para generar videos"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "El modelo Amazon Nova Reel en **Amazon Bedrock** está diseñado para creación generativa de video, por lo que permite a la productora generar contenido de video directamente y reducir tiempos de producción de la forma más eficiente operativamente.",
+      "referencia": null
+    },
+    {
+      "id": 94,
+      "pregunta": "Una firma contable invirtió en una solución de IA generativa para automatizar la redacción de informes financieros. ¿Qué métrica mide mejor si esta inversión generó valor financiero?",
+      "opciones": {
+        "A": "Retorno de la inversión (ROI)",
+        "B": "Precisión del modelo",
+        "C": "Cantidad de parámetros del modelo",
+        "D": "Volumen de datos de entrenamiento"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "El retorno de la inversión (ROI) mide si los beneficios financieros de la solución de IA, como ahorro de mano de obra y mayor velocidad de entrega, superan los costos de construcción y operación, lo que muestra directamente si la inversión generó valor financiero.",
+      "referencia": null
+    },
+    {
+      "id": 95,
+      "pregunta": "Una empresa resume contratos con un modelo base de **Amazon Bedrock** y ahora entrenó un modelo personalizado para mejor calidad. ¿Qué debe hacer la empresa para usar el modelo personalizado en **Amazon Bedrock**?",
+      "opciones": {
+        "A": "Desplegar el modelo personalizado en un endpoint de **Amazon SageMaker AI** para inferencia en tiempo real",
+        "B": "Registrar el modelo en el **Amazon SageMaker** Model Registry",
+        "C": "Solicitar acceso al modelo personalizado en **Amazon Bedrock**",
+        "D": "Comprar Provisioned Throughput para el modelo personalizado"
+      },
+      "respuesta_correcta": "D",
+      "explicacion": "Para ejecutar un modelo personalizado (fine-tuned) en **Amazon Bedrock**, la empresa debe comprar Provisioned Throughput para ese modelo, lo que asigna la capacidad dedicada que Bedrock requiere para servir modelos personalizados.",
+      "referencia": null
+    },
+    {
+      "id": 96,
+      "pregunta": "¿Cuál es el propósito principal de **Amazon Q Business**?",
+      "opciones": {
+        "A": "Entrenar modelos de ML personalizados",
+        "B": "Almacenar grandes conjuntos de datos",
+        "C": "Proporcionar asistencia empresarial impulsada por IA sobre los datos de la compañía",
+        "D": "Monitorear infraestructura"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "**Amazon Q Business** es un asistente de IA generativa para la empresa; su propósito principal es proporcionar asistencia impulsada por IA sobre los datos internos de una compañía, respondiendo preguntas, generando contenido y resumiendo información respetando controles de acceso.",
+      "referencia": null
+    },
+    {
+      "id": 97,
+      "pregunta": "Un practicante de IA observa que un large language model devuelve respuestas distintas cada vez que recibe la misma entrada. ¿Qué riesgo de la IA describe esto?",
+      "opciones": {
+        "A": "Alucinaciones (hallucinations)",
+        "B": "No determinismo (nondeterminism)",
+        "C": "Precisión (accuracy)",
+        "D": "Multimodalidad (multimodality)"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "El no determinismo es la propiedad por la cual un large language model puede devolver respuestas distintas a la misma entrada debido a la aleatoriedad en cómo genera texto, lo que coincide con el comportamiento observado.",
+      "referencia": null
+    },
+    {
+      "id": 98,
+      "pregunta": "Un equipo de ciencia de datos quiere desplegar un foundation model (FM) rápidamente dentro de su propia VPC. ¿Qué servicio o funcionalidad de AWS permite al equipo hacerlo?",
+      "opciones": {
+        "A": "**Amazon Personalize**",
+        "B": "PartyRock, un Playground de **Amazon Bedrock**",
+        "C": "**Amazon SageMaker** JumpStart",
+        "D": "Endpoints de **Amazon SageMaker AI**"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "**Amazon SageMaker** JumpStart ofrece foundation models preconstruidos que un equipo puede desplegar rápidamente dentro de su propia VPC y comenzar a usar de inmediato, lo que coincide con el requisito.",
+      "referencia": null
+    },
+    {
+      "id": 99,
+      "pregunta": "Una empresa quiere infraestructura administrada para desplegar, escalar y monitorear sus agentes de IA en producción sin gestionar el cómputo y la red subyacentes. ¿Qué servicio de AWS cumple este requisito?",
+      "opciones": {
+        "A": "**Amazon Bedrock** AgentCore",
+        "B": "**Amazon SageMaker** Canvas",
+        "C": "Amazon Kendra",
+        "D": "**Amazon Polly**"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "**Amazon Bedrock** AgentCore proporciona infraestructura administrada para desplegar, escalar y monitorear agentes de IA en producción, gestionando cómputo, red y preocupaciones operativas para que la empresa se enfoque en la lógica del agente en lugar de la infraestructura.",
+      "referencia": null
+    },
+    {
+      "id": 100,
+      "pregunta": "En IA generativa, ¿qué es prompt engineering?",
+      "opciones": {
+        "A": "Un método para comprimir modelos y ejecutarlos más rápido",
+        "B": "El proceso de diseñar prompts de entrada efectivos para guiar las salidas del modelo",
+        "C": "Una técnica para diseñar la arquitectura de red neuronal de un modelo",
+        "D": "El proceso de etiquetar datos de entrenamiento para aprendizaje supervisado"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Prompt engineering es la práctica de diseñar y refinar prompts de entrada, por ejemplo agregando contexto, restricciones o ejemplos, para guiar un modelo generativo hacia salidas precisas y relevantes.",
+      "referencia": null
+    },
+    {
+      "id": 101,
+      "pregunta": "Un hospital quiere una herramienta de IA generativa con speech-to-text que ayude a los médicos a dictar y crear notas clínicas. ¿Qué servicio de AWS cumple este requisito?",
+      "opciones": {
+        "A": "**Amazon Q** Developer",
+        "B": "**Amazon Polly**",
+        "C": "AWS HealthScribe",
+        "D": "**Amazon Rekognition**"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "AWS HealthScribe está diseñado para el sector salud y combina reconocimiento de voz con IA generativa para transcribir conversaciones clínicas y producir notas clínicas estructuradas, lo que cumple la necesidad del hospital.",
+      "referencia": null
+    },
+    {
+      "id": 102,
+      "pregunta": "¿Cómo afecta reducir el límite máximo de tokens de salida al costo y al rendimiento al usar un foundation model?",
+      "opciones": {
+        "A": "Aumenta el costo pero no tiene efecto en el tiempo de respuesta",
+        "B": "Disminuye el costo y puede reducir el tiempo de respuesta",
+        "C": "No tiene efecto en el costo ni en el tiempo de respuesta",
+        "D": "Aumenta el tiempo de respuesta pero disminuye el costo"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Reducir el límite máximo de tokens de salida significa que se generan menos tokens por solicitud, lo que reduce directamente el costo bajo precios por tokens y también puede reducir el tiempo de respuesta porque el modelo produce menos salida.",
+      "referencia": null
+    },
+    {
+      "id": 103,
+      "pregunta": "En un large language model (LLM), ¿qué hacen posible los vector embeddings?",
+      "opciones": {
+        "A": "Dividir texto en fragmentos manejables de datos",
+        "B": "Comparar textos matemáticamente",
+        "C": "Agrupar un conjunto de caracteres para tratarlos como una sola unidad",
+        "D": "Contar cada palabra en la entrada"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Los vector embeddings convierten texto en vectores numéricos que capturan significado, por lo que los textos pueden compararse matemáticamente midiendo distancia o similitud, lo que soporta tareas como recuperación y clustering.",
+      "referencia": null
+    },
+    {
+      "id": 104,
+      "pregunta": "Una empresa personalizó un foundation model (FM) de **Amazon Bedrock** y ahora necesita cargar un conjunto de datos para que Bedrock valide las respuestas del modelo. ¿Qué servicio de AWS debe almacenar ese conjunto de datos?",
+      "opciones": {
+        "A": "Amazon Elastic Block Store (**Amazon EBS**)",
+        "B": "AWS Snowcone",
+        "C": "**Amazon S3**",
+        "D": "Amazon Elastic File System (**Amazon EFS**)"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "**Amazon S3** es el servicio de almacenamiento de objetos escalable que se integra con **Amazon Bedrock**, por lo que es el lugar correcto para cargar y almacenar el conjunto de datos de validación que Bedrock utilizará.",
+      "referencia": null
+    },
+    {
+      "id": 105,
+      "pregunta": "Una empresa de servicios financieros quiere que varios agentes de IA especializados colaboren en solicitudes complejas de clientes. Un agente gestiona consultas de cuentas, otro procesa transacciones y un tercero verifica cumplimiento normativo. ¿Qué concepto de IA agéntica representa esta arquitectura?",
+      "opciones": {
+        "A": "Aprendizaje por refuerzo de agente único",
+        "B": "Patrón de sistema multiagente (multi-agent system)",
+        "C": "Pipeline de clasificación supervisada",
+        "D": "Flujo de trabajo de inferencia por lotes (batch inference)"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Un patrón de sistema multiagente usa varios agentes de IA especializados que se comunican y colaboran para gestionar tareas complejas, con cada agente responsable de una capacidad específica como consultas de cuentas, transacciones o verificación de cumplimiento, lo que coincide con la arquitectura descrita.",
+      "referencia": null
+    },
+    {
+      "id": 106,
+      "pregunta": "Una empresa de medios quiere usar un foundation model desarrollado por AWS para generar copy de marketing e imágenes. ¿Qué servicio de AWS proporciona foundation models de primera parte construidos por Amazon?",
+      "opciones": {
+        "A": "**Amazon Rekognition**",
+        "B": "Amazon Nova",
+        "C": "**Amazon Comprehend**",
+        "D": "**Amazon Polly**"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Amazon Nova es una familia de foundation models desarrollados por AWS que pueden generar texto, imágenes y otro contenido, lo que la convierte en la opción adecuada cuando una empresa quiere usar foundation models de primera parte construidos por Amazon para generación de contenido.",
+      "referencia": null
+    },
+    {
+      "id": 107,
+      "pregunta": "Relaciona cada oferta de IA generativa de AWS con el propósito principal para el que fue diseñada. Empareja cada servicio de la izquierda con la descripción correcta de la derecha.\n\nElementos:\n• Amazon Bedrock\n• Amazon SageMaker JumpStart\n• Amazon Q Business\n• PartyRock\n\n¿Qué mapeo es correcto?",
+      "opciones": {
+        "A": "**Amazon Bedrock** → Un hub de foundation models preconstruidos y plantillas de solución que los practicantes de ML pueden desplegar y afinar; **Amazon SageMaker** JumpStart → Un asistente de IA generativa administrado que responde preguntas sobre los datos y documentos empresariales conectados; **Amazon Q Business** → Un playground sin código para construir y compartir apps pequeñas de IA generativa sin cuenta de AWS; PartyRock → Acceso unificado por API a foundation models de varios proveedores para construir aplicaciones de IA generativa",
+        "B": "**Amazon Bedrock** → Un playground sin código para construir y compartir apps pequeñas de IA generativa sin cuenta de AWS; **Amazon SageMaker** JumpStart → Un asistente de IA generativa administrado que responde preguntas sobre los datos y documentos empresariales conectados; **Amazon Q Business** → Un hub de foundation models preconstruidos y plantillas de solución que los practicantes de ML pueden desplegar y afinar; PartyRock → Acceso unificado por API a foundation models de varios proveedores para construir aplicaciones de IA generativa",
+        "C": "**Amazon Bedrock** → Acceso unificado por API a foundation models de varios proveedores para construir aplicaciones de IA generativa; **Amazon SageMaker** JumpStart → Un hub de foundation models preconstruidos y plantillas de solución que los practicantes de ML pueden desplegar y afinar; **Amazon Q Business** → Un asistente de IA generativa administrado que responde preguntas sobre los datos y documentos empresariales conectados; PartyRock → Un playground sin código para construir y compartir apps pequeñas de IA generativa sin cuenta de AWS",
+        "D": "**Amazon Bedrock** → Un hub de foundation models preconstruidos y plantillas de solución que los practicantes de ML pueden desplegar y afinar; **Amazon SageMaker** JumpStart → Acceso unificado por API a foundation models de varios proveedores para construir aplicaciones de IA generativa; **Amazon Q Business** → Un asistente de IA generativa administrado que responde preguntas sobre los datos y documentos empresariales conectados; PartyRock → Un playground sin código para construir y compartir apps pequeñas de IA generativa sin cuenta de AWS"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "**Amazon Bedrock** proporciona acceso serverless por API a foundation models de varios proveedores, **Amazon SageMaker** JumpStart es un hub de modelos preconstruidos y plantillas de solución que los practicantes despliegan y afinan, **Amazon Q Business** es un asistente administrado que razona sobre datos empresariales conectados y PartyRock es un playground sin código para construir y compartir apps de IA generativa rápidamente.",
+      "referencia": null
+    },
+    {
+      "id": 108,
+      "pregunta": "Un analista de retail quiere gráficos de ventas de productos top por tienda del último año generados automáticamente. ¿Qué solución de AWS se ajusta a esta necesidad?",
+      "opciones": {
+        "A": "**Amazon Q** Developer",
+        "B": "**Amazon Q** in Amazon QuickSight",
+        "C": "**Amazon Q** in AWS Chatbot",
+        "D": "**Amazon Q** in **Amazon EC2**"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "**Amazon Q** in Amazon QuickSight permite a los usuarios hacer preguntas en lenguaje natural y construye automáticamente gráficos y visualizaciones, como ventas totales de productos top, lo que cumple el requisito.",
+      "referencia": null
+    },
+    {
+      "id": 109,
+      "pregunta": "Una agencia de publicidad explora la IA generativa. ¿Cuál de estas tareas es un caso de uso de IA generativa?",
+      "opciones": {
+        "A": "Mejorar la seguridad de red usando un sistema de detección de intrusiones",
+        "B": "Pronosticar tendencias del mercado bursátil a partir de datos financieros históricos",
+        "C": "Generar imágenes fotorrealistas a partir de descripciones de texto para una campaña publicitaria",
+        "D": "Acelerar consultas a bases de datos con indexación optimizada"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "La IA generativa crea contenido nuevo, y producir imágenes fotorrealistas a partir de descripciones de texto para una campaña publicitaria es generación de contenido, un caso de uso clásico de IA generativa.",
+      "referencia": null
+    },
+    {
+      "id": 110,
+      "pregunta": "Al elegir un foundation model (FM) en **Amazon Bedrock**, un equipo de investigación necesita saber cuánto texto puede incluir en un solo prompt. ¿Qué propiedad del modelo les indica esto?",
+      "opciones": {
+        "A": "Temperature",
+        "B": "Model size",
+        "C": "Context window",
+        "D": "Batch size"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "La context window define cuántos tokens puede recibir un foundation model a la vez, por lo que determina cuánta información cabe en un solo prompt.",
+      "referencia": null
+    },
+    {
+      "id": 111,
+      "pregunta": "En el ciclo de vida de un modelo de IA generativa, ¿qué etapa ejecuta pruebas para verificar la precisión del modelo?",
+      "opciones": {
+        "A": "Pre-entrenamiento (pre-training)",
+        "B": "Fine-tuning",
+        "C": "Evaluación (evaluation)",
+        "D": "Despliegue (deployment)"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "La etapa de evaluación prueba el modelo contra datos de validación o hold-out usando métricas como precisión antes de pasar al despliegue.",
+      "referencia": null
+    },
+    {
+      "id": 112,
+      "pregunta": "Una empresa de suscripción mensual opera un chatbot de soporte con IA generativa y quiere medir su efecto financiero en las operaciones. ¿Qué métrica debe rastrear la empresa?",
+      "opciones": {
+        "A": "Cantidad de consultas de clientes atendidas",
+        "B": "Costo por conversación con el cliente",
+        "C": "Tiempo promedio de atención (AHT)",
+        "D": "Costo de entrenar los modelos de IA"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "El costo por conversación con el cliente cuantifica directamente el gasto operativo de usar el chatbot, por lo que la empresa puede medir su efecto financiero y compararlo con alternativas como agentes humanos.",
+      "referencia": null
+    },
+    {
+      "id": 113,
+      "pregunta": "El asistente de IA de un bufete jurídico en **Amazon Bedrock** debe combinar la pregunta del usuario, cláusulas relevantes de contratos recuperadas de una base de conocimiento, las reglas de cumplimiento de la firma y el historial de conversación en una sola llamada al modelo. ¿Qué práctica gobierna cómo se ensamblan y priorizan estos elementos?",
+      "opciones": {
+        "A": "Fine-tuning",
+        "B": "Hyperparameter tuning",
+        "C": "Context engineering",
+        "D": "Feature engineering"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Context engineering gobierna cómo se ensamblan, priorizan y estructuran todos los elementos de información, como documentos recuperados, reglas del sistema, entrada del usuario e historial de conversación, antes de pasarlos al modelo, asegurando que tenga el contexto correcto para responder con precisión.",
+      "referencia": null
+    },
+    {
+      "id": 114,
+      "pregunta": "¿Cuáles dos afirmaciones sobre el espacio latente (latent space) de un modelo son correctas?",
+      "opciones": {
+        "A": "Debe almacenarse en un tipo específico de base de datos",
+        "B": "Captura la comprensión interna del modelo sobre las relaciones entre conceptos",
+        "C": "Solo aplica a datos de imagen",
+        "D": "Permite calcular similitud semántica entre distintas entradas",
+        "E": "Es una tabla de consulta legible por humanos"
+      },
+      "respuesta_correcta": "B,D",
+      "explicacion": "El espacio latente de un modelo es la representación interna donde organiza conceptos, por lo que tanto captura las relaciones que el modelo ha aprendido como permite calcular similitud semántica entre distintas entradas.",
+      "referencia": null
+    },
+    {
+      "id": 115,
+      "pregunta": "Una fintech opera varias aplicaciones de IA generativa en **Amazon Bedrock** y necesita versionar sus prompts, comparar variantes y revertir a una versión anterior si baja la calidad. ¿Qué función de **Amazon Bedrock** cumple estos requisitos?",
+      "opciones": {
+        "A": "**Amazon Bedrock** Knowledge Bases",
+        "B": "**Amazon Bedrock** Guardrails",
+        "C": "**Amazon Bedrock** Prompt Management",
+        "D": "**Amazon Bedrock** Model Evaluation"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "**Amazon Bedrock** Prompt Management permite crear, versionar y administrar plantillas de prompts, comparar variantes y revertir a versiones anteriores, ofreciendo el control del ciclo de vida que el equipo necesita para mantener la calidad de los prompts en producción.",
+      "referencia": null
+    },
+    {
+      "id": 116,
+      "pregunta": "Una aseguradora necesita respuestas de mayor calidad de un LLM en casos complejos de siniestros que exigen razonamiento detallado paso a paso. ¿Qué técnica de prompt engineering encaja mejor?",
+      "opciones": {
+        "A": "Directional stimulus prompting",
+        "B": "Prompt chaining",
+        "C": "Least-to-most prompting",
+        "D": "Chain-of-thought prompting"
+      },
+      "respuesta_correcta": "D",
+      "explicacion": "Chain-of-thought prompting guía al modelo para exponer su razonamiento como una secuencia lógica de pasos dentro de la respuesta, lo que mejora la calidad en problemas complejos como el análisis de siniestros.",
+      "referencia": null
+    },
+    {
+      "id": 117,
+      "pregunta": "Un despacho jurídico usa un foundation model (FM) de **Amazon Bedrock** en una herramienta de búsqueda interna y quiere afinarlo con sus propios datos para mejorar la precisión. ¿Qué enfoque realiza correctamente el fine-tuning?",
+      "opciones": {
+        "A": "Comprar Provisioned Throughput para **Amazon Bedrock**",
+        "B": "Proporcionar ejemplos etiquetados con un campo prompt y un campo completion",
+        "C": "Preparar el dataset como un archivo .txt con varias líneas de contenido .csv",
+        "D": "Entrenar el modelo con revistas académicas y libros de texto"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "El fine-tuning en **Amazon Bedrock** requiere un dataset etiquetado donde cada registro empareja un prompt de entrada con la completion esperada, de modo que el modelo aprenda el comportamiento deseado a partir de los datos del despacho.",
+      "referencia": null
+    },
+    {
+      "id": 118,
+      "pregunta": "Un hospital construye un grafo de conocimiento clínico que también debe almacenar embeddings vectoriales y ejecutar búsquedas por similitud junto con recorridos del grafo. ¿Qué servicio de base de datos de AWS admite consultas de grafo y búsqueda vectorial?",
+      "opciones": {
+        "A": "**Amazon DynamoDB**",
+        "B": "Amazon Neptune",
+        "C": "Amazon Redshift",
+        "D": "Amazon ElastiCache"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Amazon Neptune es una base de datos de grafos que también admite búsqueda por similitud vectorial, permitiendo al hospital almacenar embeddings junto con relaciones clínicas y ejecutar recorridos de grafo y consultas de vecinos más cercanos en la misma base de datos.",
+      "referencia": null
+    },
+    {
+      "id": 119,
+      "pregunta": "Una cadena de restaurantes quiere que un modelo generativo preentrenado redacte publicaciones para redes sociales con el tono y estilo de su marca. ¿Qué debe hacer el equipo?",
+      "opciones": {
+        "A": "Agregar más capas a la arquitectura del modelo para aumentar su complejidad",
+        "B": "Diseñar prompts claros y bien estructurados que incluyan instrucciones y contexto para guiar la salida",
+        "C": "Ajustar la arquitectura e hiperparámetros del modelo para mejorar su rendimiento general",
+        "D": "Recolectar un dataset grande y diverso y preentrenar un nuevo modelo generativo desde cero"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Diseñar prompts claros con instrucciones y contexto guía al modelo preentrenado para generar contenido acorde al tono de la marca, sin modificar el modelo en sí.",
+      "referencia": null
+    },
+    {
+      "id": 120,
+      "pregunta": "Una clínica integra un LLM en su sistema de codificación médica y necesita respuestas lo más deterministas y estables posible. ¿Qué solución cumple este requisito?",
+      "opciones": {
+        "A": "Agregar \"haz tu respuesta determinista\" al final del prompt antes de enviarlo",
+        "B": "Establecer el parámetro temperature en 1 al enviar el prompt",
+        "C": "Establecer el parámetro temperature en 0 al enviar el prompt",
+        "D": "Agregar \"haz tu respuesta determinista\" al inicio del prompt antes de enviarlo"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Establecer temperature en 0 fuerza decodificación greedy, de modo que el modelo selecciona el token más probable en cada paso y produce salidas deterministas y estables.",
+      "referencia": null
+    },
+    {
+      "id": 121,
+      "pregunta": "Una inmobiliaria genera imágenes con Amazon Nova Canvas y necesita excluir elementos específicos de los resultados, como muebles no deseados. ¿Qué solución cumple este requisito?",
+      "opciones": {
+        "A": "Usar un valor de temperature más alto",
+        "B": "Usar un negative prompt",
+        "C": "Usar un prompt más detallado",
+        "D": "Cambiar a otro foundation model (FM)"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Un negative prompt especifica los elementos o características que el modelo debe evitar, manteniendo fuera de las imágenes generadas los objetos no deseados.",
+      "referencia": null
+    },
+    {
+      "id": 122,
+      "pregunta": "Un banco usa un LLM preentrenado para un asistente de consultas de productos financieros. El banco necesita respuestas breves y redactadas en un idioma específico. ¿Qué enfoque alinea mejor la salida del LLM con estas expectativas?",
+      "opciones": {
+        "A": "Elegir un LLM de diferente tamaño",
+        "B": "Aumentar el valor de temperature",
+        "C": "Refinar el prompt",
+        "D": "Aumentar el valor de Top K"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Refinar el prompt permite al banco indicar directamente la longitud requerida y el idioma objetivo, de modo que el modelo devuelva respuestas breves en el idioma elegido.",
+      "referencia": null
+    },
+    {
+      "id": 123,
+      "pregunta": "Una empresa logística quiere un asistente de IA que evalúe fuentes de datos específicas, invoque APIs externas y luego genere, compare y priorice opciones de respuesta. ¿Qué función de **Amazon Bedrock** encaja?",
+      "opciones": {
+        "A": "Prompt Management",
+        "B": "Knowledge Bases",
+        "C": "Agents",
+        "D": "**Amazon Bedrock** Model Evaluation"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "**Amazon Bedrock** Agents orquestan tareas de varios pasos, incluyendo invocar APIs externas y generar, comparar y priorizar opciones de respuesta, lo que coincide con todas las necesidades planteadas.",
+      "referencia": null
+    },
+    {
+      "id": 124,
+      "pregunta": "Un equipo de RR. HH. afinó un LLM para responder consultas del portal de empleados y quiere confirmar que el fine-tuning mejoró la precisión. ¿Qué métrica debe usar?",
+      "opciones": {
+        "A": "Precision",
+        "B": "F1 score",
+        "C": "Time to first token",
+        "D": "Perplexity"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "El F1 score equilibra precision y recall en un solo valor, reflejando qué tan precisa y completa es la respuesta del modelo, por lo que es la forma adecuada de medir la mejora del fine-tuning.",
+      "referencia": null
+    },
+    {
+      "id": 125,
+      "pregunta": "Un fabricante de autos quiere una interfaz de chat sobre manuales PDF de sus vehículos usando LLMs en **Amazon Bedrock**, al menor costo posible. ¿Qué enfoque encaja mejor?",
+      "opciones": {
+        "A": "Agregar todos los manuales a cada prompt como contexto",
+        "B": "Subir los manuales a una knowledge base de **Amazon Bedrock** y recuperar solo los pasajes relevantes por consulta",
+        "C": "Hacer fine-tuning de un modelo con los manuales y servir el modelo afinado",
+        "D": "Preentrenar continuamente el modelo base con el contenido de los manuales"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Una knowledge base recupera solo los pasajes relevantes a cada pregunta, dando al modelo el contexto correcto de forma económica, sin pagar por enviar manuales completos en cada consulta ni por entrenar el modelo.",
+      "referencia": null
+    },
+    {
+      "id": 126,
+      "pregunta": "Un marketplace usa RAG con **Amazon Bedrock** y Stable Diffusion para crear imágenes de productos, pero los resultados son aleatorios y omiten detalles solicitados. El equipo quiere que las imágenes sigan más fielmente los prompts. ¿Qué cambio ayuda?",
+      "opciones": {
+        "A": "Aumentar el número de generation steps",
+        "B": "Aumentar la escala de classifier-free guidance (CFG)",
+        "C": "Establecer una random seed fija",
+        "D": "Aumentar el peso del negative prompt"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "La escala CFG controla qué tan fuertemente el modelo sigue el prompt de texto; al aumentarla, la imagen generada se adhiere más a los detalles solicitados.",
+      "referencia": null
+    },
+    {
+      "id": 127,
+      "pregunta": "Una agencia de publicidad usa un foundation model (FM) de generación de imágenes en **Amazon Bedrock** y quiere controlar qué tan detallada o abstracta es cada imagen generada. ¿Qué parámetro del modelo debe ajustar?",
+      "opciones": {
+        "A": "Model checkpoint",
+        "B": "Generation step",
+        "C": "Batch size",
+        "D": "Token length"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "El parámetro generation step define cuántos pasos de refinamiento ejecuta el modelo al crear una imagen; más pasos producen imágenes más detalladas y menos pasos, más abstractas, por lo que controla el nivel de detalle.",
+      "referencia": null
+    },
+    {
+      "id": 128,
+      "pregunta": "El chatbot de un bufete legal responde preguntas sobre jurisprudencia densa, pero incluso tras varios ajustes de prompt maneja mal la terminología jurídica especializada. ¿Qué lo mejorará de forma más efectiva?",
+      "opciones": {
+        "A": "Usar few-shot prompting con pares de pregunta y respuesta de ejemplo",
+        "B": "Aplicar domain adaptation fine-tuning sobre el corpus jurídico especializado",
+        "C": "Agregar un paso de Retrieval Augmented Generation (RAG) sobre la jurisprudencia",
+        "D": "Bajar la temperature para que las respuestas sean más enfocadas"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "El domain adaptation fine-tuning entrena al modelo con el corpus jurídico especializado para que aprenda la terminología legal, que es lo que corrige la mala comprensión del lenguaje técnico denso.",
+      "referencia": null
+    },
+    {
+      "id": 129,
+      "pregunta": "El chatbot de una cadena retail usa un LLM en **Amazon Bedrock** para detectar intenciones y el equipo quiere mejorar la precisión con few-shot learning. ¿Qué datos necesita el equipo?",
+      "opciones": {
+        "A": "Pares de mensajes del usuario y sus intenciones correctas",
+        "B": "Pares de mensajes del usuario y las respuestas correctas del chatbot",
+        "C": "Pares de respuestas del chatbot y las intenciones correctas del usuario",
+        "D": "Pares de intenciones del usuario y las respuestas correctas del chatbot"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Few-shot learning proporciona al modelo pares de ejemplo entrada-salida para la tarea, y la detección de intenciones mapea un mensaje del usuario a una intención, por lo que se necesitan pares de mensajes del usuario y sus intenciones correctas.",
+      "referencia": null
+    },
+    {
+      "id": 130,
+      "pregunta": "Una app de periodismo invoca un LLM para reescribir notas con mayor claridad y tiene ejemplos de referencia de las versiones mejoradas. Quiere que la salida del modelo se parezca a esos ejemplos. ¿Qué métrica debe usar?",
+      "opciones": {
+        "A": "Perplexity del texto generado",
+        "B": "Recall-Oriented Understudy for Gisting Evaluation (ROUGE)",
+        "C": "Semantic robustness score",
+        "D": "Latencia promedio de respuesta"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "ROUGE mide la superposición de n-gramas y secuencias entre la salida del modelo y los ejemplos de referencia, capturando directamente qué tan parecida es la salida a esas versiones mejoradas.",
+      "referencia": null
+    },
+    {
+      "id": 131,
+      "pregunta": "Para cargas de trabajo de IA, ¿cuál es el principal beneficio de combinar **Amazon Aurora** con la extensión pgvector?",
+      "opciones": {
+        "A": "Genera modelos de IA automáticamente",
+        "B": "Proporciona modelos de lenguaje preentrenados",
+        "C": "Habilita búsqueda por similitud vectorial dentro de una base de datos relacional",
+        "D": "Proporciona capacidades de cómputo serverless"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "**Amazon Aurora** con la extensión pgvector habilita búsqueda por similitud vectorial dentro de una base de datos relacional, de modo que los embeddings se almacenan junto a datos estructurados y se consultan con SQL conservando las funciones relacionales.",
+      "referencia": null
+    },
+    {
+      "id": 132,
+      "pregunta": "¿Cuáles dos métricas son ejemplos de métricas de alineación con el negocio para evaluar aplicaciones de IA?",
+      "opciones": {
+        "A": "Satisfacción del usuario",
+        "B": "BERTScore",
+        "C": "Costo por interacción",
+        "D": "Puntaje ROUGE",
+        "E": "Tiempo de entrenamiento del modelo"
+      },
+      "respuesta_correcta": "A,C",
+      "explicacion": "La satisfacción del usuario mide qué tan bien la aplicación de IA cumple las expectativas del usuario final, y el costo por interacción mide el gasto operativo de cada interacción, ambos alineados directamente con objetivos de negocio y definidos como métricas de alineación empresarial.",
+      "referencia": null
+    },
+    {
+      "id": 133,
+      "pregunta": "¿Qué técnica entrena un modelo de IA con un dataset etiquetado para adaptarlo a la terminología y requisitos de una industria específica?",
+      "opciones": {
+        "A": "Continuous pre-training",
+        "B": "In-context learning",
+        "C": "Fine-tuning",
+        "D": "Model distillation"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Fine-tuning continúa entrenando un modelo preentrenado con un dataset etiquetado y específico del dominio, de modo que aprende la terminología y requisitos de la industria directamente de esos datos.",
+      "referencia": null
+    },
+    {
+      "id": 134,
+      "pregunta": "Una universidad construye un chatbot de políticas estudiantiles sobre un LLM con un gran conjunto de documentos digitales y quiere optimizar la calidad de las respuestas. ¿Qué técnica encaja mejor?",
+      "opciones": {
+        "A": "Establecer temperature en 1",
+        "B": "Usar Retrieval Augmented Generation (RAG)",
+        "C": "Hacer fine-tuning del modelo con los documentos de políticas",
+        "D": "Disminuir el token size"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "RAG recupera pasajes precisos y actuales de los documentos de políticas en el momento de la consulta y fundamenta las respuestas del chatbot en ellos, optimizando la precisión sin sobrecargar la ventana de contexto.",
+      "referencia": null
+    },
+    {
+      "id": 135,
+      "pregunta": "La aplicación RAG de un portal de noticias debe sentirse casi en tiempo real, mientras se publican artículos nuevos a diario. ¿Cuáles dos pasos del pipeline pueden ejecutarse como trabajos batch offline?",
+      "opciones": {
+        "A": "Generar embeddings para cada consulta entrante del usuario",
+        "B": "Generar embeddings para el contenido publicado",
+        "C": "Clasificar y devolver resultados para la consulta de un usuario",
+        "D": "Construir o actualizar el índice de búsqueda vectorial",
+        "E": "Detectar el idioma de cada consulta del usuario"
+      },
+      "respuesta_correcta": "B,D",
+      "explicacion": "Generar embeddings del contenido y construir o actualizar el índice de búsqueda dependen solo de los documentos, por lo que pueden ejecutarse en lotes periódicos a medida que llegan artículos nuevos, fuera del camino en tiempo real.",
+      "referencia": null
+    },
+    {
+      "id": 136,
+      "pregunta": "Una plataforma de redes sociales ejecuta análisis de sentimiento con un LLM en **Amazon Bedrock** y quiere que la misma entrada produzca resultados más estables. ¿Qué parámetro de inferencia debe cambiar?",
+      "opciones": {
+        "A": "Aumentar el valor de temperature",
+        "B": "Aumentar la longitud máxima de generación",
+        "C": "Disminuir el valor de temperature",
+        "D": "Reducir el número máximo de tokens de salida"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Bajar temperature reduce la aleatoriedad en la selección de tokens, haciendo las salidas del modelo más deterministas y consistentes para la misma entrada.",
+      "referencia": null
+    },
+    {
+      "id": 137,
+      "pregunta": "Una empresa construye una herramienta de IA generativa y personalizará un foundation model (FM) con sus documentos internos. ¿Qué enfoque cumple este requisito?",
+      "opciones": {
+        "A": "Classification",
+        "B": "Distillation",
+        "C": "Continued pre-training",
+        "D": "Regression"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Continued pre-training entrena adicionalmente un foundation model con los documentos internos de la empresa, de modo que el modelo se adapta al dominio y contenido de la organización.",
+      "referencia": null
+    },
+    {
+      "id": 138,
+      "pregunta": "¿Cuáles dos parámetros se usan comúnmente para controlar la diversidad de la salida de un modelo de IA generativa?",
+      "opciones": {
+        "A": "Model size",
+        "B": "Top-k sampling",
+        "C": "Training dataset size",
+        "D": "Top-p (nucleus) sampling",
+        "E": "Hardware configuration"
+      },
+      "respuesta_correcta": "B,D",
+      "explicacion": "Top-k sampling limita la selección a los k tokens más probables, y Top-p (nucleus) sampling selecciona del conjunto más pequeño de tokens cuyas probabilidades suman p; ambos ajustan el pool de candidatos para equilibrar diversidad y calidad del texto generado.",
+      "referencia": null
+    },
+    {
+      "id": 139,
+      "pregunta": "Una cadena hotelera quiere un chatbot de texto para reservas, tarifas y pagos, basado en LLMs más una knowledge base, con el MENOR esfuerzo de desarrollo. ¿Qué solución encaja?",
+      "opciones": {
+        "A": "Entrenar modelos con **Amazon SageMaker** Autopilot",
+        "B": "Hacer fine-tuning de modelos en **Amazon SageMaker** JumpStart",
+        "C": "Construir un agente RAG con **Amazon Bedrock**",
+        "D": "Construir un servicio de orquestación personalizado con **AWS Lambda** y un modelo autoalojado"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "**Amazon Bedrock** permite combinar un LLM con una knowledge base usando RAG para entregar respuestas precisas y actuales con mínimo esfuerzo de desarrollo.",
+      "referencia": null
+    },
+    {
+      "id": 140,
+      "pregunta": "¿Qué parámetro de un LLM define cuántos tokens candidatos considera el modelo en cada paso de generación?",
+      "opciones": {
+        "A": "Maximum tokens",
+        "B": "Temperature",
+        "C": "Top K",
+        "D": "Batch size"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "El parámetro Top K limita el muestreo en cada paso a los K tokens más probables, controlando directamente cuántos tokens candidatos considera el modelo al generar cada token.",
+      "referencia": null
+    },
+    {
+      "id": 141,
+      "pregunta": "¿Qué métrica se usa comúnmente para evaluar qué tan bien un foundation model (FM) realiza resúmenes de texto?",
+      "opciones": {
+        "A": "F1 score",
+        "B": "Mean squared error (MSE)",
+        "C": "Recall-Oriented Understudy for Gisting Evaluation (ROUGE)",
+        "D": "Bilingual Evaluation Understudy (BLEU) score"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "ROUGE mide la superposición entre un resumen generado y resúmenes de referencia, lo que la convierte en la métrica estándar para calidad de resúmenes.",
+      "referencia": null
+    },
+    {
+      "id": 142,
+      "pregunta": "Una telco tiene 100 conversaciones de alta calidad entre agentes y clientes y quiere que las respuestas de su chatbot coincidan con el tono de la empresa. ¿Qué solución cumple este requisito?",
+      "opciones": {
+        "A": "Usar **Amazon Personalize** para generar las respuestas",
+        "B": "Crear un trabajo de fine-tuning en **Amazon Bedrock**",
+        "C": "Crear un trabajo de pre-training en **Amazon SageMaker** HyperPod",
+        "D": "Alojar el modelo en **Amazon SageMaker AI** y aplicar TensorRT para optimizar inferencia de LLM"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Un trabajo de fine-tuning en **Amazon Bedrock** adapta un foundation model con las conversaciones de ejemplo de la empresa, enseñándole el tono corporativo para que el chatbot lo refleje en sus respuestas.",
+      "referencia": null
+    },
+    {
+      "id": 143,
+      "pregunta": "Un practicante de IA compara top-p (nucleus) sampling con muestreo basado en temperature. ¿Qué distingue al top-p sampling?",
+      "opciones": {
+        "A": "Solo funciona con ciertas arquitecturas de modelos",
+        "B": "Siempre devuelve la misma salida para un prompt dado",
+        "C": "Limita el muestreo a exactamente un token en cada paso",
+        "D": "Muestrea del conjunto más pequeño de tokens principales cuyas probabilidades suman p"
+      },
+      "respuesta_correcta": "D",
+      "explicacion": "Top-p (nucleus) sampling elige el conjunto más pequeño de tokens de mayor probabilidad cuya probabilidad acumulada alcanza p y muestrea de ese conjunto, adaptando el pool de candidatos a la distribución en cada paso en lugar de usar un corte fijo.",
+      "referencia": null
+    },
+    {
+      "id": 144,
+      "pregunta": "Una planta de alimentos necesita un dataset de imágenes etiquetadas de alta precisión para un modelo de detección de defectos y quiere minimizar ejemplos mal etiquetados. ¿Qué enfoque cumple mejor estos requisitos?",
+      "opciones": {
+        "A": "Anotación automatizada con **Amazon Rekognition** Custom Labels",
+        "B": "Validación human-in-the-loop con **Amazon SageMaker** Ground Truth Plus",
+        "C": "Generación sintética de imágenes con un foundation model de **Amazon Bedrock**",
+        "D": "Etiquetado automatizado con active learning en **Amazon SageMaker** Ground Truth"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "La validación human-in-the-loop con **Amazon SageMaker** Ground Truth Plus enruta las etiquetas por revisores expertos que las verifican y corrigen, produciendo anotaciones de mayor precisión con menos errores.",
+      "referencia": null
+    },
+    {
+      "id": 145,
+      "pregunta": "Un call center de seguros despliega un chatbot con LLM para reducir los pasos que los agentes dan al resolver consultas de pólizas. ¿Qué métrica de negocio muestra mejor si el chatbot está marcando diferencia?",
+      "opciones": {
+        "A": "Responsabilidad social corporativa",
+        "B": "Cumplimiento regulatorio",
+        "C": "Duración promedio de la llamada",
+        "D": "Tasa de engagement del sitio web"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "La duración promedio de la llamada refleja directamente cuánto reduce el chatbot los pasos para resolver consultas, por lo que rastrearla mide el impacto de negocio del chatbot.",
+      "referencia": null
+    },
+    {
+      "id": 146,
+      "pregunta": "Una plataforma de gaming quiere comparar la toxicidad de la salida de varios LLM candidatos de **Amazon SageMaker** JumpStart con el MENOR esfuerzo operativo. ¿Qué enfoque de evaluación encaja?",
+      "opciones": {
+        "A": "Evaluación del modelo con una fuerza laboral de revisión humana",
+        "B": "Evaluación automática del modelo usando métricas de toxicidad integradas",
+        "C": "Calificación humana crowdsourced",
+        "D": "Pruebas A/B de los modelos con usuarios en vivo"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "La evaluación automática del modelo puntúa salidas con métricas de toxicidad integradas y no requiere reclutar ni coordinar personas, ofreciendo el menor esfuerzo operativo.",
+      "referencia": null
+    },
+    {
+      "id": 147,
+      "pregunta": "Un equipo de ML entrena un foundation model (FM) y quiere elevar su precisión hasta un umbral requerido. ¿Qué debe hacer el equipo?",
+      "opciones": {
+        "A": "Disminuir el número de epochs",
+        "B": "Disminuir el batch size",
+        "C": "Aumentar el número de epochs",
+        "D": "Aumentar el parámetro temperature"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Aumentar el número de epochs permite al modelo entrenar con más pasadas sobre los datos, lo que generalmente mejora la precisión hasta alcanzar el nivel objetivo.",
+      "referencia": null
+    },
+    {
+      "id": 148,
+      "pregunta": "El LLM de una firma de asesoría financiera sigue produciendo alucinaciones. ¿Qué cambio puede reducirlas?",
+      "opciones": {
+        "A": "Disminuir el parámetro temperature de inferencia del modelo",
+        "B": "Usar Agents for **Amazon Bedrock** para supervisar el entrenamiento del modelo",
+        "C": "Preprocesar los datos para eliminar cualquier dato que cause alucinaciones",
+        "D": "Cambiar a un foundation model (FM) entrenado para nunca alucinar"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Bajar temperature reduce la aleatoriedad en la selección de tokens, de modo que el modelo se apoya en salidas de mayor probabilidad y es menos propenso a producir contenido alucinado.",
+      "referencia": null
+    },
+    {
+      "id": 149,
+      "pregunta": "Una startup edtech opera un asistente de preguntas y respuestas y quiere que el estilo de respuesta coincida con el rango de edad de cada estudiante, que la app ya envía al modelo. ¿Qué enfoque requiere el MENOR esfuerzo?",
+      "opciones": {
+        "A": "Entrenar un modelo fine-tuned separado para cada rango de edad",
+        "B": "Construir un pipeline RAG con contenido específico por edad",
+        "C": "Postprocesar cada respuesta con un segundo modelo para ajustar el tono",
+        "D": "Agregar al prompt una instrucción de rol y audiencia que indique el rango de edad del usuario"
+      },
+      "respuesta_correcta": "D",
+      "explicacion": "Agregar una instrucción de rol y audiencia al prompt es un cambio simple de prompt engineering que orienta el estilo al rango de edad indicado con casi ningún trabajo extra.",
+      "referencia": null
+    },
+    {
+      "id": 150,
+      "pregunta": "Para aplicaciones de IA, ¿cuáles dos capacidades de **Amazon Aurora** con la extensión pgvector son las más importantes?",
+      "opciones": {
+        "A": "Operaciones SQL estándar",
+        "B": "Búsqueda por similitud vectorial",
+        "C": "Web hosting",
+        "D": "Combinar vectores con datos estructurados",
+        "E": "Manejo de correo electrónico"
+      },
+      "respuesta_correcta": "B,D",
+      "explicacion": "La búsqueda por similitud vectorial permite encontrar el contenido semánticamente más relacionado, paso central en tareas como RAG, y combinar vectores con datos estructurados significa que esas búsquedas corren junto a registros relacionales existentes en la misma base de datos, lo que hace valiosa a Aurora con pgvector para cargas de IA.",
+      "referencia": null
+    },
+    {
+      "id": 151,
+      "pregunta": "Una cadena de farmacias opera un asistente de IA que ayuda a agentes a responder preguntas frecuentes, pero las preguntas cambian constantemente. Los agentes escriben una pregunta y necesitan una respuesta generada actualizada al menor costo. ¿Qué enfoque encaja?",
+      "opciones": {
+        "A": "Usar RAG con prompt engineering",
+        "B": "Hacer fine-tuning del modelo en un cronograma recurrente",
+        "C": "Preentrenar el modelo con los datos de FAQ y hacer benchmark",
+        "D": "Incrustar todo el conjunto de FAQ en el system prompt"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "RAG recupera la información más relevante y actual en el momento de la consulta y el prompt engineering moldea la respuesta, manteniendo al asistente preciso a medida que cambian las preguntas sin costo repetido de entrenamiento.",
+      "referencia": null
+    },
+    {
+      "id": 152,
+      "pregunta": "Una tienda de moda quiere que un LLM escriba descripciones cortas de productos centradas en características clave. ¿Qué enfoque de prompt engineering funciona mejor?",
+      "opciones": {
+        "A": "Escribir un prompt genérico para todos los productos y editar manualmente cada salida",
+        "B": "Crear prompts específicos por categoría que destaquen características clave y especifiquen formato y longitud de salida",
+        "C": "Listar todos los atributos del producto en un solo prompt y pedir una descripción",
+        "D": "Pedir al modelo la descripción más creativa posible y luego recortarla"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Prompts específicos por categoría que resaltan características clave y definen formato y longitud orientan al modelo hacia descripciones consistentes, concisas y centradas en características con poco retrabajo.",
+      "referencia": null
+    },
+    {
+      "id": 153,
+      "pregunta": "¿Cuáles son dos casos de uso principales para almacenar embeddings en una base de datos vectorial como **Amazon OpenSearch Service**?",
+      "opciones": {
+        "A": "Coincidencia exacta de cadenas por palabras clave",
+        "B": "Búsqueda semántica sobre documentos",
+        "C": "Trabajos ETL batch programados",
+        "D": "Recomendaciones basadas en similitud",
+        "E": "Búsquedas transaccionales por clave primaria"
+      },
+      "respuesta_correcta": "B,D",
+      "explicacion": "La búsqueda semántica y las recomendaciones basadas en similitud dependen de comparación de vecinos más cercanos sobre embeddings, que es exactamente lo que proporciona una base de datos vectorial.",
+      "referencia": null
+    },
+    {
+      "id": 154,
+      "pregunta": "¿Qué afirmación describe un riesgo o limitación genuina del prompt engineering para un modelo de IA generativa?",
+      "opciones": {
+        "A": "Prompt engineering garantiza salidas deterministas, por lo que la validación es innecesaria",
+        "B": "Prompt engineering puede exponer al modelo a ataques de prompt injection",
+        "C": "Prompt engineering actualiza permanentemente los pesos del modelo con cada prompt",
+        "D": "Prompt engineering elimina todo riesgo de envenenamiento de datos y secuestro del modelo"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Una limitación real del prompt engineering es que entradas diseñadas aún pueden explotarse mediante prompt injection, donde un atacante manipula el prompt para cambiar el comportamiento del modelo.",
+      "referencia": null
+    },
+    {
+      "id": 155,
+      "pregunta": "Una empresa construye una solución de IA generativa en **Amazon Bedrock** y necesita un servicio que proporcione almacenamiento de base de datos vectorial y búsqueda vectorial. ¿Qué servicio de AWS encaja?",
+      "opciones": {
+        "A": "**Amazon DynamoDB**",
+        "B": "Amazon ElastiCache",
+        "C": "**Amazon OpenSearch Service**",
+        "D": "Amazon Redshift"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "**Amazon OpenSearch Service** admite almacenamiento vectorial y búsqueda por similitud sobre embeddings, por lo que puede respaldar una solución de IA generativa en **Amazon Bedrock**.",
+      "referencia": null
+    },
+    {
+      "id": 156,
+      "pregunta": "Una agencia de marketing genera contenido extenso con un foundation model y quiere evaluar la calidad a escala sin depender de revisores humanos. ¿Qué enfoque de evaluación usa otro LLM para puntuar las salidas?",
+      "opciones": {
+        "A": "BLEU scoring",
+        "B": "LLM-as-a-judge",
+        "C": "Benchmark dataset comparison",
+        "D": "Pruebas A/B con usuarios en vivo"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "LLM-as-a-judge usa un LLM separado para evaluar y puntuar las salidas de otro modelo según criterios definidos, proporcionando evaluación de calidad escalable sin requerir revisores humanos para cada salida.",
+      "referencia": null
+    },
+    {
+      "id": 157,
+      "pregunta": "Durante una prueba de red team de un foundation model (FM), un ingeniero intenta sortear sus filtros de seguridad para que produzca texto dañino. ¿Cómo se llama esta técnica?",
+      "opciones": {
+        "A": "Fuzzing de los datos de entrenamiento para encontrar vulnerabilidades",
+        "B": "Jailbreaking",
+        "C": "Prueba de penetración autorizada",
+        "D": "Ataque de denegación de servicio (DoS)"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Jailbreaking es el intento de eludir o desactivar los controles de seguridad integrados de un modelo para que produzca contenido restringido o dañino, que es exactamente lo que hace el ingeniero.",
+      "referencia": null
+    },
+    {
+      "id": 158,
+      "pregunta": "¿Qué enfoque de prompting se usa para endurecer un modelo contra ataques de prompt injection?",
+      "opciones": {
+        "A": "Chain-of-thought prompting",
+        "B": "Few-shot prompting",
+        "C": "Adversarial prompting",
+        "D": "Zero-shot prompting"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Adversarial prompting diseña y prueba deliberadamente entradas hostiles para que los intentos de inyección puedan detectarse y neutralizarse, endureciendo al modelo contra ellos.",
+      "referencia": null
+    },
+    {
+      "id": 159,
+      "pregunta": "¿Cuáles dos métricas se usan comúnmente para evaluar la calidad de la salida de modelos de IA generativa?",
+      "opciones": {
+        "A": "Uso de memoria GPU",
+        "B": "Bilingual Evaluation Understudy (BLEU) score para calidad de traducción",
+        "C": "Throughput de solicitudes por segundo",
+        "D": "Recall-Oriented Understudy for Gisting Evaluation (ROUGE) score para calidad de resúmenes",
+        "E": "Cantidad de parámetros del modelo"
+      },
+      "respuesta_correcta": "B,D",
+      "explicacion": "BLEU evalúa calidad de traducción y ROUGE evalúa calidad de resúmenes comparando texto generado con referencias, por lo que ambas miden la calidad de la salida generativa.",
+      "referencia": null
+    },
+    {
+      "id": 160,
+      "pregunta": "Una plataforma educativa entrena un LLM personalizado para adolescentes y quiere que la salida coincida con su estilo, incluyendo ortografía creativa y abreviaturas. ¿Qué métrica debe usar para evaluar la salida frente a ejemplos de referencia?",
+      "opciones": {
+        "A": "BERTScore",
+        "B": "Bilingual Evaluation Understudy (BLEU) score",
+        "C": "Perplexity",
+        "D": "F1 score"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "BLEU mide superposición de n-gramas a nivel superficial entre la salida del modelo y el texto de referencia, por lo que es adecuada para verificar qué tan fielmente reproduce la ortografía creativa y abreviaturas del estilo juvenil.",
+      "referencia": null
+    },
+    {
+      "id": 161,
+      "pregunta": "Una empresa quiere mantener su foundation model (FM) actualizado reentrenándolo regularmente con los datos más recientes. ¿Qué estrategia de entrenamiento cumple este requisito?",
+      "opciones": {
+        "A": "Batch learning",
+        "B": "Static training",
+        "C": "Latent training",
+        "D": "Continuous pre-training"
+      },
+      "respuesta_correcta": "D",
+      "explicacion": "Continuous pre-training ingiere periódicamente los datos más recientes y actualiza los pesos del modelo, manteniendo el foundation model al día sin reentrenar desde cero cada vez.",
+      "referencia": null
+    },
+    {
+      "id": 162,
+      "pregunta": "Un equipo de ingeniería quiere usar **Amazon OpenSearch Service** como base de una aplicación de búsqueda vectorial. ¿Qué capacidad lo hace posible?",
+      "opciones": {
+        "A": "Búsqueda y ranking de palabras clave full-text (BM25)",
+        "B": "Indexación y consultas geoespaciales",
+        "C": "Búsqueda k-NN de vecinos más cercanos sobre vectores de alta dimensionalidad",
+        "D": "Replicación cross-cluster para recuperación ante desastres"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "La búsqueda k-NN de vecinos más cercanos permite a **Amazon OpenSearch Service** indexar embeddings y devolver los vectores más similares a una consulta, que es el núcleo de una aplicación de base de datos vectorial como búsqueda semántica.",
+      "referencia": null
+    },
+    {
+      "id": 163,
+      "pregunta": "Una cadena de ferreterías quiere un chatbot que consulte inventario en vivo y diga a los clientes en qué pasillo está un producto. ¿Qué técnica de prompt engineering debe usar?",
+      "opciones": {
+        "A": "Few-shot prompting",
+        "B": "Chain-of-thought prompting",
+        "C": "Reasoning and acting (ReAct) prompting",
+        "D": "Zero-shot prompting"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "ReAct prompting entrelaza el razonamiento del modelo con acciones explícitas, como invocar una API de inventario en vivo, y luego usa los datos devueltos para responder, que es lo necesario para verificar stock e informar la ubicación del producto en tiempo real.",
+      "referencia": null
+    },
+    {
+      "id": 164,
+      "pregunta": "Una empresa quiere usar un LLM en **Amazon Bedrock** para etiquetar pasajes de texto como positivos o negativos. ¿Qué estrategia de prompt engineering cumple este requisito?",
+      "opciones": {
+        "A": "Agregar al prompt una explicación detallada del análisis de sentimiento y cómo funcionan los LLMs",
+        "B": "Proporcionar solo el pasaje nuevo a clasificar, sin ejemplos ni contexto adicional",
+        "C": "Incluir en el prompt algunos pasajes de ejemplo, cada uno etiquetado como positivo o negativo",
+        "D": "Incluir el pasaje nuevo junto con ejemplos de tareas no relacionadas como resumen o traducción"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Incluir pasajes de ejemplo etiquetados como positivo o negativo es few-shot prompting, que muestra al modelo el patrón entrada-etiqueta y mejora la precisión de clasificación en un pasaje nuevo.",
+      "referencia": null
+    },
+    {
+      "id": 165,
+      "pregunta": "Una empresa ejecuta un foundation model grande en **Amazon Bedrock**, pero el costo de inferencia es demasiado alto. Quiere un modelo más pequeño y económico que retenga la mayor parte de la calidad del modelo grande. ¿Qué enfoque de personalización cumple este requisito?",
+      "opciones": {
+        "A": "Retrieval Augmented Generation (RAG)",
+        "B": "Model distillation",
+        "C": "Continuous pre-training",
+        "D": "In-context learning"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Model distillation entrena un modelo estudiante más pequeño para replicar el comportamiento de un modelo maestro más grande, produciendo un modelo compacto que retiene la mayor parte de la calidad original con menor costo de inferencia.",
+      "referencia": null
+    },
+    {
+      "id": 166,
+      "pregunta": "¿Cómo puede un equipo determinar si un foundation model (FM) cumple efectivamente sus objetivos de negocio?",
+      "opciones": {
+        "A": "Evaluar el rendimiento del modelo en datasets de benchmark",
+        "B": "Evaluar qué tan bien el modelo se alinea con los casos de uso específicos que debe soportar",
+        "C": "Analizar la arquitectura e hiperparámetros del modelo",
+        "D": "Medir los recursos computacionales que el modelo necesita para despliegue"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Evaluar qué tan bien el modelo se alinea con los casos de uso específicos que debe soportar muestra si sus salidas resuelven los problemas reales del negocio, que es cómo se determina si cumple los objetivos empresariales.",
+      "referencia": null
+    },
+    {
+      "id": 167,
+      "pregunta": "La aplicación de IA generativa de una empresa usa un foundation model (FM) preentrenado en **Amazon Bedrock** y quiere que sus respuestas incluyan información propia de la empresa, al menor costo. ¿Qué solución encaja?",
+      "opciones": {
+        "A": "Usar **Amazon Bedrock** Knowledge Bases",
+        "B": "Desplegar un modelo personalizado en **Amazon Bedrock**",
+        "C": "Hacer fine-tuning del FM con la información de la empresa",
+        "D": "Usar **Amazon Bedrock** Agents"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "**Amazon Bedrock** Knowledge Bases indexa y recupera los documentos de la empresa en el momento de la inferencia e inyecta contexto relevante en el prompt (RAG), agregando la información de forma económica sin entrenamiento.",
+      "referencia": null
+    },
+    {
+      "id": 168,
+      "pregunta": "Un contador agrega a un prompt en **Amazon Bedrock** la instrucción de mostrar el procedimiento y explicar cada paso al resolver problemas matemáticos. ¿Qué técnica de prompt engineering se está usando?",
+      "opciones": {
+        "A": "Few-shot prompting",
+        "B": "Tree of thoughts prompting",
+        "C": "Chain-of-thought prompting",
+        "D": "Zero-shot prompting"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Chain-of-thought prompting pide al modelo que exponga su razonamiento intermedio paso a paso, que es exactamente lo que hace instruirlo a mostrar el procedimiento, mejorando la precisión en problemas matemáticos.",
+      "referencia": null
+    },
+    {
+      "id": 169,
+      "pregunta": "Una cadena de supermercados usa modelos de ML para proyectar la demanda semanal de productos perecederos. Un analista debe preparar un informe que permita a los gerentes entender cómo las variables de entrada influyen en las predicciones del modelo. ¿Qué debe incluir para cumplir con los requisitos de transparencia y explicabilidad?",
+      "opciones": {
+        "A": "Muestras del conjunto de entrenamiento",
+        "B": "Tablas de convergencia del entrenamiento",
+        "C": "Gráficos de dependencia parcial (PDP)",
+        "D": "El código fuente completo del entrenamiento"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Los gráficos de dependencia parcial (PDP) muestran cómo una o más variables de entrada se relacionan con la salida predicha del modelo, lo que permite explicar la influencia de cada característica y dar transparencia sobre cómo el modelo llega a sus proyecciones de demanda.",
+      "referencia": null
+    },
+    {
+      "id": 170,
+      "pregunta": "Un laboratorio agrícola necesita clasificar muestras de suelo en 15 tipos según sus propiedades químicas. El equipo debe poder documentar con claridad la lógica interna del algoritmo para justificar cada clasificación ante auditores. ¿Qué algoritmo satisface este requisito?",
+      "opciones": {
+        "A": "Regresión logística",
+        "B": "Árboles de decisión",
+        "C": "Redes neuronales",
+        "D": "Regresión lineal"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Los árboles de decisión expresan su lógica interna mediante reglas de división legibles, lo que permite documentar paso a paso cómo el modelo pasa de las propiedades del suelo a una de las 15 categorías. Esa interpretabilidad encaja con el requisito de auditoría.",
+      "referencia": null
+    },
+    {
+      "id": 171,
+      "pregunta": "Una plataforma de streaming planea usar un modelo de lenguaje grande (LLM) para moderar comentarios en vivo y quiere evaluar si trata de forma desigual a ciertos grupos de usuarios. ¿Qué fuente de datos permite hacer esta evaluación con el menor esfuerzo administrativo?",
+      "opciones": {
+        "A": "Registros de moderación históricos",
+        "B": "Contenido generado por los usuarios",
+        "C": "Conjuntos de datos de referencia (benchmark)",
+        "D": "Políticas internas de moderación de contenido"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Los conjuntos de datos de referencia (benchmark) están curados y estandarizados específicamente para evaluar sesgos y equidad en modelos, lo que permite comparar resultados de forma consistente con muy poco esfuerzo administrativo.",
+      "referencia": null
+    },
+    {
+      "id": 172,
+      "pregunta": "Una empresa de telecomunicaciones entrenará su propio LLM con datos corporativos privados y quiere minimizar la huella de carbono del entrenamiento. ¿Qué tipo de instancia de **Amazon EC2** tiene el MENOR impacto ambiental para entrenar LLM?",
+      "opciones": {
+        "A": "Serie P de **Amazon EC2**",
+        "B": "Serie Trn de **Amazon EC2**",
+        "C": "Serie G de **Amazon EC2**",
+        "D": "Serie C de **Amazon EC2**"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Las instancias de la serie Trn de **Amazon EC2** usan AWS Trainium, diseñado específicamente para entrenar modelos grandes de forma eficiente en energía, por lo que tienen el menor impacto ambiental entre las opciones listadas.",
+      "referencia": null
+    },
+    {
+      "id": 173,
+      "pregunta": "Un centro comercial instaló cámaras y usa un modelo de ML para detectar comportamientos sospechosos en el estacionamiento. El sistema marca con mucha más frecuencia a personas de un grupo étnico específico. ¿Qué tipo de sesgo está afectando las predicciones del modelo?",
+      "opciones": {
+        "A": "Sesgo de medición",
+        "B": "Sesgo de muestreo",
+        "C": "Sesgo de confirmación",
+        "D": "Sesgo del observador"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "El sesgo de muestreo ocurre cuando los datos de entrenamiento no representan a toda la población, lo que puede hacer que el modelo marque desproporcionadamente a ciertos grupos étnicos. El patrón de alertas desbalanceadas apunta a datos de entrenamiento que subrepresentaron algunos grupos.",
+      "referencia": null
+    },
+    {
+      "id": 174,
+      "pregunta": "Una aseguradora planea desplegar un LLM para automatizar el procesamiento de reclamaciones y quiere hacerlo de forma responsable para evitar daños. ¿Cuáles dos acciones debe tomar la empresa?",
+      "opciones": {
+        "A": "Incluir métricas de equidad al evaluar el modelo",
+        "B": "Ajustar el parámetro de temperatura del modelo",
+        "C": "Modificar los datos de entrenamiento para reducir sesgos",
+        "D": "Evitar el sobreajuste en los datos de entrenamiento",
+        "E": "Aplicar técnicas de prompt engineering"
+      },
+      "respuesta_correcta": "A,C",
+      "explicacion": "Incluir métricas de equidad verifica que el modelo trate los casos de forma justa, y modificar los datos de entrenamiento ataca el sesgo en su origen. Ambas acciones reducen directamente el riesgo de daño.",
+      "referencia": null
+    },
+    {
+      "id": 175,
+      "pregunta": "Un equipo de ciencia de datos publica artefactos de modelos personalizados para otras áreas de la empresa, pero conserva el código y los datos de entrenamiento. Necesita una forma estandarizada de documentar y auditar cada modelo que comparte. ¿Qué solución debe usar?",
+      "opciones": {
+        "A": "Escribir la documentación en archivos PDF almacenados en **Amazon S3**",
+        "B": "Subir los scripts de entrenamiento a un repositorio Git",
+        "C": "Crear **Amazon SageMaker** Model Cards con usos previstos y detalles de entrenamiento e inferencia",
+        "D": "Usar AWS AI Service Cards para describir los modelos"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "**Amazon SageMaker** Model Cards ofrecen un formato estandarizado para documentar usos previstos, entrenamiento e inferencia de cada modelo, creando un registro consistente que otras áreas pueden auditar.",
+      "referencia": null
+    },
+    {
+      "id": 176,
+      "pregunta": "Un banco quiere construir un sistema de ML para ayudar a su equipo de riesgo a asignar líneas de crédito entre distintos grupos demográficos. ¿Qué debe hacer para desarrollar un modelo imparcial?",
+      "opciones": {
+        "A": "Reducir el tamaño del conjunto de entrenamiento",
+        "B": "Asegurar que las predicciones reproduzcan resultados históricos",
+        "C": "Construir un modelo separado para cada grupo demográfico",
+        "D": "Medir el desbalance de clases en los datos de entrenamiento y ajustar el proceso de entrenamiento en consecuencia"
+      },
+      "respuesta_correcta": "D",
+      "explicacion": "Medir el desbalance de clases y adaptar el entrenamiento —por ejemplo con remuestreo o pesos de clase— ayuda a que el modelo trate equitativamente a grupos subrepresentados y reduce predicciones sesgadas.",
+      "referencia": null
+    },
+    {
+      "id": 177,
+      "pregunta": "Una cooperativa de crédito desarrolla un modelo de ML para aprobar microcréditos. Necesita detectar sesgos en el modelo y también explicar sus predicciones. ¿Qué solución cumple ambos requisitos?",
+      "opciones": {
+        "A": "**Amazon SageMaker** Data Wrangler",
+        "B": "**Amazon SageMaker** Clarify",
+        "C": "**Amazon SageMaker** Model Cards",
+        "D": "AWS AI Service Cards"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "**Amazon SageMaker** Clarify detecta sesgos en datos y predicciones del modelo y además ofrece explicabilidad de esas predicciones, cubriendo los dos requisitos del caso.",
+      "referencia": null
+    },
+    {
+      "id": 178,
+      "pregunta": "Una empresa de software B2B quiere una aplicación de puntuación de prospectos que permita a los vendedores ver y ajustar el peso de cada variable de entrada según su experiencia comercial. ¿Qué tipo de modelo de ML satisface este requisito?",
+      "opciones": {
+        "A": "Modelo k-nearest neighbors (k-NN)",
+        "B": "Modelo de regresión logística",
+        "C": "Modelo de deep learning basado en componentes principales",
+        "D": "Red neuronal"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Un modelo de regresión logística asigna un peso explícito (coeficiente) a cada variable de entrada, lo que permite a los vendedores ver la contribución de cada característica y ajustar esos pesos con su conocimiento del dominio.",
+      "referencia": null
+    },
+    {
+      "id": 179,
+      "pregunta": "¿Qué técnica puede usar una empresa para reducir sesgo y toxicidad en una aplicación de IA generativa durante la etapa de postprocesamiento del ciclo de vida de ML?",
+      "opciones": {
+        "A": "Aumento de datos (data augmentation)",
+        "B": "Human-in-the-loop",
+        "C": "Ingeniería de características (feature engineering)",
+        "D": "Entrenamiento adversarial (adversarial training)"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Human-in-the-loop incorpora revisión humana en la etapa de postprocesamiento para detectar y corregir salidas sesgadas o tóxicas antes de que lleguen al usuario, reduciendo directamente esos riesgos.",
+      "referencia": null
+    },
+    {
+      "id": 180,
+      "pregunta": "Una auditoría reveló que el modelo ajustado de aprobación de crédito de un banco favorece a un grupo demográfico sobre otros. ¿Cuál es la corrección MÁS rentable?",
+      "opciones": {
+        "A": "Usar Retrieval Augmented Generation (RAG) con el modelo ajustado",
+        "B": "Agregar datos de entrenamiento más diversos y representativos y volver a ajustar el modelo",
+        "C": "Preentrenar un modelo completamente nuevo con datos más diversos",
+        "D": "Aplicar **Amazon Bedrock** Guardrails para bloquear salidas sesgadas"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Agregar datos más diversos y representativos y volver a ajustar el modelo existente enseña al modelo a tratar los grupos de forma equitativa, siendo la corrección más rentable.",
+      "referencia": null
+    },
+    {
+      "id": 181,
+      "pregunta": "Una empresa de recursos humanos implementó un sistema de IA para filtrar currículums entrenado con un dataset que no representaba todos los grupos demográficos. ¿Qué dimensión central de IA responsable está involucrada en esta situación?",
+      "opciones": {
+        "A": "Transparencia",
+        "B": "Equidad (fairness)",
+        "C": "Privacidad y seguridad",
+        "D": "Explicabilidad"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Entrenar con un dataset que no representa a todos los grupos demográficos puede producir predicciones sesgadas, lo cual es una preocupación de equidad (fairness). Esta dimensión se centra en resultados justos entre grupos.",
+      "referencia": null
+    },
+    {
+      "id": 182,
+      "pregunta": "Una plataforma de videojuegos en línea usa **Amazon Bedrock** Guardrails para filtrar entradas y salidas dañinas de usuarios y del modelo. ¿Cuáles dos categorías de contenido pueden filtrar los guardrails?",
+      "opciones": {
+        "A": "Política",
+        "B": "Odio (Hate)",
+        "C": "Apuestas (Gambling)",
+        "D": "Violencia (Violence)"
+      },
+      "respuesta_correcta": "B,D",
+      "explicacion": "**Amazon Bedrock** Guardrails incluyen filtros de contenido configurables para categorías dañinas como Odio (Hate) y Violencia (Violence), aplicables tanto a entradas de usuarios como a respuestas del modelo.",
+      "referencia": null
+    },
+    {
+      "id": 183,
+      "pregunta": "Una clínica privada quiere usar IA generativa para responder preguntas médicas de pacientes en su portal web. ¿Qué servicio de AWS debe usar para apoyar prácticas de IA responsable en la aplicación?",
+      "opciones": {
+        "A": "**Amazon Inspector**",
+        "B": "**Amazon Bedrock** Guardrails",
+        "C": "**Amazon Rekognition**",
+        "D": "AWS Trusted Advisor"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "**Amazon Bedrock** Guardrails permiten definir y aplicar controles de seguridad, contenido y sesgo sobre las respuestas de IA generativa, lo que apoya IA responsable en una aplicación que responde preguntas médicas.",
+      "referencia": null
+    },
+    {
+      "id": 184,
+      "pregunta": "Una empresa desplegó un modelo de IA generativa para segmentar clientes y lleva meses en producción. El equipo nota respuestas inconsistentes y quiere evaluar sesgo y deriva del modelo. ¿Qué servicio o característica de AWS cumple este requisito?",
+      "opciones": {
+        "A": "**Amazon SageMaker** Feature Store",
+        "B": "**Amazon SageMaker** Clarify",
+        "C": "**Amazon SageMaker** Model Monitor",
+        "D": "**Amazon SageMaker** Model Cards"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "**Amazon SageMaker** Model Monitor recopila datos continuamente de un modelo desplegado y detecta deriva de datos, deriva de concepto y cambios de sesgo a lo largo del tiempo, lo que permite identificar las inconsistencias del modelo en producción.",
+      "referencia": null
+    },
+    {
+      "id": 185,
+      "pregunta": "Una empresa está incorporando IA a su proceso de selección de personal y quiere reducir riesgos de sesgo y mantener decisiones de contratación equitativas. ¿Cuáles dos dimensiones centrales de IA responsable debe priorizar?",
+      "opciones": {
+        "A": "Equidad (fairness)",
+        "B": "Flexibilidad",
+        "C": "Tolerancia",
+        "D": "Código abierto (open source)",
+        "E": "Transparencia"
+      },
+      "respuesta_correcta": "A,E",
+      "explicacion": "La equidad (fairness) mantiene resultados justos entre grupos demográficos, mitigando directamente el sesgo. La transparencia hace visibles las decisiones de la IA para poder explicarlas y auditarlas. Ambas son dimensiones centrales de IA responsable.",
+      "referencia": null
+    },
+    {
+      "id": 186,
+      "pregunta": "Un científico de datos construye un modelo de ML para predecir el riesgo de abandono de clientes y quiere dar a los gerentes transparencia y explicabilidad sobre cada predicción. ¿Qué solución cumple este requisito?",
+      "opciones": {
+        "A": "Presentar los valores de Shapley del modelo",
+        "B": "Proporcionar la medida de precisión (accuracy) del modelo",
+        "C": "Proporcionar la matriz de confusión del modelo",
+        "D": "Proporcionar un endpoint de inferencia seguro"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Los valores de Shapley cuantifican cuánto contribuye cada característica a una predicción individual, dando transparencia y explicabilidad sobre por qué el modelo produjo un resultado específico.",
+      "referencia": null
+    },
+    {
+      "id": 187,
+      "pregunta": "Una empresa tiene un modelo de ML y quiere comprender cómo llega a sus predicciones. ¿Qué término describe entender las predicciones de un modelo?",
+      "opciones": {
+        "A": "Interpretabilidad del modelo (model interpretability)",
+        "B": "Entrenamiento del modelo (model training)",
+        "C": "Rendimiento del modelo (model performance)",
+        "D": "Interoperabilidad del modelo (model interoperability)"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "La interpretabilidad del modelo (model interpretability) se refiere a comprender cómo un modelo llega a sus predicciones, que es exactamente lo que busca la empresa.",
+      "referencia": null
+    },
+    {
+      "id": 188,
+      "pregunta": "Una fintech usa un modelo de IA generativa para asignar límites de gasto a tarjetas de crédito nuevas y quiere hacer más transparente el proceso de decisión para los clientes. ¿Qué solución cumple este requisito?",
+      "opciones": {
+        "A": "Reemplazar el modelo de ML por un sistema basado en reglas",
+        "B": "Aplicar técnicas de IA explicable (XAI) para mostrar qué factores influyeron en la decisión",
+        "C": "Construir una interfaz interactiva con explicaciones técnicas detalladas del sistema",
+        "D": "Aumentar la precisión del modelo para reducir la necesidad de transparencia"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Las técnicas de IA explicable (XAI) revelan los factores específicos que influyeron en cada decisión de límite de gasto, haciendo transparente el razonamiento del modelo para los clientes.",
+      "referencia": null
+    },
+    {
+      "id": 189,
+      "pregunta": "Una agencia de marketing usa **Amazon SageMaker** para desplegar un modelo que detecta temas en publicaciones de redes sociales. La empresa necesita mostrar cómo las diferentes variables de entrada influyen en el comportamiento del modelo. ¿Qué característica de SageMaker cumple este requisito?",
+      "opciones": {
+        "A": "SageMaker Ground Truth",
+        "B": "SageMaker Clarify",
+        "C": "SageMaker Feature Store",
+        "D": "SageMaker Canvas"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "**Amazon SageMaker** Clarify ofrece explicabilidad del modelo, incluyendo atribución de características, lo que permite mostrar cómo las variables de entrada influyen en el comportamiento del modelo desplegado.",
+      "referencia": null
+    },
+    {
+      "id": 190,
+      "pregunta": "Una entidad financiera construyó un modelo de ML que aprueba o rechaza solicitudes de hipoteca. Por regulación, su proceso de decisión debe ser transparente y explicable, y la empresa debe documentarlo para auditorías. ¿Qué solución cumple estos requisitos?",
+      "opciones": {
+        "A": "**Amazon Textract**",
+        "B": "**Amazon SageMaker** Model Cards",
+        "C": "AWS CloudFormation",
+        "D": "**Amazon Comprehend**"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "**Amazon SageMaker** Model Cards documentan el uso previsto, rendimiento y detalles de decisión del modelo, proporcionando transparencia, explicabilidad y un registro auditable para cumplir requisitos regulatorios.",
+      "referencia": null
+    },
+    {
+      "id": 191,
+      "pregunta": "¿Cuáles dos características de **Amazon Bedrock** ayudan con el filtrado de contenido y la seguridad?",
+      "opciones": {
+        "A": "Guardrails para filtrar contenido",
+        "B": "Opciones de personalización del modelo",
+        "C": "Capacidades de gestión de prompts",
+        "D": "Detección de marcas de agua (watermark detection) para contenido generado por IA",
+        "E": "Integración con bases de conocimiento (knowledge base)"
+      },
+      "respuesta_correcta": "A,D",
+      "explicacion": "**Amazon Bedrock** Guardrails filtran contenido dañino o no deseado en prompts y respuestas, y la detección de marcas de agua identifica contenido generado por IA, apoyando transparencia y prevención de uso indebido. Juntas abordan filtrado y seguridad.",
+      "referencia": null
+    },
+    {
+      "id": 192,
+      "pregunta": "Un hospital usa un modelo de ML para marcar resultados de laboratorio anormales. Para garantizar prácticas de IA responsable, quiere que profesionales médicos revisen cualquier predicción incierta antes de enviar el resultado al paciente. ¿Qué servicio de AWS cumple este requisito?",
+      "opciones": {
+        "A": "**Amazon SageMaker** Clarify",
+        "B": "Amazon Augmented AI (Amazon A2I)",
+        "C": "**Amazon SageMaker** Model Monitor",
+        "D": "**Amazon Bedrock** Guardrails"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Amazon Augmented AI (Amazon A2I) habilita flujos de revisión humana donde las predicciones por debajo de un umbral de confianza se envían a revisores calificados, permitiendo que profesionales médicos verifiquen resultados inciertos antes de que lleguen al paciente.",
+      "referencia": null
+    },
+    {
+      "id": 193,
+      "pregunta": "¿Cuál de las siguientes es un riesgo legal que las organizaciones deben considerar al desplegar aplicaciones de IA generativa para clientes?",
+      "opciones": {
+        "A": "Reducción del tiempo de entrenamiento del modelo",
+        "B": "Mayor utilización de hardware",
+        "C": "Posible daño a usuarios finales por salidas imprecisas o sesgadas",
+        "D": "Menores costos de computación en la nube"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "El posible daño a usuarios finales por salidas imprecisas o sesgadas es un riesgo legal que las organizaciones deben considerar, ya que clientes que reciban consejos incorrectos, decisiones sesgadas o contenido dañino pueden sufrir consecuencias reales, generando responsabilidad legal, sanciones regulatorias y litigios.",
+      "referencia": null
+    },
+    {
+      "id": 194,
+      "pregunta": "Un equipo de ML realiza una evaluación de sesgo y equidad de IA responsable para un modelo de aprobación de seguros, antes y después de ponerlo en producción. Ordene las siguientes actividades del primero al último.\n\n¿Cuál orden es correcto?",
+      "opciones": {
+        "A": "1) Inspeccionar el dataset de entrenamiento buscando desbalance de clases y subrepresentación de grupos protegidos → 2) Ejecutar métricas de sesgo sobre las predicciones del modelo entrenado comparando resultados entre grupos protegidos → 3) Registrar el uso previsto, resultados de evaluación y riesgo residual en una model card para revisores → 4) Monitorear el endpoint desplegado buscando deriva de sesgo y atribución de características → 5) Definir criterios de equidad y elegir qué atributos, como edad o género, se consideran sensibles",
+        "B": "1) Monitorear el endpoint desplegado buscando deriva de sesgo y atribución de características → 2) Registrar el uso previsto, resultados de evaluación y riesgo residual en una model card para revisores → 3) Ejecutar métricas de sesgo sobre las predicciones del modelo entrenado comparando resultados entre grupos protegidos → 4) Inspeccionar el dataset de entrenamiento buscando desbalance de clases y subrepresentación de grupos protegidos → 5) Definir criterios de equidad y elegir qué atributos, como edad o género, se consideran sensibles",
+        "C": "1) Definir criterios de equidad y elegir qué atributos, como edad o género, se consideran sensibles → 2) Inspeccionar el dataset de entrenamiento buscando desbalance de clases y subrepresentación de grupos protegidos → 3) Ejecutar métricas de sesgo sobre las predicciones del modelo entrenado comparando resultados entre grupos protegidos → 4) Registrar el uso previsto, resultados de evaluación y riesgo residual en una model card para revisores → 5) Monitorear el endpoint desplegado buscando deriva de sesgo y atribución de características",
+        "D": "1) Inspeccionar el dataset de entrenamiento buscando desbalance de clases y subrepresentación de grupos protegidos → 2) Definir criterios de equidad y elegir qué atributos, como edad o género, se consideran sensibles → 3) Ejecutar métricas de sesgo sobre las predicciones del modelo entrenado comparando resultados entre grupos protegidos → 4) Registrar el uso previsto, resultados de evaluación y riesgo residual en una model card para revisores → 5) Monitorear el endpoint desplegado buscando deriva de sesgo y atribución de características"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Primero se definen los criterios de equidad y los atributos sensibles, porque toda medición posterior depende de saber qué grupos se comparan y qué significa equidad en este caso de uso. Luego se analizan los datos de entrenamiento (sesgo pre-entrenamiento), se miden las predicciones del modelo (sesgo post-entrenamiento), se documenta todo en una model card y finalmente se monitorea el endpoint en producción buscando deriva.",
+      "referencia": null
+    },
+    {
+      "id": 195,
+      "pregunta": "Relacione cada capacidad de IA responsable de AWS con su propósito. Empareje cada capacidad de la izquierda con la descripción correcta de la derecha.\n\nElementos:\n• **Amazon SageMaker** Clarify\n• **Amazon SageMaker** Model Monitor\n• Amazon Augmented AI (Amazon A2I)\n• **Amazon SageMaker** Model Cards\n\n¿Cuál mapeo es correcto?",
+      "opciones": {
+        "A": "**Amazon SageMaker** Clarify → Supervisa un endpoint desplegado y alerta sobre calidad de datos y deriva de atribución de características; **Amazon SageMaker** Model Monitor → Enruta predicciones con baja confianza a revisores humanos; Amazon A2I → Documenta uso previsto, resultados de evaluación y calificación de riesgo; **Amazon SageMaker** Model Cards → Detecta sesgo y explica predicciones con atribuciones SHAP",
+        "B": "**Amazon SageMaker** Clarify → Supervisa un endpoint desplegado y alerta sobre calidad de datos y deriva de atribución; **Amazon SageMaker** Model Monitor → Detecta sesgo y explica predicciones con atribuciones SHAP; Amazon A2I → Enruta predicciones con baja confianza a revisores humanos; **Amazon SageMaker** Model Cards → Documenta uso previsto, resultados y calificación de riesgo",
+        "C": "**Amazon SageMaker** Clarify → Detecta sesgo en datos y modelos y explica predicciones con atribuciones de características como valores SHAP; **Amazon SageMaker** Model Monitor → Supervisa un endpoint desplegado y alerta sobre calidad de datos y deriva de atribución de características; Amazon A2I → Enruta predicciones con baja confianza a revisores humanos para decisión final; **Amazon SageMaker** Model Cards → Documenta uso previsto, resultados de evaluación y calificación de riesgo en un solo lugar para gobernanza",
+        "D": "**Amazon SageMaker** Clarify → Documenta uso previsto, resultados y calificación de riesgo; **Amazon SageMaker** Model Monitor → Enruta predicciones con baja confianza a revisores humanos; Amazon A2I → Supervisa un endpoint y alerta sobre deriva; **Amazon SageMaker** Model Cards → Detecta sesgo y explica predicciones con atribuciones SHAP"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "**Amazon SageMaker** Clarify calcula métricas de sesgo y produce atribuciones SHAP para explicar predicciones. **Amazon SageMaker** Model Monitor verifica continuamente un endpoint en vivo y alerta sobre deriva, incluida deriva de atribución. Amazon A2I envía predicciones de baja confianza a revisores humanos. **Amazon SageMaker** Model Cards registran uso previsto, resultados y calificación de riesgo para gobernanza.",
+      "referencia": null
+    },
+    {
+      "id": 196,
+      "pregunta": "Una startup opera un chatbot basado en un modelo base (FM) de **Amazon Bedrock**. El chatbot necesita leer archivos en un bucket de **Amazon S3** protegido con claves administradas por S3 (SSE-S3), pero cada intento de lectura falla. ¿Qué acción resolverá el problema?",
+      "opciones": {
+        "A": "Usar prompt engineering para indicar al modelo dónde buscar los datos en **Amazon S3**",
+        "B": "Eliminar detalles sensibles de los datos en S3",
+        "C": "Otorgar al rol de IAM que asume **Amazon Bedrock** permiso para descifrar los datos con la clave de cifrado correcta",
+        "D": "Actualizar la política del bucket S3 para permitir acceso público por internet"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Los fallos de lectura son un problema de permisos: el rol de IAM que asume **Amazon Bedrock** debe tener autorización para acceder y descifrar los objetos cifrados. Otorgar permiso de descifrado con la clave correcta resuelve el acceso.",
+      "referencia": null
+    },
+    {
+      "id": 197,
+      "pregunta": "¿Cómo puede una empresa usar modelos de lenguaje grande de forma segura en **Amazon Bedrock**?",
+      "opciones": {
+        "A": "Configurar roles y políticas de IAM basados en privilegio mínimo (least privilege)",
+        "B": "Habilitar **AWS Audit Manager** para ejecutar trabajos automáticos de evaluación de modelos",
+        "C": "Habilitar trabajos automáticos de evaluación de modelos de **Amazon Bedrock**",
+        "D": "Usar **Amazon CloudWatch** Logs para hacer los modelos explicables y monitorear sesgos"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Configurar roles y políticas de IAM con privilegio mínimo restringe qué usuarios y aplicaciones pueden acceder a modelos y acciones de **Amazon Bedrock**, siendo la base para usar LLM de forma segura.",
+      "referencia": null
+    },
+    {
+      "id": 198,
+      "pregunta": "Un chatbot construido sobre un modelo de **Amazon SageMaker** JumpStart ajustado debe cumplir varios marcos regulatorios. ¿Cuáles dos capacidades ayudan a la empresa a demostrar cumplimiento?",
+      "opciones": {
+        "A": "Optimización de costos",
+        "B": "Protección de datos",
+        "C": "Auto escalado elástico",
+        "D": "Detección de amenazas",
+        "E": "Menor time to market"
+      },
+      "respuesta_correcta": "B,D",
+      "explicacion": "La protección de datos (salvaguardar información sensible) y la detección de amenazas (identificar riesgos de seguridad) son controles que los reguladores esperan, por lo que apoyan directamente la demostración de cumplimiento.",
+      "referencia": null
+    },
+    {
+      "id": 199,
+      "pregunta": "Una empresa planea construir una aplicación LLM con **Amazon Bedrock** usando datos de clientes almacenados en **Amazon S3**. Su política indica que cada equipo solo puede acceder a registros de sus propios clientes. ¿Qué solución cumple estos requisitos?",
+      "opciones": {
+        "A": "Crear un único rol de servicio de **Amazon Bedrock** con acceso completo a **Amazon S3** y roles de IAM por equipo limitados a carpetas de clientes",
+        "B": "Crear un rol de servicio personalizado de **Amazon Bedrock** por equipo que otorgue acceso solo a los datos de clientes de ese equipo",
+        "C": "Crear un rol de servicio con acceso a **Amazon S3** y exigir que los equipos indiquen el cliente en cada solicitud a **Amazon Bedrock**",
+        "D": "Redactar datos personales en **Amazon S3** y actualizar la política del bucket para permitir acceso por equipo"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Crear un rol de servicio personalizado de **Amazon Bedrock** por equipo, limitado a los datos de clientes de ese equipo, aplica la política mediante privilegio mínimo e impide que equipos accedan a datos de otros.",
+      "referencia": null
+    },
+    {
+      "id": 200,
+      "pregunta": "Un equipo construye y entrena modelos de ML en notebooks de **Amazon SageMaker** Studio, manteniendo sus datos en un bucket de **Amazon S3**. Necesita controlar cómo se mueven los datos entre **Amazon S3** y los notebooks. ¿Qué solución cumple este requisito?",
+      "opciones": {
+        "A": "Usar **Amazon Macie** para monitorear SageMaker Studio",
+        "B": "Configurar SageMaker para usar una VPC con un endpoint de **Amazon S3**",
+        "C": "Usar **Amazon Inspector** para monitorear SageMaker Studio",
+        "D": "Configurar SageMaker para usar S3 Glacier Deep Archive"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Configurar **Amazon SageMaker** para usar una VPC con un endpoint de **Amazon S3** crea una ruta privada y administrada para que los datos fluyan entre S3 y los notebooks sin atravesar internet público.",
+      "referencia": null
+    },
+    {
+      "id": 201,
+      "pregunta": "Para satisfacer reguladores, una empresa debe ejecutar entrenamiento e inferencia de **Amazon SageMaker AI** en un entorno aislado sin conectividad a internet. ¿Qué solución cumple estos requisitos?",
+      "opciones": {
+        "A": "Asociar roles de IAM apropiados a los trabajos de SageMaker AI",
+        "B": "Cifrar los datos en reposo usando cifrado para capacidades geoespaciales de SageMaker",
+        "C": "Ejecutar los trabajos de entrenamiento e inferencia de SageMaker AI con aislamiento de red (network isolation)",
+        "D": "Ejecutar los trabajos con SageMaker Experiments"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Ejecutar trabajos de **Amazon SageMaker AI** con aislamiento de red elimina el acceso a internet para esos trabajos, manteniéndolos en el entorno aislado que exigen las regulaciones.",
+      "referencia": null
+    },
+    {
+      "id": 202,
+      "pregunta": "Una empresa ejecuta modelos personalizados en **Amazon Bedrock** para una aplicación de IA generativa y quiere que los artefactos del modelo producidos durante trabajos de personalización se cifren con una clave que la empresa controle. ¿Qué servicio de AWS cumple estos requisitos?",
+      "opciones": {
+        "A": "**Amazon Macie**",
+        "B": "AWS Secrets Manager",
+        "C": "AWS Key Management Service (**AWS KMS**)",
+        "D": "**Amazon Inspector**"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "AWS Key Management Service (**AWS KMS**) permite crear y controlar una clave de cifrado propia y usarla para cifrar los artefactos producidos por trabajos de personalización de **Amazon Bedrock**.",
+      "referencia": null
+    },
+    {
+      "id": 203,
+      "pregunta": "Una empresa debe registrar cada llamada a su API de **Amazon Bedrock** y conservar esos registros de forma segura durante cinco años con el menor costo posible. ¿Qué dos opciones (un servicio de AWS y una clase de almacenamiento de S3) debe combinar?",
+      "opciones": {
+        "A": "**Amazon CloudWatch**",
+        "B": "**AWS CloudTrail**",
+        "C": "**Amazon S3** Intelligent-Tiering",
+        "D": "**AWS Audit Manager**",
+        "E": "**Amazon S3** Standard"
+      },
+      "respuesta_correcta": "B,C",
+      "explicacion": "**AWS CloudTrail** registra solicitudes de API a servicios de AWS, incluido **Amazon Bedrock**, y **Amazon S3** Intelligent-Tiering mueve automáticamente los logs entre niveles de acceso para mantener bajo el costo de retención a largo plazo.",
+      "referencia": null
+    },
+    {
+      "id": 204,
+      "pregunta": "Un hospital construye un sistema de IA que ayuda a médicos a diagnosticar enfermedades a partir de historias clínicas e imágenes médicas. Por ley, los datos sensibles de pacientes deben permanecer dentro del país donde se almacenan. ¿Qué estrategia de gobernanza de datos garantiza cumplimiento y protege la privacidad?",
+      "opciones": {
+        "A": "Calidad de datos (data quality)",
+        "B": "Enriquecimiento de datos (data enrichment)",
+        "C": "Residencia de datos (data residency)",
+        "D": "Descubribilidad de datos (data discoverability)"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "La residencia de datos (data residency) garantiza que los datos se almacenen y procesen solo dentro de una ubicación geográfica específica, cumpliendo directamente el requisito de que la información del paciente no salga del país.",
+      "referencia": null
+    },
+    {
+      "id": 205,
+      "pregunta": "Cuando los modelos se entrenan en AWS, ¿qué técnica de machine learning ayuda a mantener privados y conformes los datos de entrenamiento subyacentes?",
+      "opciones": {
+        "A": "Transfer learning",
+        "B": "Aprendizaje no supervisado (unsupervised learning)",
+        "C": "Aprendizaje federado (federated learning)",
+        "D": "Aprendizaje por refuerzo (reinforcement learning)"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "El aprendizaje federado (federated learning) entrena un modelo compartido entre múltiples titulares de datos sin mover los datos crudos a una ubicación central, permitiendo que cada participante conserve sus datos privados en su lugar.",
+      "referencia": null
+    },
+    {
+      "id": 206,
+      "pregunta": "Un hospital quiere ajustar un modelo base (FM) con servicios de AWS manteniendo sus datos privados y dentro de la Región de AWS donde se almacenan. ¿Cuáles dos pasos logran esto de forma MÁS rentable?",
+      "opciones": {
+        "A": "Alojar el modelo on-premises con AWS Outposts",
+        "B": "Usar **AWS PrivateLink** con una VPC",
+        "C": "Alojar la API de **Amazon Bedrock** on-premises",
+        "D": "Usar la API de **Amazon Bedrock**"
+      },
+      "respuesta_correcta": "B,D",
+      "explicacion": "Invocar la API de **Amazon Bedrock** mantiene el ajuste fino dentro del servicio administrado en la misma Región de AWS, y enrutar ese tráfico por una VPC con **AWS PrivateLink** lo mantiene en la red privada de AWS, cumpliendo privacidad sin infraestructura adicional.",
+      "referencia": null
+    },
+    {
+      "id": 207,
+      "pregunta": "Una tienda en línea opera un chatbot de IA en su sitio web que permite a clientes realizar pedidos las 24 horas. ¿Qué vulnerabilidad de entrada debe abordar la empresa antes del lanzamiento?",
+      "opciones": {
+        "A": "Filtración de datos (data leakage)",
+        "B": "Inyección de prompts (prompt injection)",
+        "C": "Alucinaciones del modelo de lenguaje grande (LLM)",
+        "D": "Deriva de concepto (concept drift)"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "La inyección de prompts (prompt injection) es una vulnerabilidad de entrada donde un usuario crea entradas maliciosas para anular o manipular las instrucciones del chatbot, por lo que la empresa debe sanitizar y restringir entradas antes del lanzamiento.",
+      "referencia": null
+    },
+    {
+      "id": 208,
+      "pregunta": "Un banco ajusta un LLM en **Amazon Bedrock** para preguntas sobre préstamos y debe garantizar que el modelo nunca revele datos privados de clientes. ¿Qué solución encaja?",
+      "opciones": {
+        "A": "Aumentar el parámetro Top K",
+        "B": "Usar **Amazon Bedrock** Guardrails",
+        "C": "Eliminar información de identificación personal (PII) de los datos antes del ajuste fino",
+        "D": "Cifrar los datos en **Amazon S3** antes del ajuste fino"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Eliminar PII antes del ajuste fino impide que el modelo ingiera datos privados, por lo que no puede reproducirlos después. Es la salvaguarda más confiable.",
+      "referencia": null
+    },
+    {
+      "id": 209,
+      "pregunta": "Una empresa analiza documentos confidenciales con un modelo de terceros en **Amazon Bedrock** y le preocupa la privacidad de los datos. ¿Qué afirmación explica cómo **Amazon Bedrock** mantiene esos datos privados?",
+      "opciones": {
+        "A": "Las entradas del usuario son confidenciales, pero las salidas del modelo se comparten con los proveedores del modelo de terceros",
+        "B": "Las entradas y salidas se anonimizan y luego se comparten con los proveedores del modelo de terceros",
+        "C": "Las entradas del usuario y las salidas del modelo NO se comparten con ningún proveedor de modelos de terceros",
+        "D": "Las entradas y salidas se redactan antes de compartirse con los proveedores del modelo de terceros"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "**Amazon Bedrock** procesa los datos dentro del entorno de AWS y no comparte entradas de usuario ni salidas del modelo con proveedores de modelos de terceros, manteniendo privados los documentos confidenciales de la empresa.",
+      "referencia": null
+    },
+    {
+      "id": 210,
+      "pregunta": "Un banco necesita que su chatbot de IA generativa sea factual por razones regulatorias. ¿Qué solución ayuda a evitar que el modelo base (FM) subyacente produzca respuestas alucinadas?",
+      "opciones": {
+        "A": "Usar **AWS Config** para consultar metadatos de cumplimiento con lenguaje natural",
+        "B": "Usar **AWS Audit Manager** para preparar informes de auditoría y cumplimiento de TI",
+        "C": "Configurar **Amazon Bedrock** Guardrails para evaluar entradas de usuarios y respuestas del modelo",
+        "D": "Usar **Amazon Inspector** para escanear cargas de trabajo en busca de vulnerabilidades"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "**Amazon Bedrock** Guardrails permite definir políticas que evalúan entradas y respuestas del modelo, incluyendo verificaciones de contextual grounding, ayudando a mantener respuestas factuales y reducir alucinaciones para cumplimiento.",
+      "referencia": null
+    },
+    {
+      "id": 211,
+      "pregunta": "Una empresa quiere asegurar que su sistema de IA sea justo y explicable y decide exigir capacitación a su equipo de desarrollo de IA. ¿Qué capacitación cumple este requisito?",
+      "opciones": {
+        "A": "Capacitación en habilidades avanzadas de programación",
+        "B": "Capacitación en privacidad de datos y protocolos de cifrado",
+        "C": "Capacitación en conciencia de sesgo e IA responsable",
+        "D": "Capacitación en algoritmos avanzados de ML"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Capacitar al equipo en conciencia de sesgo e IA responsable proporciona el conocimiento y las prácticas necesarias para construir sistemas justos y explicables, cumpliendo el requisito.",
+      "referencia": null
+    },
+    {
+      "id": 212,
+      "pregunta": "Una empresa quiere acceder a las APIs de **Amazon Bedrock** de forma privada desde su cuenta de AWS, manteniendo sus datos fuera de internet público. ¿Qué solución cumple estos requisitos?",
+      "opciones": {
+        "A": "Usar AWS Glue para configurar cifrado de datos en el catálogo de datos de la empresa",
+        "B": "Usar **AWS PrivateLink** para configurar una conexión privada entre la VPC de la empresa y **Amazon Bedrock**",
+        "C": "Usar **Amazon CloudFront** para restringir acceso al contenido privado de la empresa",
+        "D": "Usar AWS Lake Formation para gestionar gobernanza centralizada de datos y compartición entre cuentas"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "**AWS PrivateLink** configura una conexión privada entre la VPC de la empresa y las APIs de **Amazon Bedrock**, manteniendo llamadas y transferencias de datos dentro de la red de AWS sin exponerse a internet público.",
+      "referencia": null
+    },
+    {
+      "id": 213,
+      "pregunta": "Un chatbot de IA generativa sobre un modelo base (FM) de **Amazon Bedrock** es vulnerable a inyección de prompts. ¿Cómo puede la empresa asegurarlo con el MENOR esfuerzo?",
+      "opciones": {
+        "A": "Ajustar el FM para evitar respuestas dañinas",
+        "B": "Aplicar filtros de contenido y temas denegados de **Amazon Bedrock** Guardrails",
+        "C": "Cambiar a un modelo base diferente",
+        "D": "Agregar más ejemplos few-shot al prompt"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Los filtros de contenido y temas denegados de **Amazon Bedrock** Guardrails se configuran sin reentrenar para bloquear prompts y respuestas inseguros, mitigando inyección de prompts con el menor esfuerzo.",
+      "referencia": null
+    },
+    {
+      "id": 214,
+      "pregunta": "Una empresa obtiene acreditación de la International Organization for Standardization (ISO) para gestionar riesgos de IA y usar IA de forma responsable. ¿Qué refleja esta acreditación sobre la empresa?",
+      "opciones": {
+        "A": "Todos los miembros de la empresa están certificados por ISO.",
+        "B": "Todos los sistemas de IA que usa la empresa están certificados por ISO.",
+        "C": "Todos los miembros del equipo de aplicaciones de IA están certificados por ISO.",
+        "D": "El marco de desarrollo de la empresa está certificado por ISO."
+      },
+      "respuesta_correcta": "D",
+      "explicacion": "La acreditación ISO certifica que el marco de desarrollo, procesos y controles de la empresa para gestionar IA cumplen los requisitos del estándar ISO relevante, reflejando gobernanza de IA responsable y consciente de riesgos a nivel organizacional.",
+      "referencia": null
+    },
+    {
+      "id": 215,
+      "pregunta": "Una empresa mantiene reglas que establecen cuánto tiempo se almacena la información y cuándo debe eliminarse. ¿Qué estrategia de gobernanza de datos describe esto?",
+      "opciones": {
+        "A": "Estándares de calidad de datos",
+        "B": "Retención de datos (data retention)",
+        "C": "Almacenamiento de logs",
+        "D": "Desidentificación de datos"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "La retención de datos (data retention) es el conjunto de políticas que define cuánto tiempo se almacenan los datos y cuándo deben eliminarse, que es exactamente lo que describen las reglas de la empresa.",
+      "referencia": null
+    },
+    {
+      "id": 216,
+      "pregunta": "Una empresa despliega agentes de IA en **Amazon Bedrock** que necesitan acceder a múltiples sistemas backend en nombre de usuarios. Quiere que cada agente se autentique con su propia identidad en lugar de compartir un conjunto de credenciales. ¿Qué característica de AWS cumple este requisito?",
+      "opciones": {
+        "A": "AWS Secrets Manager",
+        "B": "**Amazon Bedrock** AgentCore Identity",
+        "C": "**Amazon Macie**",
+        "D": "**AWS CloudTrail**"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "**Amazon Bedrock** AgentCore Identity proporciona gestión de identidad para agentes de IA, permitiendo que cada agente se autentique con una identidad distinta al acceder a sistemas backend, aplicando privilegio mínimo y evitando credenciales compartidas.",
+      "referencia": null
+    },
+    {
+      "id": 217,
+      "pregunta": "Una institución financiera entrena modelos de ML con datos de múltiples sistemas internos. Los reguladores exigen rastrear cada dato de entrenamiento hasta su fuente original y demostrar que fue recopilado y procesado conforme a la política. ¿Qué práctica cumple este requisito?",
+      "opciones": {
+        "A": "Aumento de datos (data augmentation)",
+        "B": "Seguimiento de linaje de datos (data lineage tracking)",
+        "C": "Normalización de datos (data normalization)",
+        "D": "Balanceo de datos (data balancing)"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "El seguimiento de linaje de datos (data lineage tracking) documenta el origen, movimiento y transformación de los datos a lo largo de su ciclo de vida, permitiendo rastrear cada dato de entrenamiento hasta su fuente y demostrar manejo conforme a la política.",
+      "referencia": null
+    },
+    {
+      "id": 218,
+      "pregunta": "Una empresa usa modelos de IA entrenados con datos de clientes y necesita definir reglas sobre cuánto tiempo se conservan los datasets de entrenamiento, cuándo se archivan y cuándo deben eliminarse. ¿Qué estrategia de gobernanza de datos describe esto?",
+      "opciones": {
+        "A": "Residencia de datos (data residency)",
+        "B": "Gestión del ciclo de vida de datos (data lifecycle management)",
+        "C": "Registro de datos (data logging)",
+        "D": "Monitoreo de datos (data monitoring)"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "La gestión del ciclo de vida de datos (data lifecycle management) define reglas sobre cómo se crean, almacenan, archivan y eliminan los datos, que es lo que establecer calendarios de retención y eliminación para datasets de entrenamiento describe.",
+      "referencia": null
+    },
+    {
+      "id": 219,
+      "pregunta": "El equipo de gobernanza de datos de una empresa quiere observar continuamente cómo se accede y usa el dato de entrenamiento de IA en toda la organización para detectar patrones de uso no autorizado. ¿Qué estrategia de gobernanza de datos describe esto?",
+      "opciones": {
+        "A": "Retención de datos",
+        "B": "Residencia de datos",
+        "C": "Observación y monitoreo de datos (data observation and monitoring)",
+        "D": "Registro de datos (data logging)"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "La observación y monitoreo de datos (data observation and monitoring) implica vigilar continuamente cómo se accede y usa la información para detectar anomalías y patrones no autorizados, que es la estrategia que aborda la necesidad del equipo.",
+      "referencia": null
+    },
+    {
+      "id": 220,
+      "pregunta": "Una empresa que construye sistemas de IA en AWS quiere registrar cada acceso a sus datasets de entrenamiento con fines de auditoría. ¿Qué servicio de AWS proporciona esta capacidad de registro?",
+      "opciones": {
+        "A": "**AWS Config**",
+        "B": "**AWS CloudTrail**",
+        "C": "AWS Trusted Advisor",
+        "D": "**Amazon Inspector**"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "**AWS CloudTrail** registra llamadas de API a servicios de AWS, incluidos eventos de acceso a datos en servicios como **Amazon S3**, creando una pista de auditoría que documenta quién accedió, cuándo y qué hizo.",
+      "referencia": null
+    },
+    {
+      "id": 221,
+      "pregunta": "Una institución financiera entrena modelos de ML con datos de múltiples sistemas. Los reguladores exigen rastrear cada dato de entrenamiento hasta su origen. ¿Qué práctica cumple este requisito?",
+      "opciones": {
+        "A": "Aumento de datos (data augmentation)",
+        "B": "Seguimiento de linaje de datos (data lineage tracking)",
+        "C": "Normalización de datos (data normalization)",
+        "D": "Balanceo de datos (data balancing)"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "El seguimiento de linaje de datos (data lineage tracking) documenta el origen, movimiento y transformación de los datos, permitiendo rastrear cada dato de entrenamiento hasta su fuente y demostrar manejo conforme.",
+      "referencia": null
+    },
+    {
+      "id": 222,
+      "pregunta": "Un equipo está estableciendo un ciclo de vida seguro de gobernanza de datos para el dataset detrás de una carga de trabajo de IA en AWS. Ordene las siguientes etapas de la primera a la última para reflejar el orden correcto del ciclo de vida de gobernanza de datos.\n\n¿Cuál orden es correcto?",
+      "opciones": {
+        "A": "1) Descubrir y clasificar los datos para identificar registros sensibles o regulados → 2) Cifrar el dataset en reposo y exigir cifrado en tránsito antes de usarlo para entrenamiento o inferencia → 3) Restringir quién puede usar los datos con políticas de IAM de privilegio mínimo → 4) Monitorear y registrar continuamente el acceso para detectar actividad inusual o no autorizada → 5) Auditar logs y controles contra requisitos de cumplimiento y producir evidencia para revisores",
+        "B": "1) Cifrar el dataset en reposo y exigir cifrado en tránsito → 2) Restringir acceso con políticas de IAM de privilegio mínimo → 3) Monitorear y registrar acceso continuamente → 4) Auditar logs y controles contra cumplimiento → 5) Descubrir y clasificar los datos para identificar registros sensibles o regulados",
+        "C": "1) Auditar logs y controles contra cumplimiento → 2) Monitorear y registrar acceso continuamente → 3) Restringir acceso con políticas de IAM → 4) Cifrar el dataset en reposo y en tránsito → 5) Descubrir y clasificar los datos",
+        "D": "1) Cifrar el dataset en reposo y en tránsito → 2) Descubrir y clasificar los datos → 3) Restringir acceso con políticas de IAM de privilegio mínimo → 4) Monitorear y registrar acceso continuamente → 5) Auditar logs y controles contra cumplimiento"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Primero se descubren y clasifican los datos para saber qué es sensible y cómo debe protegerse. Luego se cifran en reposo y tránsito, se restringe el acceso con IAM de privilegio mínimo, se monitorea y registra el acceso para detectar uso indebido, y finalmente se auditan logs y controles para producir evidencia de cumplimiento. Cada etapa depende de la anterior.",
+      "referencia": null
+    }
+  ]
+}
